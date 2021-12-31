@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="20G95" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Category" representedClassName="Category" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
+    <entity name="ListItem" representedClassName="ListItem" syncable="YES">
+        <attribute name="count" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category"/>
+        <relationship name="unit" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Unit"/>
+    </entity>
+    <entity name="Unit" representedClassName="Unit" syncable="YES">
+        <attribute name="abbreviation" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Category" positionX="-9" positionY="72" width="128" height="44"/>
+        <element name="Item" positionX="-63" positionY="-18" width="128" height="44"/>
+        <element name="ListItem" positionX="-45" positionY="9" width="128" height="89"/>
+        <element name="Unit" positionX="-27" positionY="54" width="128" height="59"/>
+    </elements>
+</model>
