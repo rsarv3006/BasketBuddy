@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		782800DB278248EC002D5239 /* ListItemSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782800DA278248EC002D5239 /* ListItemSort.swift */; };
+		782800DD2782AB8B002D5239 /* ListComponentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782800DC2782AB8B002D5239 /* ListComponentItem.swift */; };
 		784CDD98277D559F0048BDEB /* ListAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CDD97277D559F0048BDEB /* ListAppApp.swift */; };
 		784CDD9A277D559F0048BDEB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CDD99277D559F0048BDEB /* ContentView.swift */; };
 		784CDD9C277D55A20048BDEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 784CDD9B277D55A20048BDEB /* Assets.xcassets */; };
@@ -33,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		782800DA278248EC002D5239 /* ListItemSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemSort.swift; sourceTree = "<group>"; };
+		782800DC2782AB8B002D5239 /* ListComponentItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListComponentItem.swift; sourceTree = "<group>"; };
 		784CDD94277D559F0048BDEB /* ListApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		784CDD97277D559F0048BDEB /* ListAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAppApp.swift; sourceTree = "<group>"; };
 		784CDD99277D559F0048BDEB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -118,6 +122,7 @@
 				784CDDAB277D56BF0048BDEB /* Main.swift */,
 				784CDDAD277D57B70048BDEB /* Settings.swift */,
 				784CDDAF277D59B60048BDEB /* ListComponent.swift */,
+				782800DC2782AB8B002D5239 /* ListComponentItem.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -143,6 +148,7 @@
 			children = (
 				784CDDB8277D7FF00048BDEB /* CategoriesStarter.swift */,
 				784CDDBA277D82310048BDEB /* UnitsStarter.swift */,
+				782800DA278248EC002D5239 /* ListItemSort.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -253,6 +259,7 @@
 				784CDDA1277D55A20048BDEB /* Persistence.swift in Sources */,
 				784CDDC7277E483D0048BDEB /* Category+CoreDataProperties.swift in Sources */,
 				784CDDB3277D5CFB0048BDEB /* AddItems.swift in Sources */,
+				782800DD2782AB8B002D5239 /* ListComponentItem.swift in Sources */,
 				784CDDC6277E483D0048BDEB /* Category+CoreDataClass.swift in Sources */,
 				784CDDB6277D5F5B0048BDEB /* UIColorExtension.swift in Sources */,
 				784CDDA4277D55A20048BDEB /* ListApp.xcdatamodeld in Sources */,
@@ -262,6 +269,7 @@
 				784CDDD5277EB4E70048BDEB /* Unit+CoreDataProperties.swift in Sources */,
 				784CDDB9277D7FF00048BDEB /* CategoriesStarter.swift in Sources */,
 				784CDD9A277D559F0048BDEB /* ContentView.swift in Sources */,
+				782800DB278248EC002D5239 /* ListItemSort.swift in Sources */,
 				784CDD98277D559F0048BDEB /* ListAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

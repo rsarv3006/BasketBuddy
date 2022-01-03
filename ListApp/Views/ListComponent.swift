@@ -8,25 +8,27 @@
 import SwiftUI
 
 struct ListComponent: View {
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Category.name, ascending: true)], animation: .default)
-    private var categories: FetchedResults<Category>
+    @SectionedFetchRequest(sectionIdentifier: ListItemSort.default.section, sortDescriptors: ListItemSort.default.descriptors, animation: .default)
+    private var listItems: SectionedFetchResults<String, ListItem>
     
-    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Unit.name, ascending: true)], animation: .default)
-    private var units: FetchedResults<Unit>
+    @State var selectedItem: ListItem?
     
     var body: some View {
         List {
-            ForEach(categories) { cat in
-                Text(cat.name ?? "")
-            }
-            ForEach(units) {unit in
-                Text("\(unit.name ?? "") - \(unit.abbreviation ?? "")")
+            ForEach(listItems) { section in
+                Section(header: Text(section.id)) {
+                    ForEach(section) { item in
+                        ListComponentItem(item: item, selectedItem: $selectedItem)
+                            .onTapGesture {
+                                selectedItem = item
+                            }
+                    }
+                }
+                
             }
         }
-            .frame(maxWidth: .infinity)
-            .background(Color.tomato)
-
+        .frame(maxWidth: .infinity)
+        
         
         
     }

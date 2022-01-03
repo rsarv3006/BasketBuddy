@@ -13,6 +13,9 @@ struct AddItems: View {
     
     @State var itemName: String = ""
     @State var itemCount: String = ""
+    @State var itemNameError: Bool = false
+    @State var itemCountError: Bool = false
+    
 //    @State private var selectedCategory: Category
 //    @State private var selectedUnit: Unit
 //
@@ -57,9 +60,15 @@ struct AddItems: View {
                     Text("Category:\(selectedCategory.name ?? "")")
                     Text("Unit:\(selectedUnit.name ?? "")")
                     
-                    TextField("Item", text: $itemName)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                    VStack {
+                        TextField("Item", text: $itemName)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
                         .frame(width: geometry.size.width * 0.8, alignment: .center)
+                        if itemNameError {
+                            Text("Item Name is required")
+                                .foregroundColor(.red)
+                        }
+                    }
                     Picker("Select a Category", selection: $selectedCategory) {
                         ForEach(categories, id: \.self) { category in
                             Text(category.name ?? "")
@@ -69,9 +78,15 @@ struct AddItems: View {
                     .pickerStyle(WheelPickerStyle())
                     .border(.gray, width: 2)
                     HStack {
-                        TextField("#", text: $itemCount)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                        VStack {
+                            TextField("#", text: $itemCount)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
                             .frame(width: geometry.size.width * 0.2, alignment: .center)
+                            if itemCountError {
+                                Text("Item Count is required")
+                                    .foregroundColor(.red)
+                            }
+                        }
                         Picker("Select a Unit", selection: $selectedUnit) {
                             ForEach(units, id: \.self) { unit in
                                 Text(unit.name ?? "")
@@ -82,14 +97,38 @@ struct AddItems: View {
                     .frame(width: geometry.size.width * 0.8, alignment: .center)
                     
                     VStack {
-                        Button {} label: {
+                        Button {
+                            if (itemName.isEmpty || itemCount.isEmpty) {
+                                itemNameError = itemName.isEmpty
+                                itemCountError = itemCount.isEmpty
+                            } else {
+                                let context = PersistenceController.shared.container.viewContext
+                                itemNameError = itemName.isEmpty
+                                itemCountError = itemCount.isEmpty
+                                
+                                let item = ListItem(context: context)
+                                item.name = itemName
+                                item.count = Double(itemCount) ?? 1
+                                item.unit = selectedUnit
+                                item.category = selectedCategory
+                                
+                                do {
+                                    try context.save()
+                                } catch let error as NSError {
+                                    print(error.userInfo)
+                                }
+                                presentationMode.wrappedValue.dismiss()
+                            }
+                        } label: {
                             Text("Add")
                         }
+                        .buttonStyle(.borderedProminent)
                         Button {
                             presentationMode.wrappedValue.dismiss()
                         } label: {
                             Text("Cancel")
                         }
+                        .buttonStyle(.bordered)
                     }
                     
                 }

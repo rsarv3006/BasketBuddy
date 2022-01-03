@@ -14,7 +14,8 @@ struct UnitsStarter {
     "Cups",
     "Quarts",
     "Pieces",
-    "Gallons"
+    "Gallons",
+    "Dozen"
     ]
     
     let abbrevDict = [
@@ -23,6 +24,7 @@ struct UnitsStarter {
         "Cups": "c",
         "Quarts": "qt",
         "Pieces": "",
-        "Gallons": "Gal"
+        "Gallons": "Gal",
+        "Dozen": "dz"
     ]
 }
