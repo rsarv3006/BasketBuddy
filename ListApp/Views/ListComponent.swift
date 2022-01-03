@@ -20,7 +20,12 @@ struct ListComponent: View {
                     ForEach(section) { item in
                         ListComponentItem(item: item, selectedItem: $selectedItem)
                             .onTapGesture {
-                                selectedItem = item
+                                if selectedItem == item {
+                                    selectedItem = nil
+                                } else {
+                                    selectedItem = item
+                                }
+                                
                             }
                     }
                 }
