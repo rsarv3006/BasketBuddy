@@ -12,19 +12,18 @@ import CoreData
 @objc(Unit)
 public class Unit: NSManagedObject {
 
-    static func addOnLoad() {
+    static func addOnLoad(viewContext: NSManagedObjectContext) {
         let unitsStarter = UnitsStarter()
         let request = Unit.fetchRequest()
-        let context = PersistenceController.shared.container.viewContext
         
         do {
-            if try context.count(for: request) == 0 {
+            if try viewContext.count(for: request) == 0 {
                 for starter in unitsStarter.unitNames {
-                    let unit = Unit(context: context)
+                    let unit = Unit(context: viewContext)
                     unit.name = starter
-                    unit.abbreviation = unitsStarter.abbrevDict[starter]
+                    unit.abbreviation = unitsStarter.abbrevDict[starter] ?? ""
                 }
-                try context.save()
+                try viewContext.save()
             }
         } catch {
             print("Error initialiZing with Units")

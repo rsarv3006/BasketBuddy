@@ -12,17 +12,17 @@ import CoreData
 @objc(Category)
 public class Category: NSManagedObject {
 
-    static func addOnLoad() {
+    static func addOnLoad(viewContext: NSManagedObjectContext) {
         let categoriesStarter = CategoriesStarter()
         let request = Category.fetchRequest()
-        let context = PersistenceController.shared.container.viewContext
+
         do {
-            if try context.count(for: request) == 0 {
+            if try viewContext.count(for: request) == 0 {
                 for starter in categoriesStarter.categoryNames {
-                    let category = Category(context: context)
+                    let category = Category(context: viewContext)
                     category.name = starter
                 }
-                try context.save()
+                try viewContext.save()
             }
         } catch {
             print("Error initializing with Categories")

@@ -7,17 +7,15 @@
 
 import SwiftUI
 
-struct Main: View {
-    @State private var showSettings = false;
-    @State private var showAdd = false;
+struct Main: View {    
+    @State private var showSettings = false
+    @State private var showAdd = false
+    @Environment(\.managedObjectContext) private var viewContext
+    @EnvironmentObject var selectedStore: SelectedStore
     
     var body: some View {
         NavigationView {
-            
-            VStack {
-                NavigationLink(destination: Settings(), isActive: $showSettings) {
-                    EmptyView()
-                }
+            ZStack {
                 ListComponent()
                     .toolbar {
                         ToolbarItem(placement: .navigationBarTrailing) {
@@ -27,41 +25,22 @@ struct Main: View {
                                 Image(systemName: "gearshape")
                             }
                         }
-                        ToolbarItem(placement: .bottomBar) {
-                            Button {
-                                showAdd.toggle()
-                            } label: {
-                                ZStack {
-                                    Circle()
-                                        .trim(from: 0.1, to: 0.9)
-                                        .rotation(.degrees(90))
-                                        .stroke(Color.blue, style: StrokeStyle(lineWidth: 3))
-                                        .frame(width: 110, height: 110)
-                                    
-                                    Image(systemName: "plus")
-                                        .font(.system(size: 50))
-                                        .foregroundColor(.blue)
-                                }
-                                
-                            }
-                            .gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local)
-                                        .onEnded({ value in
-                                if value.translation.height < 0 {
-                                    showAdd.toggle()
-                                }
-
-                            })
-                            )
-                        }
-
+                        ListComponentBottomToolbar(selectedListItem: $selectedStore.selectedListItem, showAdd: $showAdd)
                     }
-                    .sheet(isPresented: $showAdd) {
-                        AddItems()
-                    }
+                
+                NavigationLink(destination: Settings(), isActive: $showSettings) {
+                    EmptyView()
+                }
+            }
+            .sheet(isPresented: $showAdd) {
+                AddItems(viewContext: viewContext, selectedItem: $selectedStore.selectedListItem)
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
         
     }
+    
+    
 }
 
 struct Main_Previews: PreviewProvider {
@@ -69,3 +48,5 @@ struct Main_Previews: PreviewProvider {
         Main()
     }
 }
+
+

@@ -1,23 +1,19 @@
 //
-//  ListComponentItem.swift
+//  SettingsCategoriesItem.swift
 //  ListApp
 //
-//  Created by rjs on 1/2/22.
+//  Created by rjs on 1/5/22.
 //
 
 import SwiftUI
 
-struct ListComponentItem: View {
-    let item: ListItem
+struct SettingsCategoriesItem: View {
+    let category: Category
     @EnvironmentObject var selectedStore: SelectedStore
     
     var unSelectedView: some View {
         VStack {
-            Text(item.name ?? "")
-            HStack {
-                Text(String(item.count))
-                Text(item.unit?.abbreviation ?? "")
-            }
+            Text(category.name ?? "")
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
         // TODO This is a pain in the ass hack because the above ^ doesn't want to apply to just text
@@ -34,7 +30,7 @@ struct ListComponentItem: View {
     }
     
     var body: some View {
-        if let selectedItem = selectedStore.selectedListItem, selectedItem == item {
+        if let selectedCat = selectedStore.selectedCategory, selectedCat == category {
             selectedView
         } else {
             unSelectedView
@@ -44,8 +40,8 @@ struct ListComponentItem: View {
     }
 }
 
-struct ListComponentItem_Previews: PreviewProvider {
+struct SettingsCategoriesItem_Previews: PreviewProvider {
     static var previews: some View {
-        ListComponentItem(item: ListItem())
+        SettingsCategoriesItem(category: Category())
     }
 }

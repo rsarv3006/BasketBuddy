@@ -8,22 +8,22 @@
 import SwiftUI
 
 struct ListComponent: View {
-    @SectionedFetchRequest(sectionIdentifier: ListItemSort.default.section, sortDescriptors: ListItemSort.default.descriptors, animation: .default)
+    @SectionedFetchRequest(sectionIdentifier: ListItemSort.default.section, sortDescriptors: ListItemSort.default.descriptors, predicate: NSPredicate(format: "isVisible = %@", NSNumber(value: true)) ,animation: .default)
     private var listItems: SectionedFetchResults<String, ListItem>
     
-    @State var selectedItem: ListItem?
+    @EnvironmentObject var selectedStore: SelectedStore
     
     var body: some View {
         List {
             ForEach(listItems) { section in
                 Section(header: Text(section.id)) {
                     ForEach(section) { item in
-                        ListComponentItem(item: item, selectedItem: $selectedItem)
+                        ListComponentItem(item: item)
                             .onTapGesture {
-                                if selectedItem == item {
-                                    selectedItem = nil
+                                if selectedStore.selectedListItem == item {
+                                    selectedStore.selectedListItem = nil
                                 } else {
-                                    selectedItem = item
+                                    selectedStore.selectedListItem = item
                                 }
                                 
                             }

@@ -2,7 +2,7 @@
 //  Category+CoreDataProperties.swift
 //  ListApp
 //
-//  Created by rjs on 12/30/21.
+//  Created by rjs on 1/3/22.
 //
 //
 
