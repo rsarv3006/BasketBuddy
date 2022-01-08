@@ -37,8 +37,15 @@ struct SettingsEditStaplesView: View {
         }
         .frame(maxWidth: .infinity)
         .toolbar {
-            ListComponentBottomToolbar(selectedListItem: $selectedStore.selectedStaple, centerImageName: "plus", leftButtonOnPress: {showAdd.toggle()}, middleButtonOnPress: {showAdd.toggle()}, middleButtonOnSwipe: { value in
-                if value.translation.height < 0 {
+            ListComponentBottomToolbar(selectedListItem: $selectedStore.selectedStaple, centerImageName: selectedStore.selectedStaple == nil ? "plus" : "note.text.badge.plus", leftButtonOnPress: {showAdd.toggle()}, middleButtonOnPress: {
+                if (selectedStore.selectedStaple == nil) {
+                    showAdd.toggle()
+                } else if let staple = selectedStore.selectedStaple {
+                    itemModel.makeItemVisible(staple)
+                    selectedStore.selectedStaple = nil
+                }
+            }, middleButtonOnSwipe: { value in
+                if value.translation.height < 0 && selectedStore.selectedStaple == nil {
                     showAdd.toggle()
                 }
             }, rightButtonOnPress: {

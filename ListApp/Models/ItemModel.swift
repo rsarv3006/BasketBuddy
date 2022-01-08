@@ -104,4 +104,16 @@ struct ItemModel {
             return false
         }
     }
+    
+    func makeItemVisible(_ item: ListItem) {
+        guard let context = item.managedObjectContext else { return }
+        
+        item.isVisible = true
+        
+        do {
+            try context.save()
+        } catch let error as NSError {
+            print(error.userInfo)
+        }
+    }
 }
