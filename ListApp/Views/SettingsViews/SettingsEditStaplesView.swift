@@ -8,15 +8,53 @@
 import SwiftUI
 
 struct SettingsEditStaplesView: View {
+    @Environment(\.managedObjectContext) private var viewContext
+    
+    @SectionedFetchRequest(sectionIdentifier: ListItemSort.default.section, sortDescriptors: ListItemSort.default.descriptors, predicate: NSPredicate(format: "isStaple = %@", NSNumber(value: true)), animation: .default)
+    private var stapleItems: SectionedFetchResults<String, ListItem>
+    
+    @EnvironmentObject var selectedStore: SelectedStore
+    @State var showAdd: Bool = false
+    
+    let itemModel = ItemModel()
+    
     var body: some View {
-        Text("Edit Staples View")
-            .navigationTitle("Edit Staples")
-            .navigationBarTitleDisplayMode(.inline)
+        List {
+            ForEach(stapleItems) { section in
+                Section(header: Text(section.id)) {
+                    ForEach(section) { item in
+                        ListComponentItem(item: item, selectedItem: $selectedStore.selectedStaple)
+                            .onTapGesture {
+                                if (selectedStore.selectedStaple == item) {
+                                    selectedStore.selectedStaple = nil
+                                } else {
+                                    selectedStore.selectedStaple = item
+                                }
+                            }
+                    }
+                }
+            }
+        }
+        .frame(maxWidth: .infinity)
+        .toolbar {
+            ListComponentBottomToolbar(selectedListItem: $selectedStore.selectedStaple, centerImageName: "plus", leftButtonOnPress: {showAdd.toggle()}, middleButtonOnPress: {showAdd.toggle()}, middleButtonOnSwipe: { value in
+                if value.translation.height < 0 {
+                    showAdd.toggle()
+                }
+            }, rightButtonOnPress: {
+                if let safeSelectedStaple = selectedStore.selectedStaple {
+                    itemModel.makeNotVisible(safeSelectedStaple)
+                    selectedStore.selectedStaple = nil
+                }})
+        }
+        .sheet(isPresented: $showAdd) {
+            AddItems(viewContext: viewContext, selectedItem: $selectedStore.selectedStaple)
+        }
     }
 }
 
-struct SettingsEditStaples_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsEditStaplesView()
-    }
-}
+//struct SettingsEditStaples_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SettingsEditStaplesView()
+//    }
+//}

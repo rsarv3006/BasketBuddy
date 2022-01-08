@@ -59,6 +59,18 @@ struct ItemModel {
         }
     }
     
+    func makeNotVisible(_ item: ListItem) {
+        guard let context = item.managedObjectContext else { return }
+        item.isVisible = false
+        
+        do {
+            try context.save()
+        } catch {
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
+    }
+    
     func addMoveToBasketDate(_ item: ListItem) {
         guard let context = item.managedObjectContext else { return }
         
@@ -72,6 +84,24 @@ struct ItemModel {
             try context.save()
         } catch let error as NSError {
             print(error.userInfo)
+        }
+    }
+    
+    func loadStaples(_ context: NSManagedObjectContext) -> Bool {
+        let fetchRequest: NSFetchRequest<ListItem> = ListItem.fetchRequest()
+        fetchRequest.sortDescriptors = []
+        fetchRequest.predicate = NSPredicate(format: "isStaple = %@", NSNumber(value: true))
+        
+        do {
+            let staples = try context.fetch(fetchRequest)
+            for item in staples {
+                item.isVisible = true
+            }
+            try context.save()
+            return true
+        } catch let error as NSError {
+            print(error.userInfo)
+            return false
         }
     }
 }

@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct Settings: View {
+    @Environment(\.managedObjectContext) private var viewContext
+    
     @State var isCategoriesViewVisible: Bool = false
     @State var isbasketHistoryViewVisible: Bool = false
     @State var isEditStaplesViewVisible: Bool = false
+    @State var isStapleAlertVisible: Bool = false
+    @State var isStapleLoadSuccess: Bool = false
+    
+    let itemModel = ItemModel()
     
     var body: some View {
         GeometryReader { reader in
@@ -34,8 +40,14 @@ struct Settings: View {
                         .buttonStyle(.bordered)
                         .padding(.top)
                 }
-                Button("Load Staples", action: {})
+                Button("Load Staples", action: {
+                    isStapleLoadSuccess = itemModel.loadStaples(viewContext)
+                    isStapleAlertVisible.toggle()
+                })
                     .buttonStyle(.bordered)
+                    .alert(isStapleLoadSuccess ? "Loaded Staples successfully." : "Issue encountered loading staples, please try again.", isPresented: $isStapleAlertVisible) {
+                        Button("OK", role: .cancel) {}
+                    }
             }
             .padding(.leading)
             .navigationTitle("Settings")
@@ -44,8 +56,8 @@ struct Settings: View {
     }
 }
 
-struct Settings_Previews: PreviewProvider {
-    static var previews: some View {
-        Settings()
-    }
-}
+//struct Settings_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Settings()
+//    }
+//}

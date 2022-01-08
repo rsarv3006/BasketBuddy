@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ListComponentItem: View {
     let item: ListItem
-    @EnvironmentObject var selectedStore: SelectedStore
+    @Binding var selectedItem: ListItem?
     
     var unSelectedView: some View {
         VStack {
@@ -34,7 +34,7 @@ struct ListComponentItem: View {
     }
     
     var body: some View {
-        if let selectedItem = selectedStore.selectedListItem, selectedItem == item {
+        if let selectedItem = selectedItem, selectedItem == item {
             selectedView
         } else {
             unSelectedView
@@ -46,6 +46,6 @@ struct ListComponentItem: View {
 
 struct ListComponentItem_Previews: PreviewProvider {
     static var previews: some View {
-        ListComponentItem(item: ListItem())
+        ListComponentItem(item: ListItem(), selectedItem: .constant(ListItem()))
     }
 }

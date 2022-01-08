@@ -18,7 +18,7 @@ struct ListComponent: View {
             ForEach(listItems) { section in
                 Section(header: Text(section.id)) {
                     ForEach(section) { item in
-                        ListComponentItem(item: item)
+                        ListComponentItem(item: item, selectedItem: $selectedStore.selectedListItem)
                             .onTapGesture {
                                 if selectedStore.selectedListItem == item {
                                     selectedStore.selectedListItem = nil
@@ -33,14 +33,11 @@ struct ListComponent: View {
             }
         }
         .frame(maxWidth: .infinity)
-        
-        
-        
     }
 }
 
-struct ListComponent_Previews: PreviewProvider {
-    static var previews: some View {
-        ListComponent()
-    }
-}
+//struct ListComponent_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ListComponent()
+//    }
+//}

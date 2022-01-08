@@ -13,6 +13,8 @@ struct Main: View {
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var selectedStore: SelectedStore
     
+    let itemModel = ItemModel()
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -25,7 +27,22 @@ struct Main: View {
                                 Image(systemName: "gearshape")
                             }
                         }
-                        ListComponentBottomToolbar(selectedListItem: $selectedStore.selectedListItem, showAdd: $showAdd)
+                        ListComponentBottomToolbar(selectedListItem: $selectedStore.selectedListItem, centerImageName: selectedStore.selectedListItem == nil ? "plus" : "cart.badge.plus", leftButtonOnPress: {showAdd.toggle()}, middleButtonOnPress: {
+                            if (selectedStore.selectedListItem == nil) {
+                                showAdd.toggle()
+                            } else if let item = selectedStore.selectedListItem {
+                                itemModel.addMoveToBasketDate(item)
+                                selectedStore.selectedListItem = nil
+                            }
+                        }, middleButtonOnSwipe: { value in
+                            if value.translation.height < 0 && selectedStore.selectedListItem == nil {
+                                showAdd.toggle()
+                            }
+                        }, rightButtonOnPress: {
+                            if let safeSelectedItem = selectedStore.selectedListItem {
+                                itemModel.makeNotVisible(safeSelectedItem)
+                                selectedStore.selectedListItem = nil
+                            }})
                     }
                 
                 NavigationLink(destination: Settings(), isActive: $showSettings) {
@@ -43,10 +60,10 @@ struct Main: View {
     
 }
 
-struct Main_Previews: PreviewProvider {
-    static var previews: some View {
-        Main()
-    }
-}
+//struct Main_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Main()
+//    }
+//}
 
 
