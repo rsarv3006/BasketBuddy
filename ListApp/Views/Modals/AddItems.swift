@@ -136,7 +136,7 @@ struct AddItems: View {
                             if (selectedItem == nil) {
                                 Text("Add")
                             } else {
-                                Text("Edit")
+                                Text("Save")
                             }
                         }
                         .buttonStyle(.borderedProminent)

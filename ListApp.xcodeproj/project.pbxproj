@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7801C837278AA0BE00831859 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7801C836278AA0BE00831859 /* DateExtension.swift */; };
+		7801C839278AAD4400831859 /* SettingsBasketHistoryClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7801C838278AAD4400831859 /* SettingsBasketHistoryClearButton.swift */; };
 		782800DB278248EC002D5239 /* ListItemSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782800DA278248EC002D5239 /* ListItemSort.swift */; };
 		782800DD2782AB8B002D5239 /* ListComponentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782800DC2782AB8B002D5239 /* ListComponentItem.swift */; };
 		782800E42783A601002D5239 /* ListComponentBottomToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782800E32783A601002D5239 /* ListComponentBottomToolbar.swift */; };
@@ -42,6 +44,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7801C836278AA0BE00831859 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		7801C838278AAD4400831859 /* SettingsBasketHistoryClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBasketHistoryClearButton.swift; sourceTree = "<group>"; };
 		782800DA278248EC002D5239 /* ListItemSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemSort.swift; sourceTree = "<group>"; };
 		782800DC2782AB8B002D5239 /* ListComponentItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListComponentItem.swift; sourceTree = "<group>"; };
 		782800E32783A601002D5239 /* ListComponentBottomToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListComponentBottomToolbar.swift; sourceTree = "<group>"; };
@@ -117,6 +121,7 @@
 				782801082786517F002D5239 /* SettingsBasketHistoryView.swift */,
 				7828010A278651A0002D5239 /* SettingsEditStaplesView.swift */,
 				7828011327869BE8002D5239 /* SettingsCategoriesItem.swift */,
+				7801C838278AAD4400831859 /* SettingsBasketHistoryClearButton.swift */,
 			);
 			path = SettingsViews;
 			sourceTree = "<group>";
@@ -197,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				784CDDB5277D5F5B0048BDEB /* UIColorExtension.swift */,
+				7801C836278AA0BE00831859 /* DateExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -302,9 +308,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				784CDDBB277D82310048BDEB /* UnitsStarter.swift in Sources */,
+				7801C839278AAD4400831859 /* SettingsBasketHistoryClearButton.swift in Sources */,
 				784CDDAE277D57B70048BDEB /* Settings.swift in Sources */,
 				7828011627869E2C002D5239 /* SettingsAddCategory.swift in Sources */,
 				784CDDC2277E483D0048BDEB /* ListItem+CoreDataClass.swift in Sources */,
+				7801C837278AA0BE00831859 /* DateExtension.swift in Sources */,
 				784CDDC4277E483D0048BDEB /* Unit+CoreDataClass.swift in Sources */,
 				7828010B278651A0002D5239 /* SettingsEditStaplesView.swift in Sources */,
 				784CDDB0277D59B60048BDEB /* ListComponent.swift in Sources */,
@@ -388,7 +396,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -443,7 +451,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

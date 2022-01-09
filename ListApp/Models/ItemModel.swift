@@ -73,11 +73,16 @@ struct ItemModel {
     
     func addMoveToBasketDate(_ item: ListItem) {
         guard let context = item.managedObjectContext else { return }
+        let date1 = Date.parse("2021-01-01")
+        let date2 = Date.parse("2022-01-01")
+        let date = Date.randomBetween(start: date1, end: date2)
         
         item.isVisible = false
         if var datesMoved = item.datesMovedToBasket {
-            datesMoved.append(Date())
+            datesMoved.append(date)
             item.datesMovedToBasket = datesMoved
+        } else {
+            item.datesMovedToBasket = [date]
         }
         
         do {
@@ -111,6 +116,24 @@ struct ItemModel {
         item.isVisible = true
         
         do {
+            try context.save()
+        } catch let error as NSError {
+            print(error.userInfo)
+        }
+    }
+    
+    func clearMoveToBasketHistory(_ context: NSManagedObjectContext) {
+        let fetchRequest: NSFetchRequest<ListItem> = ListItem.fetchRequest()
+        fetchRequest.sortDescriptors = []
+        fetchRequest.predicate = NSPredicate(value: true)
+        
+        do {
+            let listItems = try context.fetch(fetchRequest)
+            for item in listItems {
+                if item.datesMovedToBasket != nil {
+                    item.datesMovedToBasket = []
+                }
+            }
             try context.save()
         } catch let error as NSError {
             print(error.userInfo)

@@ -27,7 +27,7 @@ struct Settings: View {
                     })
                         .buttonStyle(.bordered)
                 }
-                NavigationLink(destination: SettingsBasketHistoryView(), isActive: $isbasketHistoryViewVisible) {
+                NavigationLink(destination: SettingsBasketHistoryView(viewContext: viewContext), isActive: $isbasketHistoryViewVisible) {
                     Button("Basket History", action: {
                         isbasketHistoryViewVisible.toggle()
                     })

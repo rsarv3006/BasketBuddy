@@ -1,0 +1,7 @@
+Notes on App from Josh
+Default to number keyboard for itemCount field on Add
+itemCount needs to be a string field in the database 
+
+Formatting on the main list when the abbreviation is not there
+
+Fix basket history section headers not deleting in a timely manner
