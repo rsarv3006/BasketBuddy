@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct Main: View {    
+struct Main: View {
+    @Environment(\.presentationMode) var presentation
     @State private var showSettings = false
     @State private var showAdd = false
     @Environment(\.managedObjectContext) private var viewContext
@@ -26,6 +27,7 @@ struct Main: View {
                             } label: {
                                 Image(systemName: "gearshape")
                             }
+                            .frame(height: 96, alignment: .trailing) // Workaroud, credit: https://stackoverflow.com/a/62209223/5421557
                         }
                         ListComponentBottomToolbar(selectedListItem: $selectedStore.selectedListItem, centerImageName: selectedStore.selectedListItem == nil ? "plus" : "cart.badge.plus", leftButtonOnPress: {showAdd.toggle()}, middleButtonOnPress: {
                             if (selectedStore.selectedListItem == nil) {
@@ -44,7 +46,6 @@ struct Main: View {
                                 selectedStore.selectedListItem = nil
                             }})
                     }
-                
                 NavigationLink(destination: Settings(), isActive: $showSettings) {
                     EmptyView()
                 }
