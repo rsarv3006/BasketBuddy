@@ -1,4 +1,4 @@
-Notes on App from Josh
+Notes on App things to fix still
 
 Default to number keyboard for itemCount field on Add
 itemCount needs to be a string field in the database 
