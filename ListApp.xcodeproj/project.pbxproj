@@ -12,7 +12,6 @@
 		782800DB278248EC002D5239 /* ListItemSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782800DA278248EC002D5239 /* ListItemSort.swift */; };
 		782800DD2782AB8B002D5239 /* ListComponentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782800DC2782AB8B002D5239 /* ListComponentItem.swift */; };
 		782800E42783A601002D5239 /* ListComponentBottomToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782800E32783A601002D5239 /* ListComponentBottomToolbar.swift */; };
-		782800E62783AA0C002D5239 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782800E52783AA0C002D5239 /* ItemModel.swift */; };
 		78280100278402AA002D5239 /* ListItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782800FD278402AA002D5239 /* ListItem+CoreDataProperties.swift */; };
 		78280101278402AA002D5239 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782800FE278402AA002D5239 /* Category+CoreDataProperties.swift */; };
 		78280102278402AA002D5239 /* Unit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782800FF278402AA002D5239 /* Unit+CoreDataProperties.swift */; };
@@ -49,7 +48,6 @@
 		782800DA278248EC002D5239 /* ListItemSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemSort.swift; sourceTree = "<group>"; };
 		782800DC2782AB8B002D5239 /* ListComponentItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListComponentItem.swift; sourceTree = "<group>"; };
 		782800E32783A601002D5239 /* ListComponentBottomToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListComponentBottomToolbar.swift; sourceTree = "<group>"; };
-		782800E52783AA0C002D5239 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		782800FD278402AA002D5239 /* ListItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		782800FE278402AA002D5239 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		782800FF278402AA002D5239 /* Unit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Unit+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -213,7 +211,6 @@
 				784CDDB8277D7FF00048BDEB /* CategoriesStarter.swift */,
 				784CDDBA277D82310048BDEB /* UnitsStarter.swift */,
 				782800DA278248EC002D5239 /* ListItemSort.swift */,
-				782800E52783AA0C002D5239 /* ItemModel.swift */,
 				782801032785289B002D5239 /* SelectedStore.swift */,
 				7828010C2786850E002D5239 /* CategoryModel.swift */,
 			);
@@ -320,7 +317,6 @@
 				784CDDA1277D55A20048BDEB /* Persistence.swift in Sources */,
 				782801042785289B002D5239 /* SelectedStore.swift in Sources */,
 				78280101278402AA002D5239 /* Category+CoreDataProperties.swift in Sources */,
-				782800E62783AA0C002D5239 /* ItemModel.swift in Sources */,
 				7828011227869329002D5239 /* SettingsCategoriesBottomToolbar.swift in Sources */,
 				782801092786517F002D5239 /* SettingsBasketHistoryView.swift in Sources */,
 				7828010727865170002D5239 /* SettingsCategoriesView.swift in Sources */,

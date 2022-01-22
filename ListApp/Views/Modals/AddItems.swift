@@ -23,7 +23,6 @@ struct AddItems: View {
     @State private var selectedUnit: Unit
     
     private var viewContext: NSManagedObjectContext
-    let itemModel = ItemModel()
     
     @Binding var selectedItem: ListItem?
     
@@ -65,94 +64,96 @@ struct AddItems: View {
                 self._selectedCategory = State(initialValue: tempCategories.first!)
                 self._selectedUnit = State(initialValue: tempUnits.first!)
             }
-
+            
         } catch {
             fatalError("Init Problem")
         }
-
+        
     }
     
     var body: some View {
-        NavigationView {
-            GeometryReader { geometry in
-                VStack(alignment: .center) {
-                    Text("Add Items Screen")
-                    VStack {
-                        TextField("Item", text: $itemName)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
+        GeometryReader { geometry in
+            ScrollView(showsIndicators: false) {
+                Text("Add Item")
+                    .padding(.top)
+                VStack {
+                    TextField("Item", text: $itemName)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
                         .frame(width: geometry.size.width * 0.8, alignment: .center)
-                        if itemNameError {
-                            Text("Item Name is required")
+                    if itemNameError {
+                        Text("Item Name is required")
+                            .foregroundColor(.red)
+                    }
+                }
+                Picker("Select a Category", selection: $selectedCategory) {
+                    ForEach(categories, id: \.self) { category in
+                        Text(category.name ?? "")
+                    }
+                }
+                .frame(width: geometry.size.width * 0.8, alignment: .center)
+                .pickerStyle(WheelPickerStyle())
+                .border(.gray, width: 2)
+                HStack {
+                    VStack {
+                        TextField("#", text: $itemCount)
+                            .keyboardType(.numberPad)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .frame(width: geometry.size.width * 0.2, alignment: .center)
+                        if itemCountError {
+                            Text("Item Count is required")
                                 .foregroundColor(.red)
                         }
                     }
-                    Picker("Select a Category", selection: $selectedCategory) {
-                        ForEach(categories, id: \.self) { category in
-                            Text(category.name ?? "")
+                    Picker("Select a Unit", selection: $selectedUnit) {
+                        ForEach(units, id: \.self) { unit in
+                            Text(unit.name ?? "")
                         }
                     }
+                    .frame(width: geometry.size.width * 0.4,alignment: .center)
+                }
+                .frame(width: geometry.size.width * 0.8, alignment: .center)
+                Toggle("Item is a Staple", isOn: $isStaple)
                     .frame(width: geometry.size.width * 0.8, alignment: .center)
-                    .pickerStyle(WheelPickerStyle())
-                    .border(.gray, width: 2)
-                    HStack {
-                        VStack {
-                            TextField("#", text: $itemCount)
-                                .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .frame(width: geometry.size.width * 0.2, alignment: .center)
-                            if itemCountError {
-                                Text("Item Count is required")
-                                    .foregroundColor(.red)
-                            }
-                        }
-                        Picker("Select a Unit", selection: $selectedUnit) {
-                            ForEach(units, id: \.self) { unit in
-                                Text(unit.name ?? "")
-                            }
-                        }
-                        .frame(width: geometry.size.width * 0.4,alignment: .center)
-                    }
-                    .frame(width: geometry.size.width * 0.8, alignment: .center)
-                    Toggle("Item is a Staple", isOn: $isStaple)
-                        .frame(width: geometry.size.width * 0.8, alignment: .center)
-                    VStack {
-                        Button {
-                            if (itemName.isEmpty || itemCount.isEmpty) {
-                                itemNameError = itemName.isEmpty
-                                itemCountError = itemCount.isEmpty
+                VStack {
+                    Button {
+                        if (itemName.isEmpty || itemCount.isEmpty) {
+                            itemNameError = itemName.isEmpty
+                            itemCountError = itemCount.isEmpty
+                        } else {
+                            itemNameError = itemName.isEmpty
+                            itemCountError = itemCount.isEmpty
+                            
+                            if let tempSelectedItem = selectedItem {
+                                ListItem.editItem(itemToEdit: tempSelectedItem, itemName: itemName, itemCount: itemCount, unit: selectedUnit, category: selectedCategory, isStaple: isStaple)
+                                selectedItem = nil
                             } else {
-                                itemNameError = itemName.isEmpty
-                                itemCountError = itemCount.isEmpty
-                                
-                                if let tempSelectedItem = selectedItem {
-                                    itemModel.editItem(itemToEdit: tempSelectedItem, itemName: itemName, itemCount: itemCount, unit: selectedUnit, category: selectedCategory, isStaple: isStaple)
-                                    selectedItem = nil
-                                } else {
-                                    itemModel.addItem(itemName: itemName, itemCount: itemCount, unit: selectedUnit, category: selectedCategory, isStaple: isStaple, viewContext: viewContext)
-                                }
-                                
-                                presentationMode.wrappedValue.dismiss()
+                                ListItem.addItem(itemName: itemName, itemCount: itemCount, unit: selectedUnit, category: selectedCategory, isStaple: isStaple, viewContext: viewContext)
                             }
-                        } label: {
-                            if (selectedItem == nil) {
-                                Text("Add")
-                            } else {
-                                Text("Save")
-                            }
-                        }
-                        .buttonStyle(.borderedProminent)
-                        Button {
+                            
                             presentationMode.wrappedValue.dismiss()
-                        } label: {
-                            Text("Cancel")
                         }
-                        .buttonStyle(.bordered)
+                    } label: {
+                        if (selectedItem == nil) {
+                            Text("Add")
+                        } else {
+                            Text("Save")
+                        }
                     }
+                    .buttonStyle(.borderedProminent)
+                    Button {
+                        presentationMode.wrappedValue.dismiss()
+                    } label: {
+                        Text("Cancel")
+                    }
+                    .buttonStyle(.bordered)
                     
                 }
-                .frame(width: geometry.size.width, alignment: .center)
+                
             }
+            .frame(width: geometry.size.width, alignment: .center)
         }
     }
+    
 }
 
 //struct AddItems_Previews: PreviewProvider {

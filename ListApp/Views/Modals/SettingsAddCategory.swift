@@ -17,29 +17,38 @@ struct SettingsAddCategory: View {
     let categoryModel = CategoryModel()
     
     var body: some View {
-        TextField("Category Name", text: $categoryName)
-        if nameError {
-            Text("Category Name is required")
-                .foregroundColor(.red)
-        }
-        Button {
-            if categoryName.isEmpty {
-                nameError = categoryName.isEmpty
-            } else {
-                nameError = categoryName.isEmpty
-                categoryModel.add(name: categoryName, viewContext: viewContext)
-                presentationMode.wrappedValue.dismiss()
+        GeometryReader { reader in
+            VStack(alignment: .center, spacing: 10) {
+                Text("Add a Category")
+                    .padding(EdgeInsets(top: reader.size.height * 0.1, leading: 0, bottom: 0, trailing: 0))
+                TextField("Category Name", text: $categoryName)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .frame(width: reader.size.width * 0.8, alignment: .center)
+                if nameError {
+                    Text("Category Name is required")
+                        .foregroundColor(.red)
+                }
+                Button {
+                    if categoryName.isEmpty {
+                        nameError = categoryName.isEmpty
+                    } else {
+                        nameError = categoryName.isEmpty
+                        categoryModel.add(name: categoryName, viewContext: viewContext)
+                        presentationMode.wrappedValue.dismiss()
+                    }
+                    
+                } label: {
+                    Text("Add")
+                }
+                .buttonStyle(.borderedProminent)
+                Button {
+                    presentationMode.wrappedValue.dismiss()
+                } label: {
+                    Text("Cancel")
+                }
+                .buttonStyle(.bordered)
             }
-
-        } label: {
-            Text("Add")
+            .frame(width: reader.size.width, alignment: .center)
         }
-            .buttonStyle(.borderedProminent)
-        Button {
-            presentationMode.wrappedValue.dismiss()
-        } label: {
-            Text("Cancel")
-        }
-        .buttonStyle(.bordered)
     }
 }

@@ -8,20 +8,20 @@
 import SwiftUI
 
 struct ListComponentItem: View {
+    @Environment(\.colorScheme) var colorScheme
+    
     let item: ListItem
     @Binding var selectedItem: ListItem?
     
     var unSelectedView: some View {
-        VStack {
+        VStack(alignment: .leading) {
             Text(item.name ?? "")
-            HStack {
-                Text(String(item.count))
-                Text(item.unit?.abbreviation ?? "")
-            }
+            Text("\(String(item.count)) \(item.unit?.abbreviation ?? "")")
+                
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
         // TODO This is a pain in the ass hack because the above ^ doesn't want to apply to just text
-        .background(.background)
+        .background(colorScheme == .light ? Color.white : Color(UIColor.systemGray6) )
         
     }
     
@@ -39,13 +39,11 @@ struct ListComponentItem: View {
         } else {
             unSelectedView
         }
-        
-        
     }
 }
 
-struct ListComponentItem_Previews: PreviewProvider {
-    static var previews: some View {
-        ListComponentItem(item: ListItem(), selectedItem: .constant(ListItem()))
-    }
-}
+//struct ListComponentItem_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ListComponentItem(item: ListItem(), selectedItem: .constant(ListItem()))
+//    }
+//}

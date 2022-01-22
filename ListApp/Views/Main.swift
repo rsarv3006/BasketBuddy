@@ -14,8 +14,6 @@ struct Main: View {
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var selectedStore: SelectedStore
     
-    let itemModel = ItemModel()
-    
     var body: some View {
         NavigationView {
             ZStack {
@@ -33,7 +31,7 @@ struct Main: View {
                             if (selectedStore.selectedListItem == nil) {
                                 showAdd.toggle()
                             } else if let item = selectedStore.selectedListItem {
-                                itemModel.addMoveToBasketDate(item)
+                                ListItem.addMoveToBasketDate(item)
                                 selectedStore.selectedListItem = nil
                             }
                         }, middleButtonOnSwipe: { value in
@@ -42,7 +40,7 @@ struct Main: View {
                             }
                         }, rightButtonOnPress: {
                             if let safeSelectedItem = selectedStore.selectedListItem {
-                                itemModel.makeNotVisible(safeSelectedItem)
+                                ListItem.makeNotVisible(safeSelectedItem)
                                 selectedStore.selectedListItem = nil
                             }})
                     }

@@ -16,8 +16,6 @@ struct SettingsEditStaplesView: View {
     @EnvironmentObject var selectedStore: SelectedStore
     @State var showAdd: Bool = false
     
-    let itemModel = ItemModel()
-    
     var body: some View {
         List {
             ForEach(stapleItems) { section in
@@ -41,7 +39,7 @@ struct SettingsEditStaplesView: View {
                 if (selectedStore.selectedStaple == nil) {
                     showAdd.toggle()
                 } else if let staple = selectedStore.selectedStaple {
-                    itemModel.makeItemVisible(staple)
+                    ListItem.makeItemVisible(staple)
                     selectedStore.selectedStaple = nil
                 }
             }, middleButtonOnSwipe: { value in
@@ -50,7 +48,7 @@ struct SettingsEditStaplesView: View {
                 }
             }, rightButtonOnPress: {
                 if let safeSelectedStaple = selectedStore.selectedStaple {
-                    itemModel.makeNotVisible(safeSelectedStaple)
+                    ListItem.makeNotVisible(safeSelectedStaple)
                     selectedStore.selectedStaple = nil
                 }})
         }

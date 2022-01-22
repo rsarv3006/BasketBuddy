@@ -16,8 +16,6 @@ struct Settings: View {
     @State var isStapleAlertVisible: Bool = false
     @State var isStapleLoadSuccess: Bool = false
     
-    let itemModel = ItemModel()
-    
     var body: some View {
         GeometryReader { reader in
             VStack(alignment: .leading, spacing: 10) {
@@ -41,7 +39,7 @@ struct Settings: View {
                         .padding(.top)
                 }
                 Button("Load Staples", action: {
-                    isStapleLoadSuccess = itemModel.loadStaples(viewContext)
+                    isStapleLoadSuccess = ListItem.loadStaples(viewContext)
                     isStapleAlertVisible.toggle()
                 })
                     .buttonStyle(.bordered)

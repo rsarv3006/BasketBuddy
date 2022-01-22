@@ -16,8 +16,6 @@ struct SettingsBasketHistoryView: View {
     private var viewContext: NSManagedObjectContext
     @State private var dateArray: [String]
     
-    let itemModel = ItemModel()
-    
     func createFormattedDateHeaderString(_ date: String) -> String {
         let dateArr = date.components(separatedBy: ".")
         

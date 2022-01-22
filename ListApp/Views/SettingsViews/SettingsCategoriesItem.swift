@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SettingsCategoriesItem: View {
+    @Environment(\.colorScheme) var colorScheme
+    
     let category: Category
     @EnvironmentObject var selectedStore: SelectedStore
     
@@ -17,7 +19,7 @@ struct SettingsCategoriesItem: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
         // TODO This is a pain in the ass hack because the above ^ doesn't want to apply to just text
-        .background(.background)
+        .background(colorScheme == .light ? Color.white : Color(UIColor.systemGray6))
         
     }
     
@@ -40,8 +42,8 @@ struct SettingsCategoriesItem: View {
     }
 }
 
-struct SettingsCategoriesItem_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsCategoriesItem(category: Category())
-    }
-}
+//struct SettingsCategoriesItem_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SettingsCategoriesItem(category: Category())
+//    }
+//}

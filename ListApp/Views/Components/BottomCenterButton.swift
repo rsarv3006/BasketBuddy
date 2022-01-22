@@ -11,8 +11,6 @@ struct BottomCenterButton: View {
     var centerImageName: String
     var onPressed: () -> Void
     
-    let itemModel = ItemModel()
-    
     var body: some View {
         Button {
             self.onPressed()

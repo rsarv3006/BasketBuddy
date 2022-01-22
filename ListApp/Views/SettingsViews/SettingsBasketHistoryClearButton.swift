@@ -12,11 +12,10 @@ struct SettingsBasketHistoryClearButton: View {
     @Environment(\.dismiss) var dismiss
     
     @Binding var dateArray: [String]
-    
-    let itemModel = ItemModel()
+
     var body: some View {
         Button(action: {
-            itemModel.clearMoveToBasketHistory(viewContext)
+            ListItem.clearMoveToBasketHistory(viewContext)
             // TODO Fix issue where the section headers don't get removed unless you navigate home and come back
             dateArray = []
             dismiss()

@@ -16,7 +16,7 @@ extension ListItem {
         return NSFetchRequest<ListItem>(entityName: "ListItem")
     }
 
-    @NSManaged public var count: Double
+    @NSManaged public var count: String
     @NSManaged public var dateAdded: Date?
     @NSManaged public var datesMovedToBasket: [Date]?
     @NSManaged public var name: String?
