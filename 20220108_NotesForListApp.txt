@@ -3,3 +3,5 @@ App Todo
 Fix basket history section headers not deleting in a timely manner
 
 Add ability to re-add items from the basket history
+
+Refactor to MVVM
