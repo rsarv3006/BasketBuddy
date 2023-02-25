@@ -23,6 +23,7 @@ struct ListComponentBottomToolbar: ToolbarContent {
                 Button(action: leftButtonOnPress, label: {
                     Image(systemName: "pencil.circle")
                         .font(.system(size: 30))
+                        .foregroundColor(Color.theme.seaGreen)
                 })
             }
         }
@@ -39,6 +40,7 @@ struct ListComponentBottomToolbar: ToolbarContent {
                 Button(action: rightButtonOnPress, label: {
                     Image(systemName: "trash.circle")
                         .font(.system(size: 30))
+                        .foregroundColor(Color.theme.redMunsell)
                 })
             }
         }

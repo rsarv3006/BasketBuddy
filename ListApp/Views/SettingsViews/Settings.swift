@@ -51,6 +51,7 @@ struct Settings: View {
             .navigationTitle("Settings")
             .navigationBarTitleDisplayMode(.inline)
         }
+        .background(Color.theme.linen)
     }
 }
 

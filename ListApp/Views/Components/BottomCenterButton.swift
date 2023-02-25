@@ -17,16 +17,16 @@ struct BottomCenterButton: View {
         } label: {
             ZStack {
                 Circle()
-                    .fill(.background)
+                    .fill(Color.theme.linen)
                     .frame(width: 110, height: 110)
                 Circle()
                     .trim(from: 0.1, to: 0.9)
                     .rotation(.degrees(90))
-                    .stroke(Color.blue, style: StrokeStyle(lineWidth: 3))
+                    .stroke(Color.theme.seaGreen, style: StrokeStyle(lineWidth: 3))
                     .frame(width: 110, height: 110)
                 Image(systemName: centerImageName)
                     .font(.system(size: 45))
-                    .foregroundColor(.blue)
+                    .foregroundColor(Color.theme.seaGreen)
                 
             }
         }

@@ -9,7 +9,6 @@ import SwiftUI
 
 struct Main: View {
     @Environment(\.presentationMode) var presentation
-    @State private var showSettings = false
     @State private var showAdd = false
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var selectedStore: SelectedStore
@@ -20,10 +19,9 @@ struct Main: View {
                 ListComponent()
                     .toolbar {
                         ToolbarItem(placement: .navigationBarTrailing) {
-                            Button {
-                                showSettings.toggle()
-                            } label: {
+                            NavigationLink(destination: Settings()) {
                                 Image(systemName: "gearshape")
+                                    .foregroundColor(Color.theme.seaGreen)
                             }
                             .frame(height: 96, alignment: .trailing) // Workaroud, credit: https://stackoverflow.com/a/62209223/5421557
                         }
@@ -44,15 +42,13 @@ struct Main: View {
                                 selectedStore.selectedListItem = nil
                             }})
                     }
-                NavigationLink(destination: Settings(), isActive: $showSettings) {
-                    EmptyView()
-                }
             }
             .sheet(isPresented: $showAdd) {
                 AddItems(viewContext: viewContext, selectedItem: $selectedStore.selectedListItem)
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
+        
         
     }
     
