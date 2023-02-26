@@ -71,102 +71,103 @@ struct AddItems: View {
     }
     
     var body: some View {
-        GeometryReader { geometry in
-            ScrollView(showsIndicators: false) {
-                Text("Add Item")
-                    .padding(.top)
+        ScrollView(showsIndicators: false) {
+            Text("Add Item")
+                .padding(.top)
+                .foregroundColor(Color.theme.seaGreen)
+            
+            VStack {
+                TextField("Item", text: $itemName)
                     .foregroundColor(Color.theme.seaGreen)
-                VStack {
-                    TextField("Item", text: $itemName)
+                    .textFieldStyle(TextFieldDefaultBackgroundSeagreenBorder())
+                
+                if itemNameError {
+                    Text("Item Name is required")
+                        .foregroundColor(.red)
+                }
+            }
+            .padding(.horizontal)
+            
+            Picker("Select a Category", selection: $selectedCategory) {
+                ForEach(categories, id: \.self) { category in
+                    Text(category.name ?? "")
                         .foregroundColor(Color.theme.seaGreen)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .frame(width: geometry.size.width * 0.8, alignment: .center)
-                    if itemNameError {
-                        Text("Item Name is required")
-                            .foregroundColor(.red)
-                    }
                 }
-                Picker("Select a Category", selection: $selectedCategory) {
-                    ForEach(categories, id: \.self) { category in
-                        Text(category.name ?? "")
-                            .foregroundColor(Color.theme.seaGreen)
-                    }
-                }
-                .frame(width: geometry.size.width * 0.8, alignment: .center)
-                .pickerStyle(WheelPickerStyle())
-                .border(Color.theme.seaGreen, width: 2)
-                HStack {
-                    VStack {
-                        TextField("#", text: $itemCount)
-                            .keyboardType(.numberPad)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .frame(width: geometry.size.width * 0.2, alignment: .center)
-                        if itemCountError {
-                            Text("Item Count is required")
-                                .foregroundColor(Color.theme.redMunsell)
-                        }
-                    }
-                    Picker("Select a Unit", selection: $selectedUnit) {
-                        ForEach(units, id: \.self) { unit in
-                            Text(unit.name ?? "")
-                        }
-                    }
-                    .frame(width: geometry.size.width * 0.4,alignment: .center)
-                }
-                .frame(width: geometry.size.width * 0.8, alignment: .center)
-                Toggle("Item is a Staple", isOn: $isStaple)
-                    .foregroundColor(Color.theme.seaGreen)
-                    .padding(.horizontal)
-                    .padding(.bottom)
-                    .frame(width: geometry.size.width * 0.8, alignment: .center)
-                HStack {
-                    Spacer()
-                    Button {
-                        presentationMode.wrappedValue.dismiss()
-                    } label: {
-                        Text("Cancel")
+            }
+            .pickerStyle(WheelPickerStyle())
+            .background(
+                RoundedRectangle(cornerRadius: 5)
+                    .strokeBorder(Color.theme.seaGreen, lineWidth: 2))
+            .padding(.horizontal)
+            
+            HStack {
+                VStack {
+                    TextField("#", text: $itemCount)
+                        .foregroundColor(Color.theme.seaGreen)
+                        .keyboardType(.numberPad)
+                        .textFieldStyle(TextFieldDefaultBackgroundSeagreenBorder())
+                    if itemCountError {
+                        Text("Item Count is required")
                             .foregroundColor(Color.theme.redMunsell)
                     }
-                    .buttonStyle(.bordered)
-                    Spacer()
-                    Button {
-                        if (itemName.isEmpty || itemCount.isEmpty) {
-                            itemNameError = itemName.isEmpty
-                            itemCountError = itemCount.isEmpty
-                        } else {
-                            itemNameError = itemName.isEmpty
-                            itemCountError = itemCount.isEmpty
-                            
-                            if let tempSelectedItem = selectedItem {
-                                ListItem.editItem(itemToEdit: tempSelectedItem, itemName: itemName, itemCount: itemCount, unit: selectedUnit, category: selectedCategory, isStaple: isStaple)
-                                selectedItem = nil
-                            } else {
-                                ListItem.addItem(itemName: itemName, itemCount: itemCount, unit: selectedUnit, category: selectedCategory, isStaple: isStaple, viewContext: viewContext)
-                            }
-                            
-                            presentationMode.wrappedValue.dismiss()
-                        }
-                    } label: {
-                        if (selectedItem == nil) {
-                            Text("Add")
-                        } else {
-                            Text("Save")
-                        }
-                    }
-                    .buttonStyle(.borderedProminent)
-                    Spacer()
                 }
-                
+                Picker("Select a Unit", selection: $selectedUnit) {
+                    ForEach(units, id: \.self) { unit in
+                        Text(unit.name ?? "")
+                    }
+                }
+            
             }
-            .frame(width: geometry.size.width, alignment: .center)
-            .background(Color.theme.linen)
+            .padding(.horizontal)
+            
+            Toggle("Item is a Staple", isOn: $isStaple)
+                .foregroundColor(Color.theme.seaGreen)
+                .padding([.horizontal, .bottom])
+            
+            HStack {
+                Spacer()
+                Button {
+                    presentationMode.wrappedValue.dismiss()
+                } label: {
+                    Text("Cancel")
+                        .padding(.horizontal)
+                        .foregroundColor(Color.theme.redMunsell)
+                }
+                .buttonStyle(.bordered)
+                Spacer()
+                Button {
+                    if (itemName.isEmpty || itemCount.isEmpty) {
+                        itemNameError = itemName.isEmpty
+                        itemCountError = itemCount.isEmpty
+                    } else {
+                        itemNameError = itemName.isEmpty
+                        itemCountError = itemCount.isEmpty
+                        
+                        if let tempSelectedItem = selectedItem {
+                            ListItem.editItem(itemToEdit: tempSelectedItem, itemName: itemName, itemCount: itemCount, unit: selectedUnit, category: selectedCategory, isStaple: isStaple)
+                            selectedItem = nil
+                        } else {
+                            ListItem.addItem(itemName: itemName, itemCount: itemCount, unit: selectedUnit, category: selectedCategory, isStaple: isStaple, viewContext: viewContext)
+                        }
+                        
+                        presentationMode.wrappedValue.dismiss()
+                    }
+                } label: {
+                    if (selectedItem == nil) {
+                        Text("Add")
+                            .foregroundColor(Color.theme.linen)
+                            .padding(.horizontal)
+                    } else {
+                        Text("Save")
+                            .foregroundColor(Color.theme.linen)
+                            .padding(.horizontal)
+                    }
+                }
+                .buttonStyle(.borderedProminent)
+                Spacer()
+            }
+            
         }
+        .background(Color.theme.linen)
     }
-    
 }
-
-//struct AddItems_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AddItems()
-//    }
-//}

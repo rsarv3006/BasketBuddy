@@ -48,8 +48,16 @@ struct Settings: View {
                     }
             }
             .padding(.leading)
-            .navigationTitle("Settings")
             .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    HStack {
+                        Text("Settings")
+                            .font(.headline)
+                            .foregroundColor(Color.theme.seaGreen)
+                    }
+                }
+            }
         }
         .background(Color.theme.linen)
     }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7801C837278AA0BE00831859 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7801C836278AA0BE00831859 /* DateExtension.swift */; };
 		7801C839278AAD4400831859 /* SettingsBasketHistoryClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7801C838278AAD4400831859 /* SettingsBasketHistoryClearButton.swift */; };
+		781B51AF29AB1E7F00957E6A /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B51AE29AB1E7F00957E6A /* TextFieldExtension.swift */; };
 		782800DB278248EC002D5239 /* ListItemSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782800DA278248EC002D5239 /* ListItemSort.swift */; };
 		782800DD2782AB8B002D5239 /* ListComponentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782800DC2782AB8B002D5239 /* ListComponentItem.swift */; };
 		782800E42783A601002D5239 /* ListComponentBottomToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782800E32783A601002D5239 /* ListComponentBottomToolbar.swift */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		7801C836278AA0BE00831859 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		7801C838278AAD4400831859 /* SettingsBasketHistoryClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBasketHistoryClearButton.swift; sourceTree = "<group>"; };
+		781B51AE29AB1E7F00957E6A /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
 		782800DA278248EC002D5239 /* ListItemSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemSort.swift; sourceTree = "<group>"; };
 		782800DC2782AB8B002D5239 /* ListComponentItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListComponentItem.swift; sourceTree = "<group>"; };
 		782800E32783A601002D5239 /* ListComponentBottomToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListComponentBottomToolbar.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 			children = (
 				784CDDB5277D5F5B0048BDEB /* UIColorExtension.swift */,
 				7801C836278AA0BE00831859 /* DateExtension.swift */,
+				781B51AE29AB1E7F00957E6A /* TextFieldExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				784CDDB6277D5F5B0048BDEB /* UIColorExtension.swift in Sources */,
 				784CDDA4277D55A20048BDEB /* ListApp.xcdatamodeld in Sources */,
 				784CDDB9277D7FF00048BDEB /* CategoriesStarter.swift in Sources */,
+				781B51AF29AB1E7F00957E6A /* TextFieldExtension.swift in Sources */,
 				7828011427869BE8002D5239 /* SettingsCategoriesItem.swift in Sources */,
 				784CDD9A277D559F0048BDEB /* ContentView.swift in Sources */,
 				78280102278402AA002D5239 /* Unit+CoreDataProperties.swift in Sources */,

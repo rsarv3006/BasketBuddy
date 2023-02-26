@@ -56,19 +56,33 @@ struct SettingsBasketHistoryView: View {
         VStack {
             List {
                 ForEach(dateArray, id: \.self) { date in
-                    Section(header: Text(createFormattedDateHeaderString(date))) {
+                    Section(header: Text(createFormattedDateHeaderString(date)).foregroundColor(Color.theme.seaGreen)) {
                         ForEach(listItems) { item in
                             if let basketDates = item.datesMovedToBasket,  basketDates.contains(where: {$0.dateCompareString() == date}), let itemName = item.name {
                                 Text(itemName)
+                                    .foregroundColor(Color.theme.linen)
+                                    .listRowBackground(Color.theme.seaGreen)
                             }
                         }
                     }
                 }
             }
+            .background(Color.theme.linen)
+            .scrollContentBackground(.hidden)
             SettingsBasketHistoryClearButton(dateArray: $dateArray)
         }
-        .navigationTitle("Basket History")
+        .background(Color.theme.linen)
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                HStack {
+                    Text("Basket History")
+                        .font(.headline)
+                        .foregroundColor(Color.theme.seaGreen)
+                }
+            }
+        }
+
     }
 }
 

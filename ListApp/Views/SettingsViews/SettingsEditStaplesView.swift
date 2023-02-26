@@ -19,7 +19,7 @@ struct SettingsEditStaplesView: View {
     var body: some View {
         List {
             ForEach(stapleItems) { section in
-                Section(header: Text(section.id)) {
+                Section(header: Text(section.id).foregroundColor(Color.theme.seaGreen)) {
                     ForEach(section) { item in
                         ListComponentItem(item: item, selectedItem: $selectedStore.selectedStaple)
                             .listRowBackground(Color.theme.seaGreen)
@@ -34,6 +34,8 @@ struct SettingsEditStaplesView: View {
                 }
             }
         }
+        .background(Color.theme.linen)
+        .scrollContentBackground(.hidden)
         .frame(maxWidth: .infinity)
         .toolbar {
             ListComponentBottomToolbar(selectedListItem: $selectedStore.selectedStaple, centerImageName: selectedStore.selectedStaple == nil ? "plus" : "note.text.badge.plus", leftButtonOnPress: {showAdd.toggle()}, middleButtonOnPress: {

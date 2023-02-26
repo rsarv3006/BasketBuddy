@@ -42,6 +42,16 @@ struct Main: View {
                                 selectedStore.selectedListItem = nil
                             }})
                     }
+                    .navigationBarTitleDisplayMode(.inline)
+                    .toolbar {
+                        ToolbarItem(placement: .principal) {
+                            HStack {
+                                Text("List App")
+                                    .font(.headline)
+                                    .foregroundColor(Color.theme.seaGreen)
+                            }
+                        }
+                    }
             }
             .sheet(isPresented: $showAdd) {
                 AddItems(viewContext: viewContext, selectedItem: $selectedStore.selectedListItem)

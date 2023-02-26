@@ -42,8 +42,16 @@ struct SettingsCategoriesView: View {
         .sheet(isPresented: $showAdd) {
             SettingsAddCategory(viewContext: viewContext)
         }
-        .navigationTitle("Categories")
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                HStack {
+                    Text("Categories")
+                        .font(.headline)
+                        .foregroundColor(Color.theme.seaGreen)
+                }
+            }
+        }
     }
 }
 
