@@ -68,7 +68,6 @@ struct AddItems: View {
         } catch {
             fatalError("Init Problem")
         }
-        
     }
     
     var body: some View {
@@ -76,8 +75,10 @@ struct AddItems: View {
             ScrollView(showsIndicators: false) {
                 Text("Add Item")
                     .padding(.top)
+                    .foregroundColor(Color.theme.seaGreen)
                 VStack {
                     TextField("Item", text: $itemName)
+                        .foregroundColor(Color.theme.seaGreen)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .frame(width: geometry.size.width * 0.8, alignment: .center)
                     if itemNameError {
@@ -88,11 +89,12 @@ struct AddItems: View {
                 Picker("Select a Category", selection: $selectedCategory) {
                     ForEach(categories, id: \.self) { category in
                         Text(category.name ?? "")
+                            .foregroundColor(Color.theme.seaGreen)
                     }
                 }
                 .frame(width: geometry.size.width * 0.8, alignment: .center)
                 .pickerStyle(WheelPickerStyle())
-                .border(.gray, width: 2)
+                .border(Color.theme.seaGreen, width: 2)
                 HStack {
                     VStack {
                         TextField("#", text: $itemCount)
@@ -101,7 +103,7 @@ struct AddItems: View {
                             .frame(width: geometry.size.width * 0.2, alignment: .center)
                         if itemCountError {
                             Text("Item Count is required")
-                                .foregroundColor(.red)
+                                .foregroundColor(Color.theme.redMunsell)
                         }
                     }
                     Picker("Select a Unit", selection: $selectedUnit) {
@@ -113,8 +115,20 @@ struct AddItems: View {
                 }
                 .frame(width: geometry.size.width * 0.8, alignment: .center)
                 Toggle("Item is a Staple", isOn: $isStaple)
+                    .foregroundColor(Color.theme.seaGreen)
+                    .padding(.horizontal)
+                    .padding(.bottom)
                     .frame(width: geometry.size.width * 0.8, alignment: .center)
-                VStack {
+                HStack {
+                    Spacer()
+                    Button {
+                        presentationMode.wrappedValue.dismiss()
+                    } label: {
+                        Text("Cancel")
+                            .foregroundColor(Color.theme.redMunsell)
+                    }
+                    .buttonStyle(.bordered)
+                    Spacer()
                     Button {
                         if (itemName.isEmpty || itemCount.isEmpty) {
                             itemNameError = itemName.isEmpty
@@ -140,17 +154,12 @@ struct AddItems: View {
                         }
                     }
                     .buttonStyle(.borderedProminent)
-                    Button {
-                        presentationMode.wrappedValue.dismiss()
-                    } label: {
-                        Text("Cancel")
-                    }
-                    .buttonStyle(.bordered)
-                    
+                    Spacer()
                 }
                 
             }
             .frame(width: geometry.size.width, alignment: .center)
+            .background(Color.theme.linen)
         }
     }
     

@@ -50,5 +50,6 @@ struct SettingsAddCategory: View {
             }
             .frame(width: reader.size.width, alignment: .center)
         }
+        .background(Color.theme.linen)
     }
 }

@@ -22,6 +22,7 @@ struct SettingsCategoriesView: View {
             ForEach(categories) { category in
                 if let safeCat = category {
                     SettingsCategoriesItem(category: safeCat)
+                        .listRowBackground(Color.theme.seaGreen)
                         .onTapGesture {
                             if selectedStore.selectedCategory == category {
                                 selectedStore.selectedCategory = nil
@@ -33,6 +34,8 @@ struct SettingsCategoriesView: View {
                 }
             }
         }
+        .background(Color.theme.linen)
+        .scrollContentBackground(.hidden)
         .toolbar {
             SettingsCategoriesBottomToolbar(selectedCategory: $selectedStore.selectedCategory, showAdd: $showAdd, isDeleteAlertVisible: $isDeleteAlertVisible)
         }

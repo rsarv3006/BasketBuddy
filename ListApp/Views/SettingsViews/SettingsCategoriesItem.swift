@@ -16,17 +16,18 @@ struct SettingsCategoriesItem: View {
     var unSelectedView: some View {
         VStack {
             Text(category.name ?? "")
+                .foregroundColor(Color.theme.linen)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
         // TODO This is a pain in the ass hack because the above ^ doesn't want to apply to just text
-        .background(colorScheme == .light ? Color.white : Color(UIColor.systemGray6))
+        .background(Color.theme.seaGreen)
         
     }
     
     var selectedView: some View {
         HStack {
             Image(systemName: "checkmark")
-                .foregroundColor(.accentColor)
+                .foregroundColor(Color.theme.redMunsell)
             unSelectedView
         }
     }

@@ -36,13 +36,13 @@ struct SettingsCategoriesBottomToolbar: ToolbarContent {
             if (selectedCategory !== nil) {
                 Spacer()
                 Button {
+                    print("Delete requested 39")
                     isDeleteAlertVisible.toggle()
                 } label: {
                     Image(systemName: "trash.circle")
                         .font(.system(size: 30))
                         .foregroundColor(Color.theme.redMunsell)
                 }
-                Spacer()
                 .alert("Are you sure you want to delete this Category? Doing so will remove all items of this Category as well.", isPresented: $isDeleteAlertVisible) {
                     Button("Cancel", role: .cancel) {}
                     Button("Ok", role: .destructive) {
@@ -52,6 +52,7 @@ struct SettingsCategoriesBottomToolbar: ToolbarContent {
                         }
                     }
                 }
+                Spacer()
             }
         }
     }

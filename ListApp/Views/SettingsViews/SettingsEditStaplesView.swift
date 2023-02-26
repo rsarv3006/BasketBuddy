@@ -22,6 +22,7 @@ struct SettingsEditStaplesView: View {
                 Section(header: Text(section.id)) {
                     ForEach(section) { item in
                         ListComponentItem(item: item, selectedItem: $selectedStore.selectedStaple)
+                            .listRowBackground(Color.theme.seaGreen)
                             .onTapGesture {
                                 if (selectedStore.selectedStaple == item) {
                                     selectedStore.selectedStaple = nil
