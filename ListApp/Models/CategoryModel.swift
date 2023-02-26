@@ -21,7 +21,6 @@ struct CategoryModel {
     }
     
     func delete(_ category: Category) {
-        print("Howdy")
         guard let context = category.managedObjectContext else { return }
         
         let fetchRequest: NSFetchRequest<ListItem> = ListItem.fetchRequest()
@@ -36,7 +35,6 @@ struct CategoryModel {
             context.delete(category)
             try context.save()
         } catch {
-            print("Caught thrown error")
             print(error.localizedDescription)
         }
     }

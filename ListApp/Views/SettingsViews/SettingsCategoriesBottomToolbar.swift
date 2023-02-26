@@ -36,7 +36,6 @@ struct SettingsCategoriesBottomToolbar: ToolbarContent {
             if (selectedCategory !== nil) {
                 Spacer()
                 Button {
-                    print("Delete requested 39")
                     isDeleteAlertVisible.toggle()
                 } label: {
                     Image(systemName: "trash.circle")
