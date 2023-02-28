@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import GoogleMobileAds
 
 @main
 struct ListAppApp: App {
@@ -20,6 +21,8 @@ struct ListAppApp: App {
                 .onAppear(perform: {
                     Category.addOnLoad(viewContext: persistenceController.container.viewContext)
                     Unit.addOnLoad(viewContext: persistenceController.container.viewContext)
+                    
+                    GADMobileAds.sharedInstance().start(completionHandler: nil)
                 })
         }
     }

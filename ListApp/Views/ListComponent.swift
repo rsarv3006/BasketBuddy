@@ -7,11 +7,13 @@
 
 import SwiftUI
 
-struct ListComponent: View {
-    @SectionedFetchRequest(sectionIdentifier: ListItemSort.default.section, sortDescriptors: ListItemSort.default.descriptors, predicate: NSPredicate(format: "isVisible = %@", NSNumber(value: true)) ,animation: .default)
-    private var listItems: SectionedFetchResults<String, ListItem>
-    
+struct ListComponent: View {    
     @EnvironmentObject var selectedStore: SelectedStore
+    
+    private var listItems: SectionedFetchResults<String, ListItem>
+    init(listItems: SectionedFetchResults<String, ListItem>) {
+        self.listItems = listItems
+    }
     
     var body: some View {
         List {

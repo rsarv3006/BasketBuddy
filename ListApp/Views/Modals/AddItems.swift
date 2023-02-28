@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CoreData
+import GoogleMobileAds
 
 struct AddItems: View {
     @Environment(\.presentationMode) var presentationMode
@@ -166,7 +167,9 @@ struct AddItems: View {
                 .buttonStyle(.borderedProminent)
                 Spacer()
             }
-            
+            Spacer()
+            GADLargeRectangleBannerViewController()
+                .frame(width: GADAdSizeMediumRectangle.size.width, height: GADAdSizeMediumRectangle.size.height, alignment: .center)
         }
         .background(Color.theme.linen)
     }

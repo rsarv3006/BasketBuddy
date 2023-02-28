@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CoreData
+import GoogleMobileAds
 
 struct SettingsAddCategory: View {
     @Environment(\.presentationMode) var presentationMode
@@ -20,9 +21,10 @@ struct SettingsAddCategory: View {
         GeometryReader { reader in
             VStack(alignment: .center, spacing: 10) {
                 Text("Add a Category")
+                    .foregroundColor(Color.theme.seaGreen)
                     .padding(EdgeInsets(top: reader.size.height * 0.1, leading: 0, bottom: 0, trailing: 0))
                 TextField("Category Name", text: $categoryName)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .textFieldStyle(TextFieldDefaultBackgroundSeagreenBorder())
                     .frame(width: reader.size.width * 0.8, alignment: .center)
                 if nameError {
                     Text("Category Name is required")
@@ -47,6 +49,11 @@ struct SettingsAddCategory: View {
                     Text("Cancel")
                 }
                 .buttonStyle(.bordered)
+                
+                Spacer()
+                GADLargeRectangleBannerViewController()
+                    .frame(width: GADAdSizeMediumRectangle.size.width, height: GADAdSizeMediumRectangle.size.height, alignment: .center)
+                
             }
             .frame(width: reader.size.width, alignment: .center)
         }

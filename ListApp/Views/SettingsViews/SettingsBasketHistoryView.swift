@@ -54,22 +54,29 @@ struct SettingsBasketHistoryView: View {
     
     var body: some View {
         VStack {
-            List {
-                ForEach(dateArray, id: \.self) { date in
-                    Section(header: Text(createFormattedDateHeaderString(date)).foregroundColor(Color.theme.seaGreen)) {
-                        ForEach(listItems) { item in
-                            if let basketDates = item.datesMovedToBasket,  basketDates.contains(where: {$0.dateCompareString() == date}), let itemName = item.name {
-                                Text(itemName)
-                                    .foregroundColor(Color.theme.linen)
-                                    .listRowBackground(Color.theme.seaGreen)
+            ZStack {
+                List {
+                    ForEach(dateArray, id: \.self) { date in
+                        Section(header: Text(createFormattedDateHeaderString(date)).foregroundColor(Color.theme.seaGreen)) {
+                            ForEach(listItems) { item in
+                                if let basketDates = item.datesMovedToBasket,  basketDates.contains(where: {$0.dateCompareString() == date}), let itemName = item.name {
+                                    Text(itemName)
+                                        .foregroundColor(Color.theme.linen)
+                                        .listRowBackground(Color.theme.seaGreen)
+                                }
                             }
                         }
                     }
                 }
+                .background(Color.theme.linen)
+                .scrollContentBackground(.hidden)
+                if dateArray.isEmpty {
+                    Spacer()
+                        .background(Color.theme.linen)
+                }
             }
-            .background(Color.theme.linen)
-            .scrollContentBackground(.hidden)
             SettingsBasketHistoryClearButton(dateArray: $dateArray)
+            
         }
         .background(Color.theme.linen)
         .navigationBarTitleDisplayMode(.inline)
@@ -82,12 +89,6 @@ struct SettingsBasketHistoryView: View {
                 }
             }
         }
-
+        
     }
 }
-
-//struct SettingsBasketHistoryView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SettingsBasketHistoryView()
-//    }
-//}

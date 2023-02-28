@@ -17,21 +17,27 @@ struct SettingsEditStaplesView: View {
     @State var showAdd: Bool = false
     
     var body: some View {
-        List {
-            ForEach(stapleItems) { section in
-                Section(header: Text(section.id).foregroundColor(Color.theme.seaGreen)) {
-                    ForEach(section) { item in
-                        ListComponentItem(item: item, selectedItem: $selectedStore.selectedStaple)
-                            .listRowBackground(Color.theme.seaGreen)
-                            .onTapGesture {
-                                if (selectedStore.selectedStaple == item) {
-                                    selectedStore.selectedStaple = nil
-                                } else {
-                                    selectedStore.selectedStaple = item
+        ZStack {
+            List {
+                ForEach(stapleItems) { section in
+                    Section(header: Text(section.id).foregroundColor(Color.theme.seaGreen)) {
+                        ForEach(section) { item in
+                            ListComponentItem(item: item, selectedItem: $selectedStore.selectedStaple)
+                                .listRowBackground(Color.theme.seaGreen)
+                                .onTapGesture {
+                                    if (selectedStore.selectedStaple == item) {
+                                        selectedStore.selectedStaple = nil
+                                    } else {
+                                        selectedStore.selectedStaple = item
+                                    }
                                 }
-                            }
+                        }
                     }
                 }
+            }
+            if stapleItems.isEmpty {
+                Spacer()
+                    .background(Color.theme.linen)
             }
         }
         .background(Color.theme.linen)
@@ -60,9 +66,3 @@ struct SettingsEditStaplesView: View {
         }
     }
 }
-
-//struct SettingsEditStaples_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SettingsEditStaplesView()
-//    }
-//}

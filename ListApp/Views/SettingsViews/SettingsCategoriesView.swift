@@ -18,20 +18,26 @@ struct SettingsCategoriesView: View {
     @State var isDeleteAlertVisible = false
     
     var body: some View {
-        List {
-            ForEach(categories) { category in
-                if let safeCat = category {
-                    SettingsCategoriesItem(category: safeCat)
-                        .listRowBackground(Color.theme.seaGreen)
-                        .onTapGesture {
-                            if selectedStore.selectedCategory == category {
-                                selectedStore.selectedCategory = nil
-                            } else {
-                                selectedStore.selectedCategory = category
+        ZStack {
+            List {
+                ForEach(categories) { category in
+                    if let safeCat = category {
+                        SettingsCategoriesItem(category: safeCat)
+                            .listRowBackground(Color.theme.seaGreen)
+                            .onTapGesture {
+                                if selectedStore.selectedCategory == category {
+                                    selectedStore.selectedCategory = nil
+                                } else {
+                                    selectedStore.selectedCategory = category
+                                }
+                                
                             }
-                            
-                        }
+                    }
                 }
+            }
+            if categories.isEmpty {
+                Spacer()
+                    .background(Color.theme.linen)
             }
         }
         .background(Color.theme.linen)
