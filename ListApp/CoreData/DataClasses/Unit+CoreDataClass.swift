@@ -15,7 +15,7 @@ public class Unit: NSManagedObject {
     static func addOnLoad(viewContext: NSManagedObjectContext) {
         let unitsStarter = UnitsStarter()
         let request = Unit.fetchRequest()
-        
+
         do {
             if try viewContext.count(for: request) == 0 {
                 for starter in unitsStarter.unitNames {

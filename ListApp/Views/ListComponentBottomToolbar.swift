@@ -15,15 +15,15 @@ struct ListComponentBottomToolbar: ToolbarContent {
     var middleButtonOnPress: () -> Void
     var middleButtonOnSwipe: (_: DragGesture.Value) -> Void
     var rightButtonOnPress: () -> Void
-    
+
     // Note to self, using ToolbarItem(s) here because the ToolbarGroup has a weird alignment bug coming into and out of a modal, #JustSwiftUIThings
     var body: some ToolbarContent {
         ToolbarItem(placement: .bottomBar) {
-            if (selectedListItem != nil) {
+            if selectedListItem != nil {
                 Button(action: leftButtonOnPress, label: {
                     Image(systemName: "pencil.circle")
                         .font(.system(size: 30))
-                        .foregroundColor(Color.theme.seaGreen)
+                        .foregroundColor(Color.Theme.seaGreen)
                 })
             }
         }
@@ -36,11 +36,11 @@ struct ListComponentBottomToolbar: ToolbarContent {
         }
         ToolbarItem(placement: .bottomBar, content: {Spacer()})
         ToolbarItem(placement: .bottomBar) {
-            if (selectedListItem !== nil) {
+            if selectedListItem !== nil {
                 Button(action: rightButtonOnPress, label: {
                     Image(systemName: "trash.circle")
                         .font(.system(size: 30))
-                        .foregroundColor(Color.theme.redMunsell)
+                        .foregroundColor(Color.Theme.redMunsell)
                 })
             }
         }

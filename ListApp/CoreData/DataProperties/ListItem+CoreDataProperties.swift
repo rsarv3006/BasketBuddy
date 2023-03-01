@@ -9,7 +9,6 @@
 import Foundation
 import CoreData
 
-
 extension ListItem {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<ListItem> {
@@ -24,9 +23,6 @@ extension ListItem {
     @NSManaged public var isStaple: Bool
     @NSManaged public var category: Category?
     @NSManaged public var unit: Unit?
-
 }
 
-extension ListItem : Identifiable {
-
-}
+extension ListItem: Identifiable {}

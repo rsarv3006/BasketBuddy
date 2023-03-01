@@ -12,16 +12,16 @@ import GoogleMobileAds
 struct SettingsAddCategory: View {
     @Environment(\.presentationMode) var presentationMode
     var viewContext: NSManagedObjectContext
-    
+
     @State var categoryName = ""
     @State var nameError: Bool = false
     let categoryModel = CategoryModel()
-    
+
     var body: some View {
         GeometryReader { reader in
             VStack(alignment: .center, spacing: 10) {
                 Text("Add a Category")
-                    .foregroundColor(Color.theme.seaGreen)
+                    .foregroundColor(Color.Theme.seaGreen)
                     .padding(EdgeInsets(top: reader.size.height * 0.1, leading: 0, bottom: 0, trailing: 0))
                 TextField("Category Name", text: $categoryName)
                     .textFieldStyle(TextFieldDefaultBackgroundSeagreenBorder())
@@ -38,7 +38,7 @@ struct SettingsAddCategory: View {
                         categoryModel.add(name: categoryName, viewContext: viewContext)
                         presentationMode.wrappedValue.dismiss()
                     }
-                    
+
                 } label: {
                     Text("Add")
                 }
@@ -49,14 +49,14 @@ struct SettingsAddCategory: View {
                     Text("Cancel")
                 }
                 .buttonStyle(.bordered)
-                
+
                 Spacer()
                 GADLargeRectangleBannerViewController()
                     .frame(width: GADAdSizeMediumRectangle.size.width, height: GADAdSizeMediumRectangle.size.height, alignment: .center)
-                
+
             }
             .frame(width: reader.size.width, alignment: .center)
         }
-        .background(Color.theme.linen)
+        .background(Color.Theme.linen)
     }
 }

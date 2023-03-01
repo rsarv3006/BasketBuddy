@@ -9,18 +9,13 @@
 import Foundation
 import CoreData
 
-
 extension Unit {
-
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Unit> {
         return NSFetchRequest<Unit>(entityName: "Unit")
     }
 
     @NSManaged public var abbreviation: String?
     @NSManaged public var name: String?
-
 }
 
-extension Unit : Identifiable {
-
-}
+extension Unit: Identifiable {}

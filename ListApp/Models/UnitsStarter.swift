@@ -9,22 +9,24 @@ import Foundation
 
 struct UnitsStarter {
     let unitNames = [
-    "Ounces",
-    "Pounds",
-    "Cups",
-    "Quarts",
-    "Pieces",
-    "Gallons",
-    "Dozen"
+        "Ounce(s)",
+        "Pound(s)",
+        "Cup(s)",
+        "Quart(s)",
+        "Piece(s)",
+        "Gallon(s)",
+        "Dozen",
+        "Item(s)"
     ]
-    
+
     let abbrevDict = [
-        "Ounces": "oz",
-        "Pounds": "lb",
-        "Cups": "c",
-        "Quarts": "qt",
-        "Pieces": "",
-        "Gallons": "Gal",
-        "Dozen": "dz"
+        "Ounce(s)": "oz",
+        "Pound(s)": "lb",
+        "Cup(s)": "c",
+        "Quart(s)": "qt",
+        "Piece(s)": "",
+        "Gallon(s)": "Gal",
+        "Dozen": "dz",
+        "Item(s)": ""
     ]
 }

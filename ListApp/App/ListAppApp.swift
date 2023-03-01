@@ -12,7 +12,7 @@ import GoogleMobileAds
 struct ListAppApp: App {
     let persistenceController = PersistenceController.shared
     @StateObject private var selectedStore = SelectedStore()
-    
+
     var body: some Scene {
         WindowGroup {
             Main()
@@ -21,10 +21,9 @@ struct ListAppApp: App {
                 .onAppear(perform: {
                     Category.addOnLoad(viewContext: persistenceController.container.viewContext)
                     Unit.addOnLoad(viewContext: persistenceController.container.viewContext)
-                    
+
                     GADMobileAds.sharedInstance().start(completionHandler: nil)
                 })
         }
     }
-    
 }

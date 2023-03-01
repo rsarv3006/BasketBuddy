@@ -17,7 +17,7 @@ struct GADBannerViewController: UIViewControllerRepresentable {
         view.rootViewController = viewController
         viewController.view.addSubview(view)
         viewController.view.frame = CGRect(origin: .zero, size: GADAdSizeBanner.size)
-        viewController.view.backgroundColor = UIColor(Color.theme.linen)
+        viewController.view.backgroundColor = UIColor(Color.Theme.linen)
         view.load(GADRequest())
         return viewController
     }
@@ -33,7 +33,7 @@ struct GADLargeRectangleBannerViewController: UIViewControllerRepresentable {
         view.rootViewController = viewController
         viewController.view.addSubview(view)
         viewController.view.frame = CGRect(origin: .zero, size: GADAdSizeMediumRectangle.size)
-        viewController.view.backgroundColor = UIColor(Color.theme.linen)
+        viewController.view.backgroundColor = UIColor(Color.Theme.linen)
         view.load(GADRequest())
         return viewController
     }

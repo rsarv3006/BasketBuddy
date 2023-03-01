@@ -25,12 +25,14 @@ struct Settings: View {
                 })
                 .buttonStyle(.bordered)
             }
-            NavigationLink(destination: SettingsBasketHistoryView(viewContext: viewContext), isActive: $isbasketHistoryViewVisible) {
-                Button("Basket History", action: {
-                    isbasketHistoryViewVisible.toggle()
-                })
-                .buttonStyle(.bordered)
-            }
+            NavigationLink(
+                destination: SettingsBasketHistoryView(viewContext: viewContext),
+                isActive: $isbasketHistoryViewVisible) {
+                    Button("Basket History", action: {
+                        isbasketHistoryViewVisible.toggle()
+                    })
+                    .buttonStyle(.bordered)
+                }
             NavigationLink(destination: SettingsEditStaplesView(), isActive: $isEditStaplesViewVisible) {
                 Button("Edit Pantry Staples", action: {
                     isEditStaplesViewVisible.toggle()
@@ -43,7 +45,9 @@ struct Settings: View {
                 isStapleAlertVisible.toggle()
             })
             .buttonStyle(.bordered)
-            .alert(isStapleLoadSuccess ? "Loaded Staples successfully." : "Issue encountered loading staples, please try again.", isPresented: $isStapleAlertVisible) {
+            .alert(isStapleLoadSuccess
+                   ? "Loaded Staples successfully."
+                   : "Issue encountered loading staples, please try again.", isPresented: $isStapleAlertVisible) {
                 Button("OK", role: .cancel) {}
             }
             
@@ -61,16 +65,10 @@ struct Settings: View {
                 HStack {
                     Text("Settings")
                         .font(.headline)
-                        .foregroundColor(Color.theme.seaGreen)
+                        .foregroundColor(Color.Theme.seaGreen)
                 }
             }
         }
-        .background(Color.theme.linen)
+        .background(Color.Theme.linen)
     }
 }
-
-//struct Settings_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Settings()
-//    }
-//}

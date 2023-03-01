@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ListComponent: View {    
+struct ListComponent: View {
     @EnvironmentObject var selectedStore: SelectedStore
     
     private var listItems: SectionedFetchResults<String, ListItem>
@@ -18,31 +18,25 @@ struct ListComponent: View {
     var body: some View {
         List {
             ForEach(listItems) { section in
-                Section(header: Text(section.id).foregroundColor(Color.theme.seaGreen)) {
+                Section(header: Text(section.id).foregroundColor(Color.Theme.seaGreen)) {
                     ForEach(section) { item in
                         ListComponentItem(item: item, selectedItem: $selectedStore.selectedListItem)
-                            .listRowBackground(Color.theme.seaGreen)
-                            .onTapGesture {
-                                if selectedStore.selectedListItem == item {
-                                    selectedStore.selectedListItem = nil
-                                } else {
-                                    selectedStore.selectedListItem = item
-                                }
-
-                            }
+                            .listRowBackground(Color.Theme.seaGreen)
+                            .onTapGesture { self.handleOnTapGesture(item: item) }
                     }
                 }
-                
             }
         }
-        .background(Color.theme.linen)
+        .background(Color.Theme.linen)
         .scrollContentBackground(.hidden)
         .frame(maxWidth: .infinity)
     }
+    
+    private func handleOnTapGesture(item: SectionedFetchResults<String, ListItem>.Section.Element) {
+        if selectedStore.selectedListItem == item {
+            selectedStore.selectedListItem = nil
+        } else {
+            selectedStore.selectedListItem = item
+        }
+    }
 }
-
-//struct ListComponent_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ListComponent()
-//    }
-//}

@@ -9,32 +9,31 @@ import SwiftUI
 
 struct ListComponentItem: View {
     @Environment(\.colorScheme) var colorScheme
-    
+
     let item: ListItem
     @Binding var selectedItem: ListItem?
-    
+
     var unSelectedView: some View {
         VStack(alignment: .leading) {
             Text(item.name ?? "")
-                .foregroundColor(Color.theme.linen)
+                .foregroundColor(Color.Theme.linen)
             Text("\(String(item.count)) \(item.unit?.abbreviation ?? "")")
-                .foregroundColor(Color.theme.linen)
-                
+                .foregroundColor(Color.Theme.linen)
+
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-        // TODO This is a pain in the ass hack because the above ^ doesn't want to apply to just text
-        .background(Color.theme.seaGreen)
-        
+        .background(Color.Theme.seaGreen)
+
     }
-    
+
     var selectedView: some View {
         HStack {
             Image(systemName: "checkmark")
-                .foregroundColor(Color.theme.redMunsell)
+                .foregroundColor(Color.Theme.redMunsell)
             unSelectedView
         }
     }
-    
+
     var body: some View {
         if let selectedItem = selectedItem, selectedItem == item {
             selectedView
@@ -43,9 +42,3 @@ struct ListComponentItem: View {
         }
     }
 }
-
-//struct ListComponentItem_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ListComponentItem(item: ListItem(), selectedItem: .constant(ListItem()))
-//    }
-//}

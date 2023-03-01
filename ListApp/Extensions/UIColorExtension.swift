@@ -13,11 +13,11 @@ extension UIColor {
 
 extension Color {
     static let tomato = Color(uiColor: .tomato)
-    
-    struct theme {
+
+    struct Theme {
         static let seaGreen = Color("SeaGreen")
         static let redMunsell = Color("RedMunsell")
         static let linen = Color("Linen")
-//        static let persimmon = Color("Persimmon")
+        static let persimmon = Color("Persimmon")
     }
 }

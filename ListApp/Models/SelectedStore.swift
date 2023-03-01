@@ -7,9 +7,9 @@
 
 import Foundation
 class SelectedStore: ObservableObject {
-    @Published var selectedListItem: ListItem? = nil
-    @Published var selectedCategory: Category? = nil
-    @Published var selectedStaple: ListItem? = nil
-    
+    @Published var selectedListItem: ListItem?
+    @Published var selectedCategory: Category?
+    @Published var selectedStaple: ListItem?
+
     init() {}
 }

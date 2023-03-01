@@ -11,7 +11,14 @@ import CoreData
 
 @objc(ListItem)
 public class ListItem: NSManagedObject {
-    @nonobjc public class func addItem(itemName: String, itemCount: String, unit: Unit, category: Category, isStaple: Bool, viewContext: NSManagedObjectContext) {
+    @nonobjc public class func addItem(
+        itemName: String,
+        itemCount: String,
+        unit: Unit,
+        category: Category,
+        isStaple: Bool,
+        viewContext: NSManagedObjectContext
+    ) {
         let item = ListItem(context: viewContext)
         item.name = itemName
         item.count = itemCount
@@ -20,7 +27,7 @@ public class ListItem: NSManagedObject {
         item.dateAdded = Date()
         item.isStaple = isStaple
         item.isVisible = true
-        
+
         do {
             try viewContext.save()
         } catch let error as NSError {
@@ -28,10 +35,17 @@ public class ListItem: NSManagedObject {
             print(error.userInfo)
         }
     }
-    
-    @nonobjc public class func editItem(itemToEdit: ListItem, itemName: String, itemCount: String, unit: Unit, category: Category, isStaple: Bool) {
+
+    @nonobjc public class func editItem(
+        itemToEdit: ListItem,
+        itemName: String,
+        itemCount: String,
+        unit: Unit,
+        category: Category,
+        isStaple: Bool
+    ) {
         guard let context = itemToEdit.managedObjectContext else { return }
-        
+
         itemToEdit.name = itemName
         itemToEdit.count = itemCount
         itemToEdit.unit = unit
@@ -39,19 +53,19 @@ public class ListItem: NSManagedObject {
         itemToEdit.dateAdded = Date()
         itemToEdit.isStaple = isStaple
         itemToEdit.isVisible = true
-        
+
         do {
             try context.save()
         } catch let error as NSError {
             print(error.userInfo)
         }
     }
-    
+
     @nonobjc public class func deleteItem(_ item: ListItem) {
         guard let context = item.managedObjectContext else { return }
-        
+
         context.delete(item)
-        
+
         do {
             try context.save()
         } catch {
@@ -59,11 +73,11 @@ public class ListItem: NSManagedObject {
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
         }
     }
-    
+
     @nonobjc public class func makeNotVisible(_ item: ListItem) {
         guard let context = item.managedObjectContext else { return }
         item.isVisible = false
-        
+
         do {
             try context.save()
         } catch {
@@ -71,10 +85,10 @@ public class ListItem: NSManagedObject {
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
         }
     }
-    
+
     @nonobjc public class func addMoveToBasketDate(_ item: ListItem) {
         guard let context = item.managedObjectContext else { return }
-        
+
         item.isVisible = false
         if var datesMoved = item.datesMovedToBasket {
             datesMoved.append(Date())
@@ -82,19 +96,19 @@ public class ListItem: NSManagedObject {
         } else {
             item.datesMovedToBasket = [Date()]
         }
-        
+
         do {
             try context.save()
         } catch let error as NSError {
             print(error.userInfo)
         }
     }
-    
+
     @nonobjc public class func loadStaples(_ context: NSManagedObjectContext) -> Bool {
         let fetchRequest: NSFetchRequest<ListItem> = ListItem.fetchRequest()
         fetchRequest.sortDescriptors = []
         fetchRequest.predicate = NSPredicate(format: "isStaple = %@", NSNumber(value: true))
-        
+
         do {
             let staples = try context.fetch(fetchRequest)
             for item in staples {
@@ -107,24 +121,24 @@ public class ListItem: NSManagedObject {
             return false
         }
     }
-    
+
     @nonobjc public class func makeItemVisible(_ item: ListItem) {
         guard let context = item.managedObjectContext else { return }
-        
+
         item.isVisible = true
-        
+
         do {
             try context.save()
         } catch let error as NSError {
             print(error.userInfo)
         }
     }
-    
+
     @nonobjc public class func clearMoveToBasketHistory(_ context: NSManagedObjectContext) {
         let fetchRequest: NSFetchRequest<ListItem> = ListItem.fetchRequest()
         fetchRequest.sortDescriptors = []
         fetchRequest.predicate = NSPredicate(value: true)
-        
+
         do {
             let listItems = try context.fetch(fetchRequest)
             for item in listItems {

@@ -28,6 +28,4 @@ public class Category: NSManagedObject {
             print("Error initializing with Categories")
         }
     }
-    
-    
 }
