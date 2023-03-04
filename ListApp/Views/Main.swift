@@ -65,7 +65,7 @@ struct Main: View {
                         .toolbar {
                             ToolbarItem(placement: .principal) {
                                 HStack {
-                                    Text("PantryPal")
+                                    Text("BasketBuddy")
                                         .font(.headline)
                                         .foregroundColor(Color.Theme.seaGreen)
                                 }

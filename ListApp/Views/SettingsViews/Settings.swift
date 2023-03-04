@@ -16,6 +16,7 @@ struct Settings: View {
     @State var isEditStaplesViewVisible: Bool = false
     @State var isStapleAlertVisible: Bool = false
     @State var isStapleLoadSuccess: Bool = false
+    @State var isLegalViewVisible: Bool = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
@@ -40,6 +41,7 @@ struct Settings: View {
                 .buttonStyle(.bordered)
                 .padding(.top)
             }
+
             Button("Load Pantry Staples", action: {
                 isStapleLoadSuccess = ListItem.loadStaples(viewContext)
                 isStapleAlertVisible.toggle()
@@ -51,6 +53,14 @@ struct Settings: View {
                 Button("OK", role: .cancel) {}
             }
             
+            NavigationLink(destination: SettingsLegalView(), isActive: $isLegalViewVisible) {
+                Button("Legal Information", action: {
+                    isLegalViewVisible.toggle()
+                })
+                .buttonStyle(.bordered)
+                .padding(.top)
+            }
+
             Spacer()
             GADLargeRectangleBannerViewController()
                 .frame(width: GADAdSizeMediumRectangle.size.width, height: GADAdSizeMediumRectangle.size.height, alignment: .center)

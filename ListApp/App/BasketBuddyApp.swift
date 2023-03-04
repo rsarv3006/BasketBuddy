@@ -9,7 +9,7 @@ import SwiftUI
 import GoogleMobileAds
 
 @main
-struct ListAppApp: App {
+struct BasketBuddyApp: App {
     let persistenceController = PersistenceController.shared
     @StateObject private var selectedStore = SelectedStore()
 
