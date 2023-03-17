@@ -22,7 +22,7 @@ Google Ads
 ​
 We use Google Ads in our app to display relevant ads to you. Google Ads may collect certain information about you when you use our app, such as your device type, location (general location, such as city or country), and interests. This information is used to display ads that are relevant to your interests.
 ​
-We do not have access to any of the information that Google Ads collects about you. Google Ads uses cookies to display ads to you. You can opt out of the use of cookies for personalized advertising by visiting Google's Ads Settings at https://adssettings.google.com.
+We do not have access to any of the information that Google Ads collects about you.
 ​
 
 Data Sharing

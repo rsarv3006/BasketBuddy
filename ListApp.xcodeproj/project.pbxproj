@@ -31,6 +31,13 @@
 		7828011227869329002D5239 /* SettingsCategoriesBottomToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7828011127869329002D5239 /* SettingsCategoriesBottomToolbar.swift */; };
 		7828011427869BE8002D5239 /* SettingsCategoriesItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7828011327869BE8002D5239 /* SettingsCategoriesItem.swift */; };
 		7828011627869E2C002D5239 /* SettingsAddCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7828011527869E2C002D5239 /* SettingsAddCategory.swift */; };
+		783D527129B59A8C0031DDCB /* AdMob2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 783D527029B59A8C0031DDCB /* AdMob2.plist */; };
+		783D527429B5A4EA0031DDCB /* AdmobUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783D527329B5A4EA0031DDCB /* AdmobUtils.swift */; };
+		783D527629B5A88B0031DDCB /* AdMob.plist in Resources */ = {isa = PBXBuildFile; fileRef = 783D527529B5A88B0031DDCB /* AdMob.plist */; };
+		783D527A29B840B30031DDCB /* EULA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783D527929B840B30031DDCB /* EULA.swift */; };
+		783D527C29B84BCF0031DDCB /* Storekit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783D527B29B84BCF0031DDCB /* Storekit.swift */; };
+		783D528029B93BA00031DDCB /* SettingsInAppPurchases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783D527F29B93BA00031DDCB /* SettingsInAppPurchases.swift */; };
+		7844766F29B99BC900917EC8 /* BasketBuddy.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 7844766E29B99BC900917EC8 /* BasketBuddy.storekit */; };
 		784CDD98277D559F0048BDEB /* BasketBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CDD97277D559F0048BDEB /* BasketBuddyApp.swift */; };
 		784CDD9A277D559F0048BDEB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CDD99277D559F0048BDEB /* ContentView.swift */; };
 		784CDD9C277D55A20048BDEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 784CDD9B277D55A20048BDEB /* Assets.xcassets */; };
@@ -47,6 +54,7 @@
 		784CDDC2277E483D0048BDEB /* ListItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CDDBC277E483C0048BDEB /* ListItem+CoreDataClass.swift */; };
 		784CDDC4277E483D0048BDEB /* Unit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CDDBE277E483C0048BDEB /* Unit+CoreDataClass.swift */; };
 		784CDDC6277E483D0048BDEB /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CDDC0277E483C0048BDEB /* Category+CoreDataClass.swift */; };
+		7866AAA029C4159D005416ED /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 7866AA9F29C4159D005416ED /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +82,13 @@
 		7828011127869329002D5239 /* SettingsCategoriesBottomToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCategoriesBottomToolbar.swift; sourceTree = "<group>"; };
 		7828011327869BE8002D5239 /* SettingsCategoriesItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCategoriesItem.swift; sourceTree = "<group>"; };
 		7828011527869E2C002D5239 /* SettingsAddCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAddCategory.swift; sourceTree = "<group>"; };
+		783D527029B59A8C0031DDCB /* AdMob2.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AdMob2.plist; sourceTree = "<group>"; };
+		783D527329B5A4EA0031DDCB /* AdmobUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobUtils.swift; sourceTree = "<group>"; };
+		783D527529B5A88B0031DDCB /* AdMob.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AdMob.plist; sourceTree = "<group>"; };
+		783D527929B840B30031DDCB /* EULA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EULA.swift; sourceTree = "<group>"; };
+		783D527B29B84BCF0031DDCB /* Storekit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storekit.swift; sourceTree = "<group>"; };
+		783D527F29B93BA00031DDCB /* SettingsInAppPurchases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInAppPurchases.swift; sourceTree = "<group>"; };
+		7844766E29B99BC900917EC8 /* BasketBuddy.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = BasketBuddy.storekit; sourceTree = "<group>"; };
 		784CDD94277D559F0048BDEB /* BasketBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasketBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		784CDD97277D559F0048BDEB /* BasketBuddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketBuddyApp.swift; sourceTree = "<group>"; };
 		784CDD99277D559F0048BDEB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -91,6 +106,7 @@
 		784CDDBC277E483C0048BDEB /* ListItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListItem+CoreDataClass.swift"; sourceTree = "<group>"; };
 		784CDDBE277E483C0048BDEB /* Unit+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Unit+CoreDataClass.swift"; sourceTree = "<group>"; };
 		784CDDC0277E483C0048BDEB /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7866AA9F29C4159D005416ED /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +143,7 @@
 			children = (
 				781D17F829B30D4200C1F5BF /* PrivacyPolicy.swift */,
 				781D17FA29B30E7900C1F5BF /* TermsAndConditions.swift */,
+				783D527929B840B30031DDCB /* EULA.swift */,
 			);
 			path = LegalInformationStrings;
 			sourceTree = "<group>";
@@ -162,6 +179,7 @@
 				7828011327869BE8002D5239 /* SettingsCategoriesItem.swift */,
 				7801C838278AAD4400831859 /* SettingsBasketHistoryClearButton.swift */,
 				781D17F529B30B2400C1F5BF /* SettingsLegalView.swift */,
+				783D527F29B93BA00031DDCB /* SettingsInAppPurchases.swift */,
 			);
 			path = SettingsViews;
 			sourceTree = "<group>";
@@ -174,9 +192,19 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		783D527229B5A4CD0031DDCB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				783D527329B5A4EA0031DDCB /* AdmobUtils.swift */,
+				783D527B29B84BCF0031DDCB /* Storekit.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		784CDD8B277D559F0048BDEB = {
 			isa = PBXGroup;
 			children = (
+				7866AA9F29C4159D005416ED /* .gitignore */,
 				784CDD96277D559F0048BDEB /* ListApp */,
 				784CDD95277D559F0048BDEB /* Products */,
 				781D17F229B3010000C1F5BF /* Frameworks */,
@@ -194,6 +222,7 @@
 		784CDD96277D559F0048BDEB /* ListApp */ = {
 			isa = PBXGroup;
 			children = (
+				783D527229B5A4CD0031DDCB /* Utils */,
 				781D17F729B30D3000C1F5BF /* LegalInformationStrings */,
 				781B51B529AC618000957E6A /* Info.plist */,
 				784CDDCB277E4BDF0048BDEB /* App */,
@@ -206,6 +235,9 @@
 				784CDDA0277D55A20048BDEB /* Persistence.swift */,
 				784CDDA2277D55A20048BDEB /* ListApp.xcdatamodeld */,
 				784CDD9D277D55A20048BDEB /* Preview Content */,
+				783D527029B59A8C0031DDCB /* AdMob2.plist */,
+				783D527529B5A88B0031DDCB /* AdMob.plist */,
+				7844766E29B99BC900917EC8 /* BasketBuddy.storekit */,
 			);
 			path = ListApp;
 			sourceTree = "<group>";
@@ -345,8 +377,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				783D527129B59A8C0031DDCB /* AdMob2.plist in Resources */,
+				783D527629B5A88B0031DDCB /* AdMob.plist in Resources */,
 				784CDD9F277D55A20048BDEB /* Preview Assets.xcassets in Resources */,
 				784CDD9C277D55A20048BDEB /* Assets.xcassets in Resources */,
+				7866AAA029C4159D005416ED /* .gitignore in Resources */,
+				7844766F29B99BC900917EC8 /* BasketBuddy.storekit in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,6 +403,7 @@
 				7828010B278651A0002D5239 /* SettingsEditStaplesView.swift in Sources */,
 				784CDDB0277D59B60048BDEB /* ListComponent.swift in Sources */,
 				784CDDAC277D56BF0048BDEB /* Main.swift in Sources */,
+				783D527A29B840B30031DDCB /* EULA.swift in Sources */,
 				784CDDA1277D55A20048BDEB /* Persistence.swift in Sources */,
 				781B51B829ADBB8600957E6A /* GADBannerView.swift in Sources */,
 				782801042785289B002D5239 /* SelectedStore.swift in Sources */,
@@ -375,15 +412,18 @@
 				781D17FB29B30E7900C1F5BF /* TermsAndConditions.swift in Sources */,
 				782801092786517F002D5239 /* SettingsBasketHistoryView.swift in Sources */,
 				7828010727865170002D5239 /* SettingsCategoriesView.swift in Sources */,
+				783D527429B5A4EA0031DDCB /* AdmobUtils.swift in Sources */,
 				7828010D2786850E002D5239 /* CategoryModel.swift in Sources */,
 				78280100278402AA002D5239 /* ListItem+CoreDataProperties.swift in Sources */,
 				784CDDB3277D5CFB0048BDEB /* AddItems.swift in Sources */,
 				78280110278687B8002D5239 /* BottomCenterButton.swift in Sources */,
+				783D527C29B84BCF0031DDCB /* Storekit.swift in Sources */,
 				781D17F629B30B2400C1F5BF /* SettingsLegalView.swift in Sources */,
 				782800DD2782AB8B002D5239 /* ListComponentItem.swift in Sources */,
 				784CDDC6277E483D0048BDEB /* Category+CoreDataClass.swift in Sources */,
 				784CDDB6277D5F5B0048BDEB /* UIColorExtension.swift in Sources */,
 				784CDDA4277D55A20048BDEB /* ListApp.xcdatamodeld in Sources */,
+				783D528029B93BA00031DDCB /* SettingsInAppPurchases.swift in Sources */,
 				784CDDB9277D7FF00048BDEB /* CategoriesStarter.swift in Sources */,
 				781B51AF29AB1E7F00957E6A /* TextFieldExtension.swift in Sources */,
 				7828011427869BE8002D5239 /* SettingsCategoriesItem.swift in Sources */,
@@ -539,7 +579,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = rjs.app.dev.basketbuddy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -573,7 +613,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = rjs.app.dev.basketbuddy;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -20,7 +20,7 @@ struct CategoryModel {
         }
     }
 
-    func delete(_ category: Category) {
+    static func delete(_ category: Category) {
         guard let context = category.managedObjectContext else { return }
 
         let fetchRequest: NSFetchRequest<ListItem> = ListItem.fetchRequest()

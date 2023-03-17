@@ -13,7 +13,8 @@ struct Main: View {
     @State private var showAdd = false
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var selectedStore: SelectedStore
-
+    @EnvironmentObject var store: Store
+    
     @SectionedFetchRequest(
         sectionIdentifier: ListItemSort.default.section,
         sortDescriptors: ListItemSort.default.descriptors,
@@ -25,8 +26,10 @@ struct Main: View {
     var body: some View {
         NavigationView {
             VStack {
-                GADBannerViewController()
-                    .frame(width: GADAdSizeBanner.size.width, height: GADAdSizeBanner.size.height)
+                if !store.hasPurchasedAdsProduct {
+                    GADHomeScreenBannerViewController()
+                        .frame(width: GADAdSizeBanner.size.width, height: GADAdSizeBanner.size.height)
+                }
                 ZStack {
                     ListComponent(listItems: listItems)
                         .toolbar {

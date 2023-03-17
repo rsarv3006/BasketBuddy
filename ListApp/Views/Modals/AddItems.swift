@@ -11,7 +11,8 @@ import GoogleMobileAds
 
 struct AddItems: View {
     @Environment(\.presentationMode) var presentationMode
-
+    @EnvironmentObject var store: Store
+    
     @State var itemName: String = ""
     @State var itemCount: String = ""
     @State var itemNameError: Bool = false
@@ -168,13 +169,15 @@ struct AddItems: View {
                     .buttonStyle(.borderedProminent)
                     Spacer()
                 }
-                Spacer()
-                if reader.size.height > 700 {
-                    GADLargeRectangleBannerViewController()
-                        .frame(width: GADAdSizeMediumRectangle.size.width, height: GADAdSizeMediumRectangle.size.height, alignment: .center)
-                } else {
-                    GADBannerViewController()
-                        .frame(width: GADAdSizeBanner.size.width, height: GADAdSizeBanner.size.height)
+                if !store.hasPurchasedAdsProduct {
+                    Spacer()
+                    if reader.size.height > 700 {
+                        GADAddItemsLargeRectangleBannerViewController()
+                            .frame(width: GADAdSizeMediumRectangle.size.width, height: GADAdSizeMediumRectangle.size.height, alignment: .center)
+                    } else {
+                        GADAddItemsBannerViewController()
+                            .frame(width: GADAdSizeBanner.size.width, height: GADAdSizeBanner.size.height)
+                    }
                 }
             }
             .background(Color.Theme.linen)

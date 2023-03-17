@@ -7,9 +7,11 @@
 
 import SwiftUI
 import GoogleMobileAds
+import StoreKit
 
 struct Settings: View {
     @Environment(\.managedObjectContext) private var viewContext
+    @EnvironmentObject var store: Store
     
     @State var isCategoriesViewVisible: Bool = false
     @State var isbasketHistoryViewVisible: Bool = false
@@ -19,51 +21,60 @@ struct Settings: View {
     @State var isLegalViewVisible: Bool = false
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            NavigationLink(destination: SettingsCategoriesView(), isActive: $isCategoriesViewVisible) {
-                Button("Categories", action: {
-                    isCategoriesViewVisible.toggle()
-                })
-                .buttonStyle(.bordered)
-            }
-            NavigationLink(
-                destination: SettingsBasketHistoryView(viewContext: viewContext),
-                isActive: $isbasketHistoryViewVisible) {
-                    Button("Basket History", action: {
-                        isbasketHistoryViewVisible.toggle()
+        VStack {
+            ScrollView {
+                
+                NavigationLink(destination: SettingsCategoriesView(), isActive: $isCategoriesViewVisible) {
+                    Button("Categories", action: {
+                        isCategoriesViewVisible.toggle()
                     })
                     .buttonStyle(.bordered)
                 }
-            NavigationLink(destination: SettingsEditStaplesView(), isActive: $isEditStaplesViewVisible) {
-                Button("Edit Pantry Staples", action: {
-                    isEditStaplesViewVisible.toggle()
+                NavigationLink(
+                    destination: SettingsBasketHistoryView(viewContext: viewContext),
+                    isActive: $isbasketHistoryViewVisible) {
+                        Button("Basket History", action: {
+                            isbasketHistoryViewVisible.toggle()
+                        })
+                        .buttonStyle(.bordered)
+                    }
+                NavigationLink(destination: SettingsEditStaplesView(), isActive: $isEditStaplesViewVisible) {
+                    Button("Edit Pantry Staples", action: {
+                        isEditStaplesViewVisible.toggle()
+                    })
+                    .buttonStyle(.bordered)
+                    .padding(.top)
+                }
+                
+                Button("Load Pantry Staples", action: {
+                    isStapleLoadSuccess = ListItem.loadStaples(viewContext)
+                    isStapleAlertVisible.toggle()
                 })
                 .buttonStyle(.bordered)
-                .padding(.top)
-            }
+                .alert(isStapleLoadSuccess
+                       ? "Loaded Staples successfully."
+                       : "Issue encountered loading staples, please try again.", isPresented: $isStapleAlertVisible) {
+                    Button("OK", role: .cancel) {}
+                }
+                
+                NavigationLink(destination: SettingsLegalView(), isActive: $isLegalViewVisible) {
+                    Button("Legal Information", action: {
+                        isLegalViewVisible.toggle()
+                    })
+                    .buttonStyle(.bordered)
+                    .padding(.vertical)
+                }
 
-            Button("Load Pantry Staples", action: {
-                isStapleLoadSuccess = ListItem.loadStaples(viewContext)
-                isStapleAlertVisible.toggle()
-            })
-            .buttonStyle(.bordered)
-            .alert(isStapleLoadSuccess
-                   ? "Loaded Staples successfully."
-                   : "Issue encountered loading staples, please try again.", isPresented: $isStapleAlertVisible) {
-                Button("OK", role: .cancel) {}
+                if let product = store.removeAdsProduct {
+                    SettingsInAppPurchases(product: product)
+                }
+                
             }
-            
-            NavigationLink(destination: SettingsLegalView(), isActive: $isLegalViewVisible) {
-                Button("Legal Information", action: {
-                    isLegalViewVisible.toggle()
-                })
-                .buttonStyle(.bordered)
-                .padding(.top)
+            if !store.hasPurchasedAdsProduct {
+                Spacer()
+                GADSettingsLargeRectangleBannerViewController()
+                    .frame(width: GADAdSizeMediumRectangle.size.width, height: GADAdSizeMediumRectangle.size.height, alignment: .center)
             }
-
-            Spacer()
-            GADLargeRectangleBannerViewController()
-                .frame(width: GADAdSizeMediumRectangle.size.width, height: GADAdSizeMediumRectangle.size.height, alignment: .center)
         }
         .frame(
             maxWidth: .infinity,

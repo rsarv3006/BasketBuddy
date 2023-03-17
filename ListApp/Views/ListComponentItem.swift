@@ -9,28 +9,40 @@ import SwiftUI
 
 struct ListComponentItem: View {
     @Environment(\.colorScheme) var colorScheme
-
+    @EnvironmentObject var selectedStore: SelectedStore
+    
     let item: ListItem
     @Binding var selectedItem: ListItem?
 
     var unSelectedView: some View {
         VStack(alignment: .leading) {
-            Text(item.name ?? "")
-                .foregroundColor(Color.Theme.linen)
-            Text("\(String(item.count)) \(item.unit?.abbreviation ?? "")")
-                .foregroundColor(Color.Theme.linen)
-
+            VStack(alignment: .leading) {
+                Text(item.name ?? "")
+                    .foregroundColor(Color.Theme.linen)
+                Text("\(String(item.count)) \(item.unit?.abbreviation ?? "")")
+                    .foregroundColor(Color.Theme.linen)
+            }
+            .padding(.leading)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
         .background(Color.Theme.seaGreen)
-
+        .cornerRadius(12)
+        
     }
 
     var selectedView: some View {
         HStack {
-            Image(systemName: "checkmark")
-                .foregroundColor(Color.Theme.redMunsell)
             unSelectedView
+            ZStack {
+                Image(systemName: "checkmark")
+                    .foregroundColor(Color.Theme.seaGreen)
+                    .fontWeight(.heavy)
+                    .font(.largeTitle)
+            }
+            .onTapGesture {
+                ListItem.addMoveToBasketDate(item)
+                selectedStore.selectedListItem = nil
+            }
         }
     }
 

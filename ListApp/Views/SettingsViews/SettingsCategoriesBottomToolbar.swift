@@ -48,7 +48,7 @@ struct SettingsCategoriesBottomToolbar: ToolbarContent {
                         Button("Cancel", role: .cancel) {}
                         Button("Ok", role: .destructive) {
                             if let safeCategory = selectedCategory {
-                                categoryModel.delete(safeCategory)
+                                CategoryModel.delete(safeCategory)
                                 selectedCategory = nil
                             }
                         }

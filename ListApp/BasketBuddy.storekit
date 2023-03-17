@@ -1,0 +1,36 @@
+{
+  "identifier" : "F188A837",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "6446044505",
+      "localizations" : [
+        {
+          "description" : "Purchase to Permanently Remove Ads",
+          "displayName" : "Remove Ads",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "removeAds",
+      "referenceName" : "removeAds",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "6446040498",
+    "_askToBuyEnabled" : false,
+    "_developerTeamID" : "4QGR522B9M",
+    "_lastSynchronizedDate" : 700029901.05925
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 2,
+    "minor" : 0
+  }
+}

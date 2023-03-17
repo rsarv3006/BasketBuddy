@@ -21,7 +21,8 @@ struct ListComponent: View {
                 Section(header: Text(section.id).foregroundColor(Color.Theme.seaGreen)) {
                     ForEach(section) { item in
                         ListComponentItem(item: item, selectedItem: $selectedStore.selectedListItem)
-                            .listRowBackground(Color.Theme.seaGreen)
+                            .listRowBackground(Color.clear)
+                            .listRowSeparator(.hidden)
                             .onTapGesture { self.handleOnTapGesture(item: item) }
                     }
                 }

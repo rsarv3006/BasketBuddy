@@ -10,6 +10,7 @@ import CoreData
 import GoogleMobileAds
 
 struct SettingsAddCategory: View {
+    @EnvironmentObject var store: Store
     @Environment(\.presentationMode) var presentationMode
     var viewContext: NSManagedObjectContext
 
@@ -50,9 +51,11 @@ struct SettingsAddCategory: View {
                 }
                 .buttonStyle(.bordered)
 
-                Spacer()
-                GADLargeRectangleBannerViewController()
-                    .frame(width: GADAdSizeMediumRectangle.size.width, height: GADAdSizeMediumRectangle.size.height, alignment: .center)
+                if !store.hasPurchasedAdsProduct {
+                    Spacer()
+                    GADAddItemsLargeRectangleBannerViewController()
+                        .frame(width: GADAdSizeMediumRectangle.size.width, height: GADAdSizeMediumRectangle.size.height, alignment: .center)
+                }
 
             }
             .frame(width: reader.size.width, alignment: .center)

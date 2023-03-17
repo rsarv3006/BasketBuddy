@@ -9,6 +9,7 @@ import SwiftUI
 import GoogleMobileAds
 
 struct SettingsCategoriesView: View {
+    @EnvironmentObject var store: Store
     @EnvironmentObject var selectedStore: SelectedStore
     @Environment(\.managedObjectContext) private var viewContext
 
@@ -20,8 +21,10 @@ struct SettingsCategoriesView: View {
 
     var body: some View {
         VStack {
-            GADBannerViewController()
-                .frame(width: GADAdSizeBanner.size.width, height: GADAdSizeBanner.size.height)
+            if !store.hasPurchasedAdsProduct {
+                GADSettingsCategoriesBannerViewController()
+                    .frame(width: GADAdSizeBanner.size.width, height: GADAdSizeBanner.size.height)
+            }
             ZStack {
                 List {
                     ForEach(categories) { category in
@@ -37,6 +40,15 @@ struct SettingsCategoriesView: View {
 
                                 }
                         }
+                    }
+                    .onDelete { indexSet in
+                        let categoriesCount = categories.count
+                        indexSet.forEach { index in
+                            if index < categoriesCount {
+                                CategoryModel.delete(categories[index])
+                            }
+                        }
+
                     }
                 }
                 if categories.isEmpty {
@@ -67,8 +79,8 @@ struct SettingsCategoriesView: View {
     }
 }
 
-struct SettingsCategoriesView_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsCategoriesView()
-    }
-}
+//struct SettingsCategoriesView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SettingsCategoriesView()
+//    }
+//}

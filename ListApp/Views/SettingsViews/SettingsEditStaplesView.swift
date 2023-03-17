@@ -10,7 +10,8 @@ import GoogleMobileAds
 
 struct SettingsEditStaplesView: View {
     @Environment(\.managedObjectContext) private var viewContext
-
+    @EnvironmentObject var store: Store
+    
     @SectionedFetchRequest(sectionIdentifier: ListItemSort.default.section, sortDescriptors: ListItemSort.default.descriptors, predicate: NSPredicate(format: "isStaple = %@", NSNumber(value: true)), animation: .default)
     private var stapleItems: SectionedFetchResults<String, ListItem>
 
@@ -19,8 +20,10 @@ struct SettingsEditStaplesView: View {
 
     var body: some View {
         VStack {
-            GADBannerViewController()
-                .frame(width: GADAdSizeBanner.size.width, height: GADAdSizeBanner.size.height)
+            if !store.hasPurchasedAdsProduct {
+                GADSettingsEditPantryBannerViewController()
+                    .frame(width: GADAdSizeBanner.size.width, height: GADAdSizeBanner.size.height)
+            }
             ZStack {
                 List {
                     ForEach(stapleItems) { section in
@@ -68,7 +71,7 @@ struct SettingsEditStaplesView: View {
 
                 ToolbarItem(placement: .principal) {
                     HStack {
-                        Text("Basket History")
+                        Text("Pantry Staples")
                             .font(.headline)
                             .foregroundColor(Color.Theme.seaGreen)
                     }
