@@ -35,8 +35,6 @@ struct UIChangeMoveToBasketButton: View {
 
 struct UIChangeMoveToBasketButton_Previews: PreviewProvider {
     static var previews: some View {
-        UIChangeMoveToBasketButton {
-            print("howdy")
-        }
+        UIChangeMoveToBasketButton {}
     }
 }
