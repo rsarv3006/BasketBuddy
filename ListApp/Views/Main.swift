@@ -15,6 +15,8 @@ struct Main: View {
     @EnvironmentObject var selectedStore: SelectedStore
     @EnvironmentObject var store: Store
     
+    @AppStorage("shouldShowFirstStartModalForUIChangeMoveToBasketButtonPlacement") var firstTimeModal = true
+    
     @SectionedFetchRequest(
         sectionIdentifier: ListItemSort.default.section,
         sortDescriptors: ListItemSort.default.descriptors,
@@ -85,6 +87,12 @@ struct Main: View {
                         viewContext: viewContext,
                         selectedItem: $selectedStore.selectedListItem
                     )
+                }
+                .sheet(isPresented: $firstTimeModal) {
+                    UIChangeMoveToBasketButton {
+                        firstTimeModal = false
+                    }
+                    .presentationDetents([.medium])
                 }
             }
             .background(Color.Theme.linen)

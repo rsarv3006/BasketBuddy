@@ -70,7 +70,8 @@ struct Settings: View {
                 }
                 
                 Button("Contact Support", action: {
-                    let email = "contact-project+donutsahoy-listapp-32477383-issue-@incoming.gitlab.com"
+                    let webCrawlerObfuscation = "@incoming.gitlab.com"
+                    let email = "contact-project+donutsahoy-listapp-32477383-issue-\(webCrawlerObfuscation)"
                     let subject = "Support Request"
                     
                     let urlString = "mailto:\(email)?subject=\(subject)"

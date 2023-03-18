@@ -55,6 +55,7 @@
 		784CDDC4277E483D0048BDEB /* Unit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CDDBE277E483C0048BDEB /* Unit+CoreDataClass.swift */; };
 		784CDDC6277E483D0048BDEB /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CDDC0277E483C0048BDEB /* Category+CoreDataClass.swift */; };
 		7866AAA029C4159D005416ED /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 7866AA9F29C4159D005416ED /* .gitignore */; };
+		7866AAA329C63C02005416ED /* UIChangeMoveToBasketButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7866AAA229C63C02005416ED /* UIChangeMoveToBasketButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +108,7 @@
 		784CDDBE277E483C0048BDEB /* Unit+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Unit+CoreDataClass.swift"; sourceTree = "<group>"; };
 		784CDDC0277E483C0048BDEB /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7866AA9F29C4159D005416ED /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		7866AAA229C63C02005416ED /* UIChangeMoveToBasketButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIChangeMoveToBasketButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +255,7 @@
 		784CDDAA277D56B10048BDEB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7866AAA129C63BD7005416ED /* FirstTimeModals */,
 				781B51B629ADBB7800957E6A /* Ads */,
 				7828010E278687A3002D5239 /* Components */,
 				7828010527865150002D5239 /* SettingsViews */,
@@ -311,6 +314,14 @@
 				784CDD97277D559F0048BDEB /* BasketBuddyApp.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		7866AAA129C63BD7005416ED /* FirstTimeModals */ = {
+			isa = PBXGroup;
+			children = (
+				7866AAA229C63C02005416ED /* UIChangeMoveToBasketButton.swift */,
+			);
+			path = FirstTimeModals;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -401,6 +412,7 @@
 				7801C837278AA0BE00831859 /* DateExtension.swift in Sources */,
 				784CDDC4277E483D0048BDEB /* Unit+CoreDataClass.swift in Sources */,
 				7828010B278651A0002D5239 /* SettingsEditStaplesView.swift in Sources */,
+				7866AAA329C63C02005416ED /* UIChangeMoveToBasketButton.swift in Sources */,
 				784CDDB0277D59B60048BDEB /* ListComponent.swift in Sources */,
 				784CDDAC277D56BF0048BDEB /* Main.swift in Sources */,
 				783D527A29B840B30031DDCB /* EULA.swift in Sources */,
