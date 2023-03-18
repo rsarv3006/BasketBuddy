@@ -64,10 +64,25 @@ struct Settings: View {
                     .buttonStyle(.bordered)
                     .padding(.vertical)
                 }
-
+                
                 if let product = store.removeAdsProduct {
                     SettingsInAppPurchases(product: product)
                 }
+                
+                Button("Contact Support", action: {
+                    let email = "contact-project+donutsahoy-listapp-32477383-issue-@incoming.gitlab.com"
+                    let subject = "Support Request"
+                    
+                    let urlString = "mailto:\(email)?subject=\(subject)"
+                    let url = URL(string: urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)!
+                    
+                    if UIApplication.shared.canOpenURL(url) {
+                        UIApplication.shared.open(url)
+                    }
+                })
+                .buttonStyle(.bordered)
+                .padding(.top)
+                
                 
             }
             if !store.hasPurchasedAdsProduct {
