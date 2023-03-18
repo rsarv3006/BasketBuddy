@@ -43,14 +43,11 @@ struct Main: View {
                             }
                             ListComponentBottomToolbar(
                                 selectedListItem: $selectedStore.selectedListItem,
-                                centerImageName: selectedStore.selectedListItem == nil ? "plus" : "cart.badge.plus",
+                                centerImageName: "plus",
                                 leftButtonOnPress: {showAdd.toggle()},
                                 middleButtonOnPress: {
                                     if selectedStore.selectedListItem == nil {
                                         showAdd.toggle()
-                                    } else if let item = selectedStore.selectedListItem {
-                                        ListItem.addMoveToBasketDate(item)
-                                        selectedStore.selectedListItem = nil
                                     }
                                 },
                                 middleButtonOnSwipe: { value in
@@ -62,7 +59,9 @@ struct Main: View {
                                     if let safeSelectedItem = selectedStore.selectedListItem {
                                         ListItem.makeNotVisible(safeSelectedItem)
                                         selectedStore.selectedListItem = nil
-                                    }})
+                                    }},
+                                shouldShowCenterButton: selectedStore.selectedListItem == nil
+                            )
                         }
                         .navigationBarTitleDisplayMode(.inline)
                         .toolbar {
@@ -73,6 +72,9 @@ struct Main: View {
                                         .foregroundColor(Color.Theme.seaGreen)
                                 }
                             }
+                        }
+                        .onAppear {
+                            selectedStore.selectedListItem = nil
                         }
                     if listItems.isEmpty {
                         Spacer().background(Color.Theme.linen)

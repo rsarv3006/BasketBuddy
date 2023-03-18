@@ -14,10 +14,10 @@ struct SettingsEditStaplesView: View {
     
     @SectionedFetchRequest(sectionIdentifier: ListItemSort.default.section, sortDescriptors: ListItemSort.default.descriptors, predicate: NSPredicate(format: "isStaple = %@", NSNumber(value: true)), animation: .default)
     private var stapleItems: SectionedFetchResults<String, ListItem>
-
+    
     @EnvironmentObject var selectedStore: SelectedStore
     @State var showAdd: Bool = false
-
+    
     var body: some View {
         VStack {
             if !store.hasPurchasedAdsProduct {
@@ -29,15 +29,23 @@ struct SettingsEditStaplesView: View {
                     ForEach(stapleItems) { section in
                         Section(header: Text(section.id).foregroundColor(Color.Theme.seaGreen)) {
                             ForEach(section) { item in
-                                ListComponentItem(item: item, selectedItem: $selectedStore.selectedStaple)
-                                    .listRowBackground(Color.Theme.seaGreen)
-                                    .onTapGesture {
-                                        if selectedStore.selectedStaple == item {
-                                            selectedStore.selectedStaple = nil
-                                        } else {
-                                            selectedStore.selectedStaple = item
-                                        }
+                                ListComponentItem(item: item, selectedItem: $selectedStore.selectedStaple, onTapGesture: {
+                                    if let staple = selectedStore.selectedStaple {
+                                        ListItem.makeItemVisible(staple)
+                                        selectedStore.selectedStaple = nil
                                     }
+                                },
+                                                  selectedImageName: "note.text.badge.plus"
+                                )
+                                .listRowBackground(Color.clear)
+                                .listRowSeparator(.hidden)
+                                .onTapGesture {
+                                    if selectedStore.selectedStaple == item {
+                                        selectedStore.selectedStaple = nil
+                                    } else {
+                                        selectedStore.selectedStaple = item
+                                    }
+                                }
                             }
                         }
                     }
@@ -67,8 +75,10 @@ struct SettingsEditStaplesView: View {
                     if let safeSelectedStaple = selectedStore.selectedStaple {
                         ListItem.makeNotVisible(safeSelectedStaple)
                         selectedStore.selectedStaple = nil
-                    }})
-
+                    }},
+                    shouldShowCenterButton: selectedStore.selectedStaple == nil
+                )
+                
                 ToolbarItem(placement: .principal) {
                     HStack {
                         Text("Pantry Staples")
@@ -76,10 +86,13 @@ struct SettingsEditStaplesView: View {
                             .foregroundColor(Color.Theme.seaGreen)
                     }
                 }
-
+                
             }
             .sheet(isPresented: $showAdd) {
                 AddItems(viewContext: viewContext, selectedItem: $selectedStore.selectedStaple, isStaple: true)
+            }
+            .onAppear {
+                selectedStore.selectedStaple = nil
             }
         }
         .background(Color.Theme.linen)

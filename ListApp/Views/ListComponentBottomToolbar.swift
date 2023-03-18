@@ -15,7 +15,8 @@ struct ListComponentBottomToolbar: ToolbarContent {
     var middleButtonOnPress: () -> Void
     var middleButtonOnSwipe: (_: DragGesture.Value) -> Void
     var rightButtonOnPress: () -> Void
-
+    var shouldShowCenterButton: Bool = true
+    
     // Note to self, using ToolbarItem(s) here because the ToolbarGroup has a weird alignment bug coming into and out of a modal, #JustSwiftUIThings
     var body: some ToolbarContent {
         ToolbarItem(placement: .bottomBar) {
@@ -27,14 +28,17 @@ struct ListComponentBottomToolbar: ToolbarContent {
                 })
             }
         }
-        ToolbarItem(placement: .bottomBar, content: {Spacer()})
-        ToolbarItem(placement: .bottomBar) {
-            BottomCenterButton(centerImageName: centerImageName, onPressed: middleButtonOnPress)
-                .gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local)
-                            .onEnded(middleButtonOnSwipe)
-                )
+        if shouldShowCenterButton {
+            ToolbarItem(placement: .bottomBar, content: {Spacer()})
+            ToolbarItem(placement: .bottomBar) {
+                BottomCenterButton(centerImageName: centerImageName, onPressed: middleButtonOnPress)
+                    .gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local)
+                                .onEnded(middleButtonOnSwipe)
+                    )
+            }
+            ToolbarItem(placement: .bottomBar, content: {Spacer()})
+
         }
-        ToolbarItem(placement: .bottomBar, content: {Spacer()})
         ToolbarItem(placement: .bottomBar) {
             if selectedListItem !== nil {
                 Button(action: rightButtonOnPress, label: {

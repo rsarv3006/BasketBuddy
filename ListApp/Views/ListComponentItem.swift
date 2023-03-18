@@ -13,7 +13,9 @@ struct ListComponentItem: View {
     
     let item: ListItem
     @Binding var selectedItem: ListItem?
-
+    var onTapGesture: () -> Void
+    var selectedImageName: String = "checkmark"
+    
     var unSelectedView: some View {
         VStack(alignment: .leading) {
             VStack(alignment: .leading) {
@@ -34,15 +36,12 @@ struct ListComponentItem: View {
         HStack {
             unSelectedView
             ZStack {
-                Image(systemName: "checkmark")
+                Image(systemName: selectedImageName)
                     .foregroundColor(Color.Theme.seaGreen)
                     .fontWeight(.heavy)
                     .font(.largeTitle)
             }
-            .onTapGesture {
-                ListItem.addMoveToBasketDate(item)
-                selectedStore.selectedListItem = nil
-            }
+            .onTapGesture(perform: onTapGesture)
         }
     }
 

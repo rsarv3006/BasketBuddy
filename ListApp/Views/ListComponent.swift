@@ -20,10 +20,15 @@ struct ListComponent: View {
             ForEach(listItems) { section in
                 Section(header: Text(section.id).foregroundColor(Color.Theme.seaGreen)) {
                     ForEach(section) { item in
-                        ListComponentItem(item: item, selectedItem: $selectedStore.selectedListItem)
-                            .listRowBackground(Color.clear)
-                            .listRowSeparator(.hidden)
-                            .onTapGesture { self.handleOnTapGesture(item: item) }
+                        ListComponentItem(item: item, selectedItem: $selectedStore.selectedListItem, onTapGesture: {
+                            ListItem.addMoveToBasketDate(item)
+                            selectedStore.selectedListItem = nil
+                        },
+                        selectedImageName: "cart.badge.plus"
+                        )
+                        .listRowBackground(Color.clear)
+                        .listRowSeparator(.hidden)
+                        .onTapGesture { self.handleOnTapGesture(item: item) }
                     }
                 }
             }

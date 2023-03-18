@@ -74,6 +74,9 @@ struct SettingsCategoriesView: View {
                     }
                 }
             }
+            .onAppear {
+                selectedStore.selectedCategory = nil
+            }
         }
         .background(Color.Theme.linen)
     }
