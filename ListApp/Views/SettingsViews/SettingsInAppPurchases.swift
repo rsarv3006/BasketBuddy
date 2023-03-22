@@ -14,6 +14,8 @@ struct SettingsInAppPurchases: View {
     @State var errorTitle = ""
     @State var isShowingError: Bool = false
     
+    @State private var isLoading: Bool = false
+    
     private let product: Product
     
     init(product: Product) {
@@ -23,12 +25,23 @@ struct SettingsInAppPurchases: View {
     var body: some View {
         VStack {
             if !store.hasPurchasedAdsProduct {
-                Button("Remove Ads - $1.99", action: {
+                Button {
                     Task {
+                        isLoading = true
                         await buy()
+                        isLoading = false
                     }
-                })
+                } label: {
+                    if !isLoading {
+                        Text("Remove Ads - $1.99")
+                            .foregroundColor(Color.Theme.seaGreen)
+                    } else {
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle())
+                    }
+                }
                 .buttonStyle(.bordered)
+                .disabled(isLoading)
             }
             
             Button("Restore Purchases", action: {
