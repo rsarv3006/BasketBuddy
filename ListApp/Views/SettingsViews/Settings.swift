@@ -20,6 +20,8 @@ struct Settings: View {
     @State var isStapleLoadSuccess: Bool = false
     @State var isLegalViewVisible: Bool = false
     
+    private let shareLinkUrl = URL(string: "https://apps.apple.com/us/app/basketbuddy/id6446040498")
+    
     var body: some View {
         VStack {
             ScrollView {
@@ -67,6 +69,12 @@ struct Settings: View {
                 
                 if let product = store.removeAdsProduct {
                     SettingsInAppPurchases(product: product)
+                        .padding(.bottom)
+                }
+                
+                if let shareLinkUrl = shareLinkUrl {
+                    ShareLink("Share BasketBuddy!", item: shareLinkUrl)
+                        .buttonStyle(.bordered)
                 }
                 
                 Button("Contact Support", action: {
@@ -82,7 +90,6 @@ struct Settings: View {
                     }
                 })
                 .buttonStyle(.bordered)
-                .padding(.top)
                 
                 
             }
