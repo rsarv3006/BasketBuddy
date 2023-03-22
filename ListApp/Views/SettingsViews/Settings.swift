@@ -91,6 +91,15 @@ struct Settings: View {
                 })
                 .buttonStyle(.bordered)
                 
+                if let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+                    Text("App version: \(appVersion)")
+                        .padding(.top)
+                        .foregroundColor(.Theme.seaGreen)
+                }
+
+                HStack {
+                    Spacer()
+                }
                 
             }
             if !store.hasPurchasedAdsProduct {
