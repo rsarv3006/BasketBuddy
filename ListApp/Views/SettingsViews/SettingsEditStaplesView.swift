@@ -11,6 +11,7 @@ import GoogleMobileAds
 struct SettingsEditStaplesView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var store: Store
+    @State private var hasStapleBeenAddedToList: Bool = false
     
     @SectionedFetchRequest(sectionIdentifier: ListItemSort.default.section, sortDescriptors: ListItemSort.default.descriptors, predicate: NSPredicate(format: "isStaple = %@", NSNumber(value: true)), animation: .default)
     private var stapleItems: SectionedFetchResults<String, ListItem>
@@ -33,6 +34,7 @@ struct SettingsEditStaplesView: View {
                                     if let staple = selectedStore.selectedStaple {
                                         ListItem.makeItemVisible(staple)
                                         selectedStore.selectedStaple = nil
+                                        hasStapleBeenAddedToList = true
                                     }
                                 },
                                                   selectedImageName: "note.text.badge.plus"
@@ -46,6 +48,10 @@ struct SettingsEditStaplesView: View {
                                         selectedStore.selectedStaple = item
                                     }
                                 }
+                                .alert(isPresented: $hasStapleBeenAddedToList, content: {
+                                    Alert(title: Text("Pantry Staple has been added to the main list."), message: nil, dismissButton: .default(Text("Okay")))
+                                })
+
                             }
                         }
                     }
