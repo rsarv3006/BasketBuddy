@@ -1,1 +1,5 @@
 ListApp/Admob2.plist
+.DS_Store
+/Pods/
+/vendor/bundle
+*.xcuserstate

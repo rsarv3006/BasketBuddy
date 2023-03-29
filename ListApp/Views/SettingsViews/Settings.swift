@@ -104,8 +104,7 @@ struct Settings: View {
             }
             if !store.hasPurchasedAdsProduct {
                 Spacer()
-                GADSettingsLargeRectangleBannerViewController()
-                    .frame(width: GADAdSizeMediumRectangle.size.width, height: GADAdSizeMediumRectangle.size.height, alignment: .center)
+                AdRectangleView()
             }
         }
         .frame(
