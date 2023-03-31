@@ -220,7 +220,6 @@
 		784CDD8B277D559F0048BDEB = {
 			isa = PBXGroup;
 			children = (
-				78E892E729D7844700987DF8 /* AdMob.plist */,
 				7866AA9F29C4159D005416ED /* .gitignore */,
 				784CDD96277D559F0048BDEB /* ListApp */,
 				784CDD95277D559F0048BDEB /* Products */,
@@ -239,6 +238,7 @@
 		784CDD96277D559F0048BDEB /* ListApp */ = {
 			isa = PBXGroup;
 			children = (
+				78E892E729D7844700987DF8 /* AdMob.plist */,
 				783D527229B5A4CD0031DDCB /* Utils */,
 				781D17F729B30D3000C1F5BF /* LegalInformationStrings */,
 				781B51B529AC618000957E6A /* Info.plist */,
