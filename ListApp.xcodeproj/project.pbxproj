@@ -32,7 +32,6 @@
 		7828011227869329002D5239 /* SettingsCategoriesBottomToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7828011127869329002D5239 /* SettingsCategoriesBottomToolbar.swift */; };
 		7828011427869BE8002D5239 /* SettingsCategoriesItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7828011327869BE8002D5239 /* SettingsCategoriesItem.swift */; };
 		7828011627869E2C002D5239 /* SettingsAddCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7828011527869E2C002D5239 /* SettingsAddCategory.swift */; };
-		783D527129B59A8C0031DDCB /* AdMob2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 783D527029B59A8C0031DDCB /* AdMob2.plist */; };
 		783D527429B5A4EA0031DDCB /* AdmobUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783D527329B5A4EA0031DDCB /* AdmobUtils.swift */; };
 		783D527629B5A88B0031DDCB /* AdMob.plist in Resources */ = {isa = PBXBuildFile; fileRef = 783D527529B5A88B0031DDCB /* AdMob.plist */; };
 		783D527A29B840B30031DDCB /* EULA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783D527929B840B30031DDCB /* EULA.swift */; };
@@ -62,7 +61,6 @@
 		78D5705C29D68A0400B986DB /* AppVersionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D5705B29D68A0400B986DB /* AppVersionView.swift */; };
 		78F1EE3229D3E0A300347A00 /* ShareListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F1EE3129D3E0A300347A00 /* ShareListView.swift */; };
 		78F1EE3429D3E19100347A00 /* ContactSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F1EE3329D3E19100347A00 /* ContactSupport.swift */; };
-		B1141B17DEF73C35F1F5997E /* Pods_BasketBuddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1AF0DCFB7DE483BD3E6062D /* Pods_BasketBuddy.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,7 +89,6 @@
 		7828011127869329002D5239 /* SettingsCategoriesBottomToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCategoriesBottomToolbar.swift; sourceTree = "<group>"; };
 		7828011327869BE8002D5239 /* SettingsCategoriesItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCategoriesItem.swift; sourceTree = "<group>"; };
 		7828011527869E2C002D5239 /* SettingsAddCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAddCategory.swift; sourceTree = "<group>"; };
-		783D527029B59A8C0031DDCB /* AdMob2.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AdMob2.plist; sourceTree = "<group>"; };
 		783D527329B5A4EA0031DDCB /* AdmobUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobUtils.swift; sourceTree = "<group>"; };
 		783D527529B5A88B0031DDCB /* AdMob.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AdMob.plist; sourceTree = "<group>"; };
 		783D527929B840B30031DDCB /* EULA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EULA.swift; sourceTree = "<group>"; };
@@ -122,9 +119,6 @@
 		78D5705B29D68A0400B986DB /* AppVersionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionView.swift; sourceTree = "<group>"; };
 		78F1EE3129D3E0A300347A00 /* ShareListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareListView.swift; sourceTree = "<group>"; };
 		78F1EE3329D3E19100347A00 /* ContactSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactSupport.swift; sourceTree = "<group>"; };
-		9C33109DD72AFC9CC5471B01 /* Pods-BasketBuddy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BasketBuddy.debug.xcconfig"; path = "Target Support Files/Pods-BasketBuddy/Pods-BasketBuddy.debug.xcconfig"; sourceTree = "<group>"; };
-		D1AF0DCFB7DE483BD3E6062D /* Pods_BasketBuddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BasketBuddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D9CFE622202EC70E1D1A7447 /* Pods-BasketBuddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BasketBuddy.release.xcconfig"; path = "Target Support Files/Pods-BasketBuddy/Pods-BasketBuddy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,7 +251,6 @@
 				784CDDA0277D55A20048BDEB /* Persistence.swift */,
 				784CDDA2277D55A20048BDEB /* ListApp.xcdatamodeld */,
 				784CDD9D277D55A20048BDEB /* Preview Content */,
-				783D527029B59A8C0031DDCB /* AdMob2.plist */,
 				783D527529B5A88B0031DDCB /* AdMob.plist */,
 				7844766E29B99BC900917EC8 /* BasketBuddy.storekit */,
 			);
@@ -418,7 +411,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				783D527129B59A8C0031DDCB /* AdMob2.plist in Resources */,
 				783D527629B5A88B0031DDCB /* AdMob.plist in Resources */,
 				784CDD9F277D55A20048BDEB /* Preview Assets.xcassets in Resources */,
 				784CDD9C277D55A20048BDEB /* Assets.xcassets in Resources */,

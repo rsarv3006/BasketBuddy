@@ -76,6 +76,11 @@ struct AddItems: View {
     var body: some View {
         GeometryReader { reader in
             ScrollView(showsIndicators: false) {
+                if !store.hasPurchasedAdsProduct {
+                        GADAddItemsBannerViewController()
+                            .frame(width: GADAdSizeBanner.size.width, height: GADAdSizeBanner.size.height)
+                }
+                
                 Text("Add Item")
                     .padding(.top)
                     .foregroundColor(Color.Theme.seaGreen)
@@ -168,16 +173,6 @@ struct AddItems: View {
                     }
                     .buttonStyle(.borderedProminent)
                     Spacer()
-                }
-                if !store.hasPurchasedAdsProduct {
-                    Spacer()
-                    if reader.size.height > 700 {
-                        GADAddItemsLargeRectangleBannerViewController()
-                            .frame(width: GADAdSizeMediumRectangle.size.width, height: GADAdSizeMediumRectangle.size.height, alignment: .center)
-                    } else {
-                        GADAddItemsBannerViewController()
-                            .frame(width: GADAdSizeBanner.size.width, height: GADAdSizeBanner.size.height)
-                    }
                 }
             }
             .background(Color.Theme.linen)
