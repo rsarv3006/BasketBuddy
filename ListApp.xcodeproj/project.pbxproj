@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7801C837278AA0BE00831859 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7801C836278AA0BE00831859 /* DateExtension.swift */; };
 		7801C839278AAD4400831859 /* SettingsBasketHistoryClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7801C838278AAD4400831859 /* SettingsBasketHistoryClearButton.swift */; };
+		780F306029D3E776002C7BA9 /* SettingsViewShareButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780F305F29D3E776002C7BA9 /* SettingsViewShareButtons.swift */; };
 		781B51AF29AB1E7F00957E6A /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B51AE29AB1E7F00957E6A /* TextFieldExtension.swift */; };
 		781B51B829ADBB8600957E6A /* AdViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B51B729ADBB8600957E6A /* AdViews.swift */; };
 		781D17F429B3010000C1F5BF /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 781D17F329B3010000C1F5BF /* StoreKit.framework */; };
@@ -53,12 +54,18 @@
 		784CDDC6277E483D0048BDEB /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CDDC0277E483C0048BDEB /* Category+CoreDataClass.swift */; };
 		7866AAA029C4159D005416ED /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 7866AA9F29C4159D005416ED /* .gitignore */; };
 		7866AAA329C63C02005416ED /* UIChangeMoveToBasketButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7866AAA229C63C02005416ED /* UIChangeMoveToBasketButton.swift */; };
+		78D5705829D6892D00B986DB /* ShareListHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D5705729D6892D00B986DB /* ShareListHelpers.swift */; };
+		78D5705A29D6896600B986DB /* ShareListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D5705929D6896600B986DB /* ShareListRow.swift */; };
+		78D5705C29D68A0400B986DB /* AppVersionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D5705B29D68A0400B986DB /* AppVersionView.swift */; };
+		78F1EE3229D3E0A300347A00 /* ShareListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F1EE3129D3E0A300347A00 /* ShareListView.swift */; };
+		78F1EE3429D3E19100347A00 /* ContactSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F1EE3329D3E19100347A00 /* ContactSupport.swift */; };
 		B1141B17DEF73C35F1F5997E /* Pods_BasketBuddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1AF0DCFB7DE483BD3E6062D /* Pods_BasketBuddy.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7801C836278AA0BE00831859 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		7801C838278AAD4400831859 /* SettingsBasketHistoryClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBasketHistoryClearButton.swift; sourceTree = "<group>"; };
+		780F305F29D3E776002C7BA9 /* SettingsViewShareButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewShareButtons.swift; sourceTree = "<group>"; };
 		781B51AE29AB1E7F00957E6A /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
 		781B51B529AC618000957E6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		781B51B729ADBB8600957E6A /* AdViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdViews.swift; sourceTree = "<group>"; };
@@ -105,6 +112,11 @@
 		784CDDC0277E483C0048BDEB /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7866AA9F29C4159D005416ED /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		7866AAA229C63C02005416ED /* UIChangeMoveToBasketButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIChangeMoveToBasketButton.swift; sourceTree = "<group>"; };
+		78D5705729D6892D00B986DB /* ShareListHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareListHelpers.swift; sourceTree = "<group>"; };
+		78D5705929D6896600B986DB /* ShareListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareListRow.swift; sourceTree = "<group>"; };
+		78D5705B29D68A0400B986DB /* AppVersionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionView.swift; sourceTree = "<group>"; };
+		78F1EE3129D3E0A300347A00 /* ShareListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareListView.swift; sourceTree = "<group>"; };
+		78F1EE3329D3E19100347A00 /* ContactSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactSupport.swift; sourceTree = "<group>"; };
 		9C33109DD72AFC9CC5471B01 /* Pods-BasketBuddy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BasketBuddy.debug.xcconfig"; path = "Target Support Files/Pods-BasketBuddy/Pods-BasketBuddy.debug.xcconfig"; sourceTree = "<group>"; };
 		D1AF0DCFB7DE483BD3E6062D /* Pods_BasketBuddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BasketBuddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9CFE622202EC70E1D1A7447 /* Pods-BasketBuddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BasketBuddy.release.xcconfig"; path = "Target Support Files/Pods-BasketBuddy/Pods-BasketBuddy.release.xcconfig"; sourceTree = "<group>"; };
@@ -182,6 +194,7 @@
 		7828010527865150002D5239 /* SettingsViews */ = {
 			isa = PBXGroup;
 			children = (
+				78D5705629D6890F00B986DB /* ShareList */,
 				7828011127869329002D5239 /* SettingsCategoriesBottomToolbar.swift */,
 				784CDDAD277D57B70048BDEB /* Settings.swift */,
 				7828010627865170002D5239 /* SettingsCategoriesView.swift */,
@@ -191,6 +204,9 @@
 				7801C838278AAD4400831859 /* SettingsBasketHistoryClearButton.swift */,
 				781D17F529B30B2400C1F5BF /* SettingsLegalView.swift */,
 				783D527F29B93BA00031DDCB /* SettingsInAppPurchases.swift */,
+				78F1EE3329D3E19100347A00 /* ContactSupport.swift */,
+				780F305F29D3E776002C7BA9 /* SettingsViewShareButtons.swift */,
+				78D5705B29D68A0400B986DB /* AppVersionView.swift */,
 			);
 			path = SettingsViews;
 			sourceTree = "<group>";
@@ -332,6 +348,16 @@
 			path = FirstTimeModals;
 			sourceTree = "<group>";
 		};
+		78D5705629D6890F00B986DB /* ShareList */ = {
+			isa = PBXGroup;
+			children = (
+				78F1EE3129D3E0A300347A00 /* ShareListView.swift */,
+				78D5705729D6892D00B986DB /* ShareListHelpers.swift */,
+				78D5705929D6896600B986DB /* ShareListRow.swift */,
+			);
+			path = ShareList;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -468,10 +494,12 @@
 			files = (
 				784CDDBB277D82310048BDEB /* UnitsStarter.swift in Sources */,
 				7801C839278AAD4400831859 /* SettingsBasketHistoryClearButton.swift in Sources */,
+				78D5705C29D68A0400B986DB /* AppVersionView.swift in Sources */,
 				784CDDAE277D57B70048BDEB /* Settings.swift in Sources */,
 				7828011627869E2C002D5239 /* SettingsAddCategory.swift in Sources */,
 				784CDDC2277E483D0048BDEB /* ListItem+CoreDataClass.swift in Sources */,
 				7801C837278AA0BE00831859 /* DateExtension.swift in Sources */,
+				78F1EE3429D3E19100347A00 /* ContactSupport.swift in Sources */,
 				784CDDC4277E483D0048BDEB /* Unit+CoreDataClass.swift in Sources */,
 				7828010B278651A0002D5239 /* SettingsEditStaplesView.swift in Sources */,
 				7866AAA329C63C02005416ED /* UIChangeMoveToBasketButton.swift in Sources */,
@@ -484,6 +512,7 @@
 				78280101278402AA002D5239 /* Category+CoreDataProperties.swift in Sources */,
 				7828011227869329002D5239 /* SettingsCategoriesBottomToolbar.swift in Sources */,
 				781D17FB29B30E7900C1F5BF /* TermsAndConditions.swift in Sources */,
+				780F306029D3E776002C7BA9 /* SettingsViewShareButtons.swift in Sources */,
 				782801092786517F002D5239 /* SettingsBasketHistoryView.swift in Sources */,
 				7828010727865170002D5239 /* SettingsCategoriesView.swift in Sources */,
 				783D527429B5A4EA0031DDCB /* AdmobUtils.swift in Sources */,
@@ -492,8 +521,10 @@
 				784CDDB3277D5CFB0048BDEB /* AddItems.swift in Sources */,
 				78280110278687B8002D5239 /* BottomCenterButton.swift in Sources */,
 				783D527C29B84BCF0031DDCB /* Storekit.swift in Sources */,
+				78D5705A29D6896600B986DB /* ShareListRow.swift in Sources */,
 				781D17F629B30B2400C1F5BF /* SettingsLegalView.swift in Sources */,
 				782800DD2782AB8B002D5239 /* ListComponentItem.swift in Sources */,
+				78F1EE3229D3E0A300347A00 /* ShareListView.swift in Sources */,
 				784CDDC6277E483D0048BDEB /* Category+CoreDataClass.swift in Sources */,
 				784CDDB6277D5F5B0048BDEB /* UIColorExtension.swift in Sources */,
 				784CDDA4277D55A20048BDEB /* ListApp.xcdatamodeld in Sources */,
@@ -507,6 +538,7 @@
 				782800DB278248EC002D5239 /* ListItemSort.swift in Sources */,
 				782800E42783A601002D5239 /* ListComponentBottomToolbar.swift in Sources */,
 				784CDD98277D559F0048BDEB /* BasketBuddyApp.swift in Sources */,
+				78D5705829D6892D00B986DB /* ShareListHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

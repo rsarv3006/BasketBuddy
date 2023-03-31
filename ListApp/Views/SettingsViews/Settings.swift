@@ -20,8 +20,6 @@ struct Settings: View {
     @State var isStapleLoadSuccess: Bool = false
     @State var isLegalViewVisible: Bool = false
     
-    private let shareLinkUrl = URL(string: "https://apps.apple.com/us/app/basketbuddy/id6446040498")
-    
     var body: some View {
         VStack {
             ScrollView {
@@ -71,31 +69,12 @@ struct Settings: View {
                     SettingsInAppPurchases(product: product)
                         .padding(.bottom)
                 }
+                                
+                SettingsViewShareButtons()
                 
-                if let shareLinkUrl = shareLinkUrl {
-                    ShareLink("Share BasketBuddy!", item: shareLinkUrl)
-                        .buttonStyle(.bordered)
-                }
+                ContactSupport()
                 
-                Button("Contact Support", action: {
-                    let webCrawlerObfuscation = "@incoming.gitlab.com"
-                    let email = "contact-project+donutsahoy-listapp-32477383-issue-\(webCrawlerObfuscation)"
-                    let subject = "Support Request"
-                    
-                    let urlString = "mailto:\(email)?subject=\(subject)"
-                    let url = URL(string: urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)!
-                    
-                    if UIApplication.shared.canOpenURL(url) {
-                        UIApplication.shared.open(url)
-                    }
-                })
-                .buttonStyle(.bordered)
-                
-                if let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
-                    Text("App version: \(appVersion)")
-                        .padding(.top)
-                        .foregroundColor(.Theme.seaGreen)
-                }
+                AppVersionView()
 
                 HStack {
                     Spacer()
