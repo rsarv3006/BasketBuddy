@@ -22,7 +22,8 @@ struct SettingsCategoriesView: View {
     var body: some View {
         VStack {
             if !store.hasPurchasedAdsProduct {
-                AdBannerView()
+                GADSettingsCategoriesBannerViewController()
+                    .frame(width: GADAdSizeBanner.size.width, height: GADAdSizeBanner.size.height)
             }
             ZStack {
                 List {

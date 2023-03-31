@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import Appodeal
+import GoogleMobileAds
 
 @main
 struct BasketBuddyApp: App {
@@ -24,14 +24,7 @@ struct BasketBuddyApp: App {
                     Category.addOnLoad(viewContext: persistenceController.container.viewContext)
                     Unit.addOnLoad(viewContext: persistenceController.container.viewContext)
 
-                    Appodeal.setAutocache(false, types: .interstitial)
-                    Appodeal.setLogLevel(.error)
-
-                    Appodeal.setTestingEnabled(true)
-                    Appodeal.initialize(
-                        withApiKey: "",
-                        types: [.MREC, .banner]
-                    )
+                    GADMobileAds.sharedInstance().start(completionHandler: nil)
                 })
         }
     }

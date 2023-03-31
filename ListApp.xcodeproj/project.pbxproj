@@ -11,7 +11,8 @@
 		7801C839278AAD4400831859 /* SettingsBasketHistoryClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7801C838278AAD4400831859 /* SettingsBasketHistoryClearButton.swift */; };
 		780F306029D3E776002C7BA9 /* SettingsViewShareButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780F305F29D3E776002C7BA9 /* SettingsViewShareButtons.swift */; };
 		781B51AF29AB1E7F00957E6A /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B51AE29AB1E7F00957E6A /* TextFieldExtension.swift */; };
-		781B51B829ADBB8600957E6A /* AdViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B51B729ADBB8600957E6A /* AdViews.swift */; };
+		781B51B429AC608000957E6A /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 781B51B329AC608000957E6A /* GoogleMobileAds */; };
+		781B51B829ADBB8600957E6A /* GADBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B51B729ADBB8600957E6A /* GADBannerView.swift */; };
 		781D17F429B3010000C1F5BF /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 781D17F329B3010000C1F5BF /* StoreKit.framework */; };
 		781D17F629B30B2400C1F5BF /* SettingsLegalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781D17F529B30B2400C1F5BF /* SettingsLegalView.swift */; };
 		781D17F929B30D4200C1F5BF /* PrivacyPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781D17F829B30D4200C1F5BF /* PrivacyPolicy.swift */; };
@@ -32,6 +33,7 @@
 		7828011427869BE8002D5239 /* SettingsCategoriesItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7828011327869BE8002D5239 /* SettingsCategoriesItem.swift */; };
 		7828011627869E2C002D5239 /* SettingsAddCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7828011527869E2C002D5239 /* SettingsAddCategory.swift */; };
 		783D527429B5A4EA0031DDCB /* AdmobUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783D527329B5A4EA0031DDCB /* AdmobUtils.swift */; };
+		783D527629B5A88B0031DDCB /* AdMob.plist in Resources */ = {isa = PBXBuildFile; fileRef = 783D527529B5A88B0031DDCB /* AdMob.plist */; };
 		783D527A29B840B30031DDCB /* EULA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783D527929B840B30031DDCB /* EULA.swift */; };
 		783D527C29B84BCF0031DDCB /* Storekit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783D527B29B84BCF0031DDCB /* Storekit.swift */; };
 		783D528029B93BA00031DDCB /* SettingsInAppPurchases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783D527F29B93BA00031DDCB /* SettingsInAppPurchases.swift */; };
@@ -67,7 +69,7 @@
 		780F305F29D3E776002C7BA9 /* SettingsViewShareButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewShareButtons.swift; sourceTree = "<group>"; };
 		781B51AE29AB1E7F00957E6A /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
 		781B51B529AC618000957E6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		781B51B729ADBB8600957E6A /* AdViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdViews.swift; sourceTree = "<group>"; };
+		781B51B729ADBB8600957E6A /* GADBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GADBannerView.swift; sourceTree = "<group>"; };
 		781D17F329B3010000C1F5BF /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		781D17F529B30B2400C1F5BF /* SettingsLegalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLegalView.swift; sourceTree = "<group>"; };
 		781D17F829B30D4200C1F5BF /* PrivacyPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicy.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 		7828011327869BE8002D5239 /* SettingsCategoriesItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCategoriesItem.swift; sourceTree = "<group>"; };
 		7828011527869E2C002D5239 /* SettingsAddCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAddCategory.swift; sourceTree = "<group>"; };
 		783D527329B5A4EA0031DDCB /* AdmobUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobUtils.swift; sourceTree = "<group>"; };
+		783D527529B5A88B0031DDCB /* AdMob.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AdMob.plist; sourceTree = "<group>"; };
 		783D527929B840B30031DDCB /* EULA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EULA.swift; sourceTree = "<group>"; };
 		783D527B29B84BCF0031DDCB /* Storekit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storekit.swift; sourceTree = "<group>"; };
 		783D527F29B93BA00031DDCB /* SettingsInAppPurchases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInAppPurchases.swift; sourceTree = "<group>"; };
@@ -123,27 +126,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				781B51B429AC608000957E6A /* GoogleMobileAds in Frameworks */,
 				781D17F429B3010000C1F5BF /* StoreKit.framework in Frameworks */,
-				B1141B17DEF73C35F1F5997E /* Pods_BasketBuddy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6F73759AF1E85B9F54D969CA /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				9C33109DD72AFC9CC5471B01 /* Pods-BasketBuddy.debug.xcconfig */,
-				D9CFE622202EC70E1D1A7447 /* Pods-BasketBuddy.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		781B51B629ADBB7800957E6A /* Ads */ = {
 			isa = PBXGroup;
 			children = (
-				781B51B729ADBB8600957E6A /* AdViews.swift */,
+				781B51B729ADBB8600957E6A /* GADBannerView.swift */,
 			);
 			path = Ads;
 			sourceTree = "<group>";
@@ -152,7 +146,6 @@
 			isa = PBXGroup;
 			children = (
 				781D17F329B3010000C1F5BF /* StoreKit.framework */,
-				D1AF0DCFB7DE483BD3E6062D /* Pods_BasketBuddy.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -231,7 +224,6 @@
 				784CDD96277D559F0048BDEB /* ListApp */,
 				784CDD95277D559F0048BDEB /* Products */,
 				781D17F229B3010000C1F5BF /* Frameworks */,
-				6F73759AF1E85B9F54D969CA /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -362,18 +354,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 784CDDA7277D55A20048BDEB /* Build configuration list for PBXNativeTarget "BasketBuddy" */;
 			buildPhases = (
-				4FCC37B543C688BD8D921307 /* [CP] Check Pods Manifest.lock */,
 				784CDD90277D559F0048BDEB /* Sources */,
 				784CDD91277D559F0048BDEB /* Frameworks */,
 				784CDD92277D559F0048BDEB /* Resources */,
-				87264192AAD0CCC26F9C5902 /* [CP] Embed Pods Frameworks */,
-				0F0F371CD3A64BCEC9BD2B77 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = BasketBuddy;
+			packageProductDependencies = (
+				781B51B329AC608000957E6A /* GoogleMobileAds */,
+			);
 			productName = ListApp;
 			productReference = 784CDD94277D559F0048BDEB /* BasketBuddy.app */;
 			productType = "com.apple.product-type.application";
@@ -402,6 +394,9 @@
 				Base,
 			);
 			mainGroup = 784CDD8B277D559F0048BDEB;
+			packageReferences = (
+				781B51B229AC608000957E6A /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+			);
 			productRefGroup = 784CDD95277D559F0048BDEB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -426,65 +421,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		0F0F371CD3A64BCEC9BD2B77 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BasketBuddy/Pods-BasketBuddy-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BasketBuddy/Pods-BasketBuddy-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BasketBuddy/Pods-BasketBuddy-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4FCC37B543C688BD8D921307 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BasketBuddy-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		87264192AAD0CCC26F9C5902 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BasketBuddy/Pods-BasketBuddy-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BasketBuddy/Pods-BasketBuddy-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BasketBuddy/Pods-BasketBuddy-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		784CDD90277D559F0048BDEB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -505,7 +441,7 @@
 				784CDDAC277D56BF0048BDEB /* Main.swift in Sources */,
 				783D527A29B840B30031DDCB /* EULA.swift in Sources */,
 				784CDDA1277D55A20048BDEB /* Persistence.swift in Sources */,
-				781B51B829ADBB8600957E6A /* AdViews.swift in Sources */,
+				781B51B829ADBB8600957E6A /* GADBannerView.swift in Sources */,
 				782801042785289B002D5239 /* SelectedStore.swift in Sources */,
 				78280101278402AA002D5239 /* Category+CoreDataProperties.swift in Sources */,
 				7828011227869329002D5239 /* SettingsCategoriesBottomToolbar.swift in Sources */,
@@ -661,7 +597,6 @@
 		};
 		784CDDA8277D55A20048BDEB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9C33109DD72AFC9CC5471B01 /* Pods-BasketBuddy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -685,10 +620,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.3;
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"$(inherited)",
-				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = rjs.app.dev.basketbuddy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -699,7 +631,6 @@
 		};
 		784CDDA9277D55A20048BDEB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D9CFE622202EC70E1D1A7447 /* Pods-BasketBuddy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -723,10 +654,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.3;
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"$(inherited)",
-				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = rjs.app.dev.basketbuddy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -757,6 +685,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		781B51B229AC608000957E6A /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		781B51B329AC608000957E6A /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 781B51B229AC608000957E6A /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		784CDDA2277D55A20048BDEB /* ListApp.xcdatamodeld */ = {

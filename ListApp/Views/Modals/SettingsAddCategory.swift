@@ -52,13 +52,9 @@ struct SettingsAddCategory: View {
                 .buttonStyle(.bordered)
 
                 if !store.hasPurchasedAdsProduct {
-                    
                     Spacer()
-                    if reader.size.height > 700 {
-                        AdRectangleView()
-                    } else {
-                        AdBannerView()
-                    }
+                    GADAddItemsLargeRectangleBannerViewController()
+                        .frame(width: GADAdSizeMediumRectangle.size.width, height: GADAdSizeMediumRectangle.size.height, alignment: .center)
                 }
 
             }

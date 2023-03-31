@@ -56,7 +56,8 @@ struct SettingsBasketHistoryView: View {
     var body: some View {
         VStack {
             if !store.hasPurchasedAdsProduct {
-                AdBannerView()
+                GADSettingsBasketHistoryBannerViewController()
+                    .frame(width: GADAdSizeBanner.size.width, height: GADAdSizeBanner.size.height)
             }
             ZStack {
                 List {
