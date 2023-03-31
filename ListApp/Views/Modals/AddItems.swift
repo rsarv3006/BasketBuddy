@@ -84,19 +84,19 @@ struct AddItems: View {
                 Text("Add Item")
                     .padding(.top)
                     .foregroundColor(Color.Theme.seaGreen)
-
+                
                 VStack {
                     TextField("Item", text: $itemName)
                         .foregroundColor(Color.Theme.seaGreen)
                         .textFieldStyle(TextFieldDefaultBackgroundSeagreenBorder())
-
+                    
                     if itemNameError {
                         Text("Item Name is required")
                             .foregroundColor(.red)
                     }
                 }
                 .padding(.horizontal)
-
+                
                 Picker("Select a Category", selection: $selectedCategory) {
                     ForEach(categories, id: \.self) { category in
                         Text(category.name ?? "")
@@ -108,7 +108,7 @@ struct AddItems: View {
                     RoundedRectangle(cornerRadius: 5)
                         .strokeBorder(Color.Theme.seaGreen, lineWidth: 2))
                 .padding(.horizontal)
-
+                
                 HStack {
                     VStack {
                         TextField("#", text: $itemCount)
@@ -127,11 +127,11 @@ struct AddItems: View {
                     }
                 }
                 .padding(.horizontal)
-
+                
                 Toggle("Item is a Staple", isOn: $isStaple)
                     .foregroundColor(Color.Theme.seaGreen)
                     .padding([.horizontal, .bottom])
-
+                
                 HStack {
                     Spacer()
                     Button {
@@ -150,14 +150,14 @@ struct AddItems: View {
                         } else {
                             itemNameError = itemName.isEmpty
                             itemCountError = itemCount.isEmpty
-
+                            
                             if let tempSelectedItem = selectedItem {
                                 ListItem.editItem(itemToEdit: tempSelectedItem, itemName: itemName, itemCount: itemCount, unit: selectedUnit, category: selectedCategory, isStaple: isStaple)
                                 selectedItem = nil
                             } else {
                                 ListItem.addItem(itemName: itemName, itemCount: itemCount, unit: selectedUnit, category: selectedCategory, isStaple: isStaple, viewContext: viewContext)
                             }
-
+                            
                             presentationMode.wrappedValue.dismiss()
                         }
                     } label: {

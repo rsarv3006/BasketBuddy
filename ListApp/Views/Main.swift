@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import GoogleMobileAds
+import Appodeal
 
 struct Main: View {
     @Environment(\.presentationMode) var presentation
@@ -29,8 +29,7 @@ struct Main: View {
         NavigationView {
             VStack {
                 if !store.hasPurchasedAdsProduct {
-                    GADHomeScreenBannerViewController()
-                        .frame(width: GADAdSizeBanner.size.width, height: GADAdSizeBanner.size.height)
+                    AdBannerView()
                 }
                 ZStack {
                     ListComponent(listItems: listItems)

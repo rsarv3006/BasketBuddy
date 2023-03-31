@@ -22,8 +22,7 @@ struct SettingsEditStaplesView: View {
     var body: some View {
         VStack {
             if !store.hasPurchasedAdsProduct {
-                GADSettingsEditPantryBannerViewController()
-                    .frame(width: GADAdSizeBanner.size.width, height: GADAdSizeBanner.size.height)
+                AdBannerView()
             }
             ZStack {
                 List {
