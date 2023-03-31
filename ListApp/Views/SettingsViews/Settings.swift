@@ -56,24 +56,23 @@ struct Settings: View {
                        : "Issue encountered loading staples, please try again.", isPresented: $isStapleAlertVisible) {
                     Button("OK", role: .cancel) {}
                 }
-                
-                NavigationLink(destination: SettingsLegalView(), isActive: $isLegalViewVisible) {
-                    Button("Legal Information", action: {
-                        isLegalViewVisible.toggle()
-                    })
-                    .buttonStyle(.bordered)
-                    .padding(.vertical)
-                }
-                
+                                
                 if let product = store.removeAdsProduct {
                     SettingsInAppPurchases(product: product)
-                        .padding(.bottom)
+                        .padding(.vertical)
                 }
                                 
                 SettingsViewShareButtons()
                 
                 ContactSupport()
                 
+                NavigationLink(destination: SettingsLegalView(), isActive: $isLegalViewVisible) {
+                    Button("Legal Information", action: {
+                        isLegalViewVisible.toggle()
+                    })
+                    .buttonStyle(.bordered)
+                }
+
                 AppVersionView()
 
                 HStack {
@@ -83,7 +82,8 @@ struct Settings: View {
             }
             if !store.hasPurchasedAdsProduct {
                 Spacer()
-                AdRectangleView()
+                GADSettingsLargeRectangleBannerViewController()
+                    .frame(width: GADAdSizeMediumRectangle.size.width, height: GADAdSizeMediumRectangle.size.height, alignment: .center)
             }
         }
         .frame(
