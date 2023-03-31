@@ -251,7 +251,6 @@
 				784CDDA0277D55A20048BDEB /* Persistence.swift */,
 				784CDDA2277D55A20048BDEB /* ListApp.xcdatamodeld */,
 				784CDD9D277D55A20048BDEB /* Preview Content */,
-				783D527529B5A88B0031DDCB /* AdMob.plist */,
 				7844766E29B99BC900917EC8 /* BasketBuddy.storekit */,
 			);
 			path = ListApp;
@@ -411,7 +410,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				783D527629B5A88B0031DDCB /* AdMob.plist in Resources */,
 				784CDD9F277D55A20048BDEB /* Preview Assets.xcassets in Resources */,
 				784CDD9C277D55A20048BDEB /* Assets.xcassets in Resources */,
 				7866AAA029C4159D005416ED /* .gitignore in Resources */,
