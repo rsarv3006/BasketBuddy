@@ -2,17 +2,19 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>Banner_Home_Screen</key>
-    <string>ca-app-pub-3940256099942544/2934735716</string>
-    <key>Banner_Add_Item</key>
-    <string>ca-app-pub-3940256099942544/2934735716</string>
-    <key>Banner_Settings</key>
-    <string>ca-app-pub-3940256099942544/2934735716</string>
-    <key>Banner_Categories</key>
-    <string>ca-app-pub-3940256099942544/2934735716</string>
-    <key>Banner_Basket_History</key>
-    <string>ca-app-pub-3940256099942544/2934735716</string>
-    <key>Banner_Edit_Pantry</key>
-    <string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>Banner_Home_Screen</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>Banner_Add_Item</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>Banner_Settings</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>Banner_Categories</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>Banner_Basket_History</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>Banner_Edit_Pantry</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>Interstitial_Share_Create</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
 </dict>
 </plist>

@@ -29,4 +29,16 @@ public class Unit: NSManagedObject {
             print("Error initialiZing with Units")
         }
     }
+    
+    static func getUnitByName(viewContext: NSManagedObjectContext, name: String) -> Unit? {
+        let request = Unit.fetchRequest() as NSFetchRequest<Unit>
+        request.predicate = NSPredicate(format: "name == %@", name)
+        do {
+            let unit = try viewContext.fetch(request)
+            return unit.first
+        } catch {
+            print("Error fetching unit by name")
+            return nil
+        }
+    }
 }

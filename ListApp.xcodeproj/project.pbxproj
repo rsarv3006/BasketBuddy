@@ -32,6 +32,17 @@
 		7828011227869329002D5239 /* SettingsCategoriesBottomToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7828011127869329002D5239 /* SettingsCategoriesBottomToolbar.swift */; };
 		7828011427869BE8002D5239 /* SettingsCategoriesItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7828011327869BE8002D5239 /* SettingsCategoriesItem.swift */; };
 		7828011627869E2C002D5239 /* SettingsAddCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7828011527869E2C002D5239 /* SettingsAddCategory.swift */; };
+		7836847629DD26890065CDBD /* EncodeDecodeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7836847529DD26890065CDBD /* EncodeDecodeUtils.swift */; };
+		7836847829E071F80065CDBD /* AdMob.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7836847729E071F70065CDBD /* AdMob.plist */; };
+		7836847B29E0766B0065CDBD /* ShareService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7836847A29E0766B0065CDBD /* ShareService.swift */; };
+		7836847D29E076B80065CDBD /* Supabase.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7836847C29E076B80065CDBD /* Supabase.plist */; };
+		7836847F29E076D60065CDBD /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7836847E29E076D60065CDBD /* Networking.swift */; };
+		7836848129E076F60065CDBD /* ServiceErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7836848029E076F60065CDBD /* ServiceErrors.swift */; };
+		7836848329E078FC0065CDBD /* plistHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7836848229E078FC0065CDBD /* plistHelpers.swift */; };
+		7836848529E0B82C0065CDBD /* ShareListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7836848429E0B82C0065CDBD /* ShareListItem.swift */; };
+		7836848729E0BF840065CDBD /* ShareCodeReturnModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7836848629E0BF840065CDBD /* ShareCodeReturnModel.swift */; };
+		7836848929E0C8130065CDBD /* ShareDataReturnModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7836848829E0C8130065CDBD /* ShareDataReturnModel.swift */; };
+		7836848B29E10ED10065CDBD /* ServerErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7836848A29E10ED10065CDBD /* ServerErrorMessage.swift */; };
 		783D527429B5A4EA0031DDCB /* AdmobUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783D527329B5A4EA0031DDCB /* AdmobUtils.swift */; };
 		783D527A29B840B30031DDCB /* EULA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783D527929B840B30031DDCB /* EULA.swift */; };
 		783D527C29B84BCF0031DDCB /* Storekit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783D527B29B84BCF0031DDCB /* Storekit.swift */; };
@@ -55,10 +66,16 @@
 		784CDDC6277E483D0048BDEB /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CDDC0277E483C0048BDEB /* Category+CoreDataClass.swift */; };
 		7866AAA029C4159D005416ED /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 7866AA9F29C4159D005416ED /* .gitignore */; };
 		7866AAA329C63C02005416ED /* UIChangeMoveToBasketButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7866AAA229C63C02005416ED /* UIChangeMoveToBasketButton.swift */; };
+		78CD1BA629E3767E006F71C8 /* ShareListDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CD1BA529E3767E006F71C8 /* ShareListDto.swift */; };
+		78CD1BAB29E3BA6B006F71C8 /* ImportShareListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CD1BAA29E3BA6B006F71C8 /* ImportShareListView.swift */; };
+		78CD1BAD29E4B639006F71C8 /* ShareCodeAllowedValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CD1BAC29E4B639006F71C8 /* ShareCodeAllowedValues.swift */; };
+		78CD1BAF29E65A47006F71C8 /* ItemsToBeAddedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CD1BAE29E65A47006F71C8 /* ItemsToBeAddedView.swift */; };
+		78CD1BB329E65BEF006F71C8 /* ItemToBeAddedRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CD1BB229E65BEF006F71C8 /* ItemToBeAddedRow.swift */; };
+		78CD1BB529E79EA1006F71C8 /* GADInterstitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CD1BB429E79EA1006F71C8 /* GADInterstitialView.swift */; };
 		78D5705829D6892D00B986DB /* ShareListHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D5705729D6892D00B986DB /* ShareListHelpers.swift */; };
 		78D5705A29D6896600B986DB /* ShareListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D5705929D6896600B986DB /* ShareListRow.swift */; };
 		78D5705C29D68A0400B986DB /* AppVersionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D5705B29D68A0400B986DB /* AppVersionView.swift */; };
-		78E892E829D7844700987DF8 /* AdMob.plist in Resources */ = {isa = PBXBuildFile; fileRef = 78E892E729D7844700987DF8 /* AdMob.plist */; };
+		78E892E829D7844700987DF8 /* AdMob1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 78E892E729D7844700987DF8 /* AdMob1.plist */; };
 		78F1EE3229D3E0A300347A00 /* ShareListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F1EE3129D3E0A300347A00 /* ShareListView.swift */; };
 		78F1EE3429D3E19100347A00 /* ContactSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F1EE3329D3E19100347A00 /* ContactSupport.swift */; };
 /* End PBXBuildFile section */
@@ -89,6 +106,17 @@
 		7828011127869329002D5239 /* SettingsCategoriesBottomToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCategoriesBottomToolbar.swift; sourceTree = "<group>"; };
 		7828011327869BE8002D5239 /* SettingsCategoriesItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCategoriesItem.swift; sourceTree = "<group>"; };
 		7828011527869E2C002D5239 /* SettingsAddCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAddCategory.swift; sourceTree = "<group>"; };
+		7836847529DD26890065CDBD /* EncodeDecodeUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodeDecodeUtils.swift; sourceTree = "<group>"; };
+		7836847729E071F70065CDBD /* AdMob.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AdMob.plist; sourceTree = "<group>"; };
+		7836847A29E0766B0065CDBD /* ShareService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareService.swift; sourceTree = "<group>"; };
+		7836847C29E076B80065CDBD /* Supabase.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Supabase.plist; sourceTree = "<group>"; };
+		7836847E29E076D60065CDBD /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		7836848029E076F60065CDBD /* ServiceErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceErrors.swift; sourceTree = "<group>"; };
+		7836848229E078FC0065CDBD /* plistHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = plistHelpers.swift; sourceTree = "<group>"; };
+		7836848429E0B82C0065CDBD /* ShareListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareListItem.swift; sourceTree = "<group>"; };
+		7836848629E0BF840065CDBD /* ShareCodeReturnModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCodeReturnModel.swift; sourceTree = "<group>"; };
+		7836848829E0C8130065CDBD /* ShareDataReturnModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareDataReturnModel.swift; sourceTree = "<group>"; };
+		7836848A29E10ED10065CDBD /* ServerErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerErrorMessage.swift; sourceTree = "<group>"; };
 		783D527329B5A4EA0031DDCB /* AdmobUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobUtils.swift; sourceTree = "<group>"; };
 		783D527929B840B30031DDCB /* EULA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EULA.swift; sourceTree = "<group>"; };
 		783D527B29B84BCF0031DDCB /* Storekit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storekit.swift; sourceTree = "<group>"; };
@@ -113,10 +141,16 @@
 		784CDDC0277E483C0048BDEB /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7866AA9F29C4159D005416ED /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		7866AAA229C63C02005416ED /* UIChangeMoveToBasketButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIChangeMoveToBasketButton.swift; sourceTree = "<group>"; };
+		78CD1BA529E3767E006F71C8 /* ShareListDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareListDto.swift; sourceTree = "<group>"; };
+		78CD1BAA29E3BA6B006F71C8 /* ImportShareListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportShareListView.swift; sourceTree = "<group>"; };
+		78CD1BAC29E4B639006F71C8 /* ShareCodeAllowedValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCodeAllowedValues.swift; sourceTree = "<group>"; };
+		78CD1BAE29E65A47006F71C8 /* ItemsToBeAddedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsToBeAddedView.swift; sourceTree = "<group>"; };
+		78CD1BB229E65BEF006F71C8 /* ItemToBeAddedRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemToBeAddedRow.swift; sourceTree = "<group>"; };
+		78CD1BB429E79EA1006F71C8 /* GADInterstitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GADInterstitialView.swift; sourceTree = "<group>"; };
 		78D5705729D6892D00B986DB /* ShareListHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareListHelpers.swift; sourceTree = "<group>"; };
 		78D5705929D6896600B986DB /* ShareListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareListRow.swift; sourceTree = "<group>"; };
 		78D5705B29D68A0400B986DB /* AppVersionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionView.swift; sourceTree = "<group>"; };
-		78E892E729D7844700987DF8 /* AdMob.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AdMob.plist; sourceTree = "<group>"; };
+		78E892E729D7844700987DF8 /* AdMob1.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AdMob1.plist; sourceTree = "<group>"; };
 		78F1EE3129D3E0A300347A00 /* ShareListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareListView.swift; sourceTree = "<group>"; };
 		78F1EE3329D3E19100347A00 /* ContactSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactSupport.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				781B51B729ADBB8600957E6A /* GADBannerView.swift */,
+				78CD1BB429E79EA1006F71C8 /* GADInterstitialView.swift */,
 			);
 			path = Ads;
 			sourceTree = "<group>";
@@ -183,6 +218,7 @@
 		7828010527865150002D5239 /* SettingsViews */ = {
 			isa = PBXGroup;
 			children = (
+				78CD1BA929E3BA44006F71C8 /* ImportShareList */,
 				78D5705629D6890F00B986DB /* ShareList */,
 				7828011127869329002D5239 /* SettingsCategoriesBottomToolbar.swift */,
 				784CDDAD277D57B70048BDEB /* Settings.swift */,
@@ -208,11 +244,24 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		7836847929E0765C0065CDBD /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				7836847A29E0766B0065CDBD /* ShareService.swift */,
+				7836847E29E076D60065CDBD /* Networking.swift */,
+				7836848029E076F60065CDBD /* ServiceErrors.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		783D527229B5A4CD0031DDCB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				783D527329B5A4EA0031DDCB /* AdmobUtils.swift */,
 				783D527B29B84BCF0031DDCB /* Storekit.swift */,
+				7836847529DD26890065CDBD /* EncodeDecodeUtils.swift */,
+				7836848229E078FC0065CDBD /* plistHelpers.swift */,
+				78CD1BAC29E4B639006F71C8 /* ShareCodeAllowedValues.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -238,7 +287,9 @@
 		784CDD96277D559F0048BDEB /* ListApp */ = {
 			isa = PBXGroup;
 			children = (
-				78E892E729D7844700987DF8 /* AdMob.plist */,
+				7836847929E0765C0065CDBD /* Services */,
+				7836847729E071F70065CDBD /* AdMob.plist */,
+				78E892E729D7844700987DF8 /* AdMob1.plist */,
 				783D527229B5A4CD0031DDCB /* Utils */,
 				781D17F729B30D3000C1F5BF /* LegalInformationStrings */,
 				781B51B529AC618000957E6A /* Info.plist */,
@@ -253,6 +304,7 @@
 				784CDDA2277D55A20048BDEB /* ListApp.xcdatamodeld */,
 				784CDD9D277D55A20048BDEB /* Preview Content */,
 				7844766E29B99BC900917EC8 /* BasketBuddy.storekit */,
+				7836847C29E076B80065CDBD /* Supabase.plist */,
 			);
 			path = ListApp;
 			sourceTree = "<group>";
@@ -308,6 +360,11 @@
 				782800DA278248EC002D5239 /* ListItemSort.swift */,
 				782801032785289B002D5239 /* SelectedStore.swift */,
 				7828010C2786850E002D5239 /* CategoryModel.swift */,
+				7836848429E0B82C0065CDBD /* ShareListItem.swift */,
+				7836848629E0BF840065CDBD /* ShareCodeReturnModel.swift */,
+				7836848829E0C8130065CDBD /* ShareDataReturnModel.swift */,
+				7836848A29E10ED10065CDBD /* ServerErrorMessage.swift */,
+				78CD1BA529E3767E006F71C8 /* ShareListDto.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -335,6 +392,16 @@
 				7866AAA229C63C02005416ED /* UIChangeMoveToBasketButton.swift */,
 			);
 			path = FirstTimeModals;
+			sourceTree = "<group>";
+		};
+		78CD1BA929E3BA44006F71C8 /* ImportShareList */ = {
+			isa = PBXGroup;
+			children = (
+				78CD1BAA29E3BA6B006F71C8 /* ImportShareListView.swift */,
+				78CD1BAE29E65A47006F71C8 /* ItemsToBeAddedView.swift */,
+				78CD1BB229E65BEF006F71C8 /* ItemToBeAddedRow.swift */,
+			);
+			path = ImportShareList;
 			sourceTree = "<group>";
 		};
 		78D5705629D6890F00B986DB /* ShareList */ = {
@@ -411,9 +478,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7836847D29E076B80065CDBD /* Supabase.plist in Resources */,
 				784CDD9F277D55A20048BDEB /* Preview Assets.xcassets in Resources */,
-				78E892E829D7844700987DF8 /* AdMob.plist in Resources */,
+				78E892E829D7844700987DF8 /* AdMob1.plist in Resources */,
 				784CDD9C277D55A20048BDEB /* Assets.xcassets in Resources */,
+				7836847829E071F80065CDBD /* AdMob.plist in Resources */,
 				7866AAA029C4159D005416ED /* .gitignore in Resources */,
 				7844766F29B99BC900917EC8 /* BasketBuddy.storekit in Resources */,
 			);
@@ -427,6 +496,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				784CDDBB277D82310048BDEB /* UnitsStarter.swift in Sources */,
+				78CD1BAD29E4B639006F71C8 /* ShareCodeAllowedValues.swift in Sources */,
 				7801C839278AAD4400831859 /* SettingsBasketHistoryClearButton.swift in Sources */,
 				78D5705C29D68A0400B986DB /* AppVersionView.swift in Sources */,
 				784CDDAE277D57B70048BDEB /* Settings.swift in Sources */,
@@ -434,38 +504,52 @@
 				784CDDC2277E483D0048BDEB /* ListItem+CoreDataClass.swift in Sources */,
 				7801C837278AA0BE00831859 /* DateExtension.swift in Sources */,
 				78F1EE3429D3E19100347A00 /* ContactSupport.swift in Sources */,
+				7836848929E0C8130065CDBD /* ShareDataReturnModel.swift in Sources */,
+				7836848529E0B82C0065CDBD /* ShareListItem.swift in Sources */,
 				784CDDC4277E483D0048BDEB /* Unit+CoreDataClass.swift in Sources */,
 				7828010B278651A0002D5239 /* SettingsEditStaplesView.swift in Sources */,
+				7836848129E076F60065CDBD /* ServiceErrors.swift in Sources */,
 				7866AAA329C63C02005416ED /* UIChangeMoveToBasketButton.swift in Sources */,
 				784CDDB0277D59B60048BDEB /* ListComponent.swift in Sources */,
 				784CDDAC277D56BF0048BDEB /* Main.swift in Sources */,
+				78CD1BAF29E65A47006F71C8 /* ItemsToBeAddedView.swift in Sources */,
 				783D527A29B840B30031DDCB /* EULA.swift in Sources */,
+				78CD1BAB29E3BA6B006F71C8 /* ImportShareListView.swift in Sources */,
 				784CDDA1277D55A20048BDEB /* Persistence.swift in Sources */,
 				781B51B829ADBB8600957E6A /* GADBannerView.swift in Sources */,
 				782801042785289B002D5239 /* SelectedStore.swift in Sources */,
 				78280101278402AA002D5239 /* Category+CoreDataProperties.swift in Sources */,
 				7828011227869329002D5239 /* SettingsCategoriesBottomToolbar.swift in Sources */,
+				7836847B29E0766B0065CDBD /* ShareService.swift in Sources */,
 				781D17FB29B30E7900C1F5BF /* TermsAndConditions.swift in Sources */,
+				78CD1BB529E79EA1006F71C8 /* GADInterstitialView.swift in Sources */,
+				7836847F29E076D60065CDBD /* Networking.swift in Sources */,
 				780F306029D3E776002C7BA9 /* SettingsViewShareButtons.swift in Sources */,
 				782801092786517F002D5239 /* SettingsBasketHistoryView.swift in Sources */,
 				7828010727865170002D5239 /* SettingsCategoriesView.swift in Sources */,
 				783D527429B5A4EA0031DDCB /* AdmobUtils.swift in Sources */,
 				7828010D2786850E002D5239 /* CategoryModel.swift in Sources */,
 				78280100278402AA002D5239 /* ListItem+CoreDataProperties.swift in Sources */,
+				7836848729E0BF840065CDBD /* ShareCodeReturnModel.swift in Sources */,
 				784CDDB3277D5CFB0048BDEB /* AddItems.swift in Sources */,
+				7836848B29E10ED10065CDBD /* ServerErrorMessage.swift in Sources */,
 				78280110278687B8002D5239 /* BottomCenterButton.swift in Sources */,
 				783D527C29B84BCF0031DDCB /* Storekit.swift in Sources */,
+				78CD1BB329E65BEF006F71C8 /* ItemToBeAddedRow.swift in Sources */,
 				78D5705A29D6896600B986DB /* ShareListRow.swift in Sources */,
 				781D17F629B30B2400C1F5BF /* SettingsLegalView.swift in Sources */,
 				782800DD2782AB8B002D5239 /* ListComponentItem.swift in Sources */,
+				78CD1BA629E3767E006F71C8 /* ShareListDto.swift in Sources */,
 				78F1EE3229D3E0A300347A00 /* ShareListView.swift in Sources */,
 				784CDDC6277E483D0048BDEB /* Category+CoreDataClass.swift in Sources */,
 				784CDDB6277D5F5B0048BDEB /* UIColorExtension.swift in Sources */,
 				784CDDA4277D55A20048BDEB /* ListApp.xcdatamodeld in Sources */,
 				783D528029B93BA00031DDCB /* SettingsInAppPurchases.swift in Sources */,
+				7836847629DD26890065CDBD /* EncodeDecodeUtils.swift in Sources */,
 				784CDDB9277D7FF00048BDEB /* CategoriesStarter.swift in Sources */,
 				781B51AF29AB1E7F00957E6A /* TextFieldExtension.swift in Sources */,
 				7828011427869BE8002D5239 /* SettingsCategoriesItem.swift in Sources */,
+				7836848329E078FC0065CDBD /* plistHelpers.swift in Sources */,
 				784CDD9A277D559F0048BDEB /* ContentView.swift in Sources */,
 				781D17F929B30D4200C1F5BF /* PrivacyPolicy.swift in Sources */,
 				78280102278402AA002D5239 /* Unit+CoreDataProperties.swift in Sources */,
@@ -619,7 +703,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.5.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = rjs.app.dev.basketbuddy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -653,7 +737,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.5.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = rjs.app.dev.basketbuddy;
 				PRODUCT_NAME = "$(TARGET_NAME)";

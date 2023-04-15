@@ -11,6 +11,19 @@ import CoreData
 
 @objc(ListItem)
 public class ListItem: NSManagedObject {
+    @nonobjc public class func addItemsFromShareList(viewContext: NSManagedObjectContext, items: Set<ShareListItem>) throws {
+        try items.forEach { itemToAdd in
+            let unit = Unit.getUnitByName(viewContext: viewContext, name: itemToAdd.unitName)
+            let category = CategoryModel.getCategoryByName(viewContext: viewContext, name: itemToAdd.categoryName)
+            
+            guard let unit = unit, let category = category else {
+                throw ServiceErrors.custom(message: "Unable to find a matching unit and/or Category")
+            }
+            
+            self.addItem(itemName: itemToAdd.itemName, itemCount: itemToAdd.itemCount, unit: unit, category: category, isStaple: false, viewContext: viewContext)
+        }
+    }
+    
     @nonobjc public class func addItem(
         itemName: String,
         itemCount: String,

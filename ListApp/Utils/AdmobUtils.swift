@@ -9,7 +9,7 @@ import Foundation
 
 struct AdmobAdUnitIds: Decodable {
     enum CodingKeys: String, CodingKey {
-        case Banner_Home_Screen, Banner_Add_Item, Banner_Settings, Banner_Categories, Banner_Basket_History, Banner_Edit_Pantry
+        case Banner_Home_Screen, Banner_Add_Item, Banner_Settings, Banner_Categories, Banner_Basket_History, Banner_Edit_Pantry, Interstitial_Share_Create
     }
     
     let Banner_Home_Screen: String
@@ -18,6 +18,7 @@ struct AdmobAdUnitIds: Decodable {
     let Banner_Categories: String
     let Banner_Basket_History: String
     let Banner_Edit_Pantry: String
+    let Interstitial_Share_Create: String
 }
 
 private func getAdmobAdUnitIdFromPlist() -> AdmobAdUnitIds? {
@@ -44,6 +45,8 @@ func getAdmobUnitId(variant: AdmobAdUnitIds.CodingKeys) -> String {
             return admobUnitIds.Banner_Basket_History
         case .Banner_Edit_Pantry:
             return admobUnitIds.Banner_Edit_Pantry
+        case .Interstitial_Share_Create:
+            return admobUnitIds.Interstitial_Share_Create
         }
     }
     return ""

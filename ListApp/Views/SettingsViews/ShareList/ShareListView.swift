@@ -9,6 +9,8 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 struct ShareListView: View {
+    @EnvironmentObject var store: Store
+    
     @SectionedFetchRequest(
         sectionIdentifier: ListItemSort.default.section,
         sortDescriptors: ListItemSort.default.descriptors,
@@ -19,6 +21,16 @@ struct ShareListView: View {
     
     @State private var selectedItems: Set<ListItem> = []
     @State private var shouldPresentCopiedToClipboardAlert = false
+    @State private var shouldPresentShareCodeAlert = false
+    @State private var shareCode: String? = nil
+    @State private var didShareCodeAttemptError = false
+    @State private var shareCodeError: String? = nil
+    
+    private var interstitial: Interstitial
+    
+    init() {
+        self.interstitial = Interstitial()
+    }
     
     var body: some View {
         VStack {
@@ -41,12 +53,11 @@ struct ShareListView: View {
                     .cornerRadius(12)
             }
             
-            
-            List {
-                ForEach(listItems) { section in
-                    Section(header: Text(section.id).foregroundColor(Color.Theme.seaGreen)) {
-                        ForEach(section) { item in
-                            if let item = item {
+            ZStack {
+                List {
+                    ForEach(listItems) { section in
+                        Section(header: Text(section.id).foregroundColor(Color.Theme.seaGreen)) {
+                            ForEach(section) { item in
                                 ShareListRow(item: item, isSelected: self.selectedItems.contains(item)) {
                                     if self.selectedItems.contains(item) {
                                         self.selectedItems.remove(item)
@@ -60,30 +71,71 @@ struct ShareListView: View {
                         }
                     }
                 }
+                .background(Color.Theme.linen)
+                .scrollContentBackground(.hidden)
+                .frame(maxWidth: .infinity)
+                
+                if listItems.isEmpty {
+                    Spacer().background(Color.Theme.linen)
+                }
             }
-            .background(Color.Theme.linen)
-            .scrollContentBackground(.hidden)
-            .frame(maxWidth: .infinity)
             
-            if listItems.isEmpty {
-                Spacer().background(Color.Theme.linen)
-            }
-            
-            Button {
-                UIPasteboard.general.setValue(buildItemsDisplayString(selectedItems), forPasteboardType: UTType.plainText.identifier)
-                shouldPresentCopiedToClipboardAlert = true
-            } label: {
-                Text("Copy Selections to Clipboard")
-                    .padding(.horizontal)
-                    .padding(.vertical, 8)
-                    .foregroundColor(Color.Theme.linen)
-                    .background(Color.Theme.seaGreen)
-                    .cornerRadius(12)
-            }
-            .alert("Copied to Clipboard", isPresented: $shouldPresentCopiedToClipboardAlert) {
-                Button("OK", role: .cancel) {}
+            HStack {
+                Button {
+                    UIPasteboard.general.setValue(buildItemsDisplayString(selectedItems), forPasteboardType: UTType.plainText.identifier)
+                    shouldPresentCopiedToClipboardAlert = true
+                } label: {
+                    Text("Copy to Clipboard")
+                        .padding(.horizontal)
+                        .padding(.vertical, 8)
+                        .foregroundColor(Color.Theme.linen)
+                        .background(Color.Theme.seaGreen)
+                        .cornerRadius(12)
+                }
+                .alert("Copied to Clipboard", isPresented: $shouldPresentCopiedToClipboardAlert) {
+                    Button("OK", role: .cancel) {}
+                }
+                
+                Button {
+                    Task {
+                        do {
+                            let itemsToShare = ShareService.convertListItemsToShareListDto(listItems: selectedItems)
+                            shareCode = try await ShareService.createShare(items: itemsToShare)
+                            
+                            shouldPresentShareCodeAlert = true
+                        } catch {
+                            shareCodeError = error.localizedDescription
+                            didShareCodeAttemptError = true
+                        }
+                    }
+                } label: {
+                    Text("Share by Code")
+                        .padding(.horizontal)
+                        .padding(.vertical, 8)
+                        .foregroundColor(Color.Theme.linen)
+                        .background(Color.Theme.seaGreen)
+                        .cornerRadius(12)
+                }
+                .alert("Your code is \(shareCode ?? "")", isPresented: $shouldPresentShareCodeAlert) {
+                    Button("OK") {
+                        openIntersitialAd()
+                    }
+                    Button("Copy to Clipboard", role: .cancel) {
+                        UIPasteboard.general.setValue("Someone has shared a BasketBudy list with you! Use the code \(shareCode ?? "") to access the list.", forPasteboardType: UTType.plainText.identifier)
+                        openIntersitialAd()
+                    }
+                }
+                .alert("Error encountered trying to share your list. Error: \(shareCodeError ?? "")", isPresented: $didShareCodeAttemptError) {
+                    Button("OK", role: .cancel) {}
+                }
             }
         }
         .background(Color.Theme.linen)
+    }
+    
+    private func openIntersitialAd() {
+        if !store.hasPurchasedAdsProduct {
+            interstitial.showAd()
+        }
     }
 }
