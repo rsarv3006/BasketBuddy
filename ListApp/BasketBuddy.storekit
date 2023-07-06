@@ -18,13 +18,28 @@
       "productID" : "removeAds",
       "referenceName" : "removeAds",
       "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "6450941139",
+      "localizations" : [
+        {
+          "description" : "Support this app!",
+          "displayName" : "Small Tip",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "smallTip",
+      "referenceName" : "Small Tip",
+      "type" : "Consumable"
     }
   ],
   "settings" : {
     "_applicationInternalID" : "6446040498",
     "_askToBuyEnabled" : false,
     "_developerTeamID" : "4QGR522B9M",
-    "_lastSynchronizedDate" : 700029901.05925
+    "_lastSynchronizedDate" : 710223961.79301703
   },
   "subscriptionGroups" : [
 

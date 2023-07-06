@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import GoogleMobileAds
 
 struct SettingsEditStaplesView: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -21,10 +20,6 @@ struct SettingsEditStaplesView: View {
     
     var body: some View {
         VStack {
-            if !store.hasPurchasedAdsProduct {
-                GADSettingsEditPantryBannerViewController()
-                    .frame(width: GADAdSizeBanner.size.width, height: GADAdSizeBanner.size.height)
-            }
             ZStack {
                 List {
                     ForEach(stapleItems) { section in

@@ -24,7 +24,6 @@ struct SettingsInAppPurchases: View {
     
     var body: some View {
         VStack {
-            if !store.hasPurchasedAdsProduct {
                 Button {
                     Task {
                         isLoading = true
@@ -33,7 +32,7 @@ struct SettingsInAppPurchases: View {
                     }
                 } label: {
                     if !isLoading {
-                        Text("Remove Ads - $1.99")
+                        Text("Support this app with a small tip! - $0.99")
                             .foregroundColor(Color.Theme.seaGreen)
                     } else {
                         ProgressView()
@@ -42,7 +41,6 @@ struct SettingsInAppPurchases: View {
                 }
                 .buttonStyle(.bordered)
                 .disabled(isLoading)
-            }
             
             Button("Restore Purchases", action: {
                 Task {

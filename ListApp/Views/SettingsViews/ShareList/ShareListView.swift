@@ -26,12 +26,6 @@ struct ShareListView: View {
     @State private var didShareCodeAttemptError = false
     @State private var shareCodeError: String? = nil
     
-    private var interstitial: Interstitial
-    
-    init() {
-        self.interstitial = Interstitial()
-    }
-    
     var body: some View {
         VStack {
             Button(action: {
@@ -118,11 +112,9 @@ struct ShareListView: View {
                 }
                 .alert("Your code is \(shareCode ?? "")", isPresented: $shouldPresentShareCodeAlert) {
                     Button("OK") {
-                        openIntersitialAd()
                     }
                     Button("Copy to Clipboard", role: .cancel) {
                         UIPasteboard.general.setValue("Someone has shared a BasketBudy list with you! Use the code \(shareCode ?? "") to access the list.", forPasteboardType: UTType.plainText.identifier)
-                        openIntersitialAd()
                     }
                 }
                 .alert("Error encountered trying to share your list. Error: \(shareCodeError ?? "")", isPresented: $didShareCodeAttemptError) {
@@ -131,11 +123,5 @@ struct ShareListView: View {
             }
         }
         .background(Color.Theme.linen)
-    }
-    
-    private func openIntersitialAd() {
-        if !store.hasPurchasedAdsProduct {
-            interstitial.showAd()
-        }
     }
 }

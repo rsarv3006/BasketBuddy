@@ -18,18 +18,6 @@ Our mobile app does not collect any private user data. We do not access your con
 We only collect and store data locally on your device when you use our app. This includes any data that you input or create while using our app. We do not collect or store any data outside of your device.
 ​
 
-Google Ads
-​
-We use Google Ads in our app to display relevant ads to you. Google Ads may collect certain information about you when you use our app, such as your device type, location (general location, such as city or country), and interests. This information is used to display ads that are relevant to your interests.
-​
-We do not have access to any of the information that Google Ads collects about you.
-​
-
-Data Sharing
-​
-We do not share any data with third parties, except for the information that is collected by Google Ads, as described above.
-​
-
 Data Security
 
 We take data security seriously and take reasonable measures to protect the data that is stored locally on your device. However, no method of transmission or storage is completely secure, and we cannot guarantee the absolute security of your data.

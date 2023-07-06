@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import GoogleMobileAds
 import StoreKit
 
 struct Settings: View {
@@ -56,12 +55,8 @@ struct Settings: View {
                        : "Issue encountered loading staples, please try again.", isPresented: $isStapleAlertVisible) {
                     Button("OK", role: .cancel) {}
                 }
-                                
-                if let product = store.removeAdsProduct {
-                    SettingsInAppPurchases(product: product)
-                        .padding(.vertical)
-                }
-                                
+                .padding(.bottom)
+                
                 SettingsViewShareButtons()
                 
                 ContactSupport()
@@ -72,6 +67,11 @@ struct Settings: View {
                     })
                     .buttonStyle(.bordered)
                 }
+                
+                if let product = store.smallTipInAppPurchase {
+                    SettingsInAppPurchases(product: product)
+                        .padding(.top)
+                }
 
                 AppVersionView()
 
@@ -79,11 +79,6 @@ struct Settings: View {
                     Spacer()
                 }
                 
-            }
-            if !store.hasPurchasedAdsProduct {
-                Spacer()
-                GADSettingsLargeRectangleBannerViewController()
-                    .frame(width: GADAdSizeMediumRectangle.size.width, height: GADAdSizeMediumRectangle.size.height, alignment: .center)
             }
         }
         .frame(

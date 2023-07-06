@@ -7,13 +7,12 @@
 
 import SwiftUI
 import CoreData
-import GoogleMobileAds
 
 struct SettingsAddCategory: View {
     @EnvironmentObject var store: Store
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.managedObjectContext) private var viewContext
-
+    
     @State var categoryName = ""
     @State var nameError: Bool = false
     @State private var didErrorCreatingCategory = false
@@ -44,7 +43,7 @@ struct SettingsAddCategory: View {
                             _ = try CategoryModel.add(viewContext: viewContext, name: categoryName)
                             presentationMode.wrappedValue.dismiss()
                         } catch {
-                         didErrorCreatingCategory = true
+                            didErrorCreatingCategory = true
                         }
                     }
                 } label: {
@@ -61,12 +60,6 @@ struct SettingsAddCategory: View {
                     Text("Cancel")
                 }
                 .buttonStyle(.bordered)
-
-                if !store.hasPurchasedAdsProduct {
-                    Spacer()
-                    GADAddItemsLargeRectangleBannerViewController()
-                        .frame(width: GADAdSizeMediumRectangle.size.width, height: GADAdSizeMediumRectangle.size.height, alignment: .center)
-                }
             }
             .frame(width: reader.size.width, alignment: .center)
         }

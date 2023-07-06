@@ -7,7 +7,6 @@
 
 import SwiftUI
 import CoreData
-import GoogleMobileAds
 
 // TODO Fix issue where the section headers don't get removed unless you navigate home and come back
 
@@ -55,10 +54,6 @@ struct SettingsBasketHistoryView: View {
 
     var body: some View {
         VStack {
-            if !store.hasPurchasedAdsProduct {
-                GADSettingsBasketHistoryBannerViewController()
-                    .frame(width: GADAdSizeBanner.size.width, height: GADAdSizeBanner.size.height)
-            }
             ZStack {
                 List {
                     ForEach(dateArray, id: \.self) { date in

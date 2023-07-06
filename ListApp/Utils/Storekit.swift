@@ -8,7 +8,7 @@
 import Foundation
 import StoreKit
 
-let RemoveAdsId = "removeAds"
+let SmallTipId = "smallTip"
 
 public enum StoreError: Error {
     case failedVerification
@@ -17,8 +17,9 @@ public enum StoreError: Error {
 class Store: ObservableObject {
     var updateListenerTask: Task<Void, Error>? = nil
     
-    @Published var removeAdsProduct: Product? = nil
-    @Published var hasPurchasedAdsProduct: Bool = false
+    @Published var smallTipInAppPurchase: Product? = nil
+    @Published var hasPurchasedSmallTip: Bool = false
+    
     
     init() {
         updateListenerTask = listenForTransactions()
@@ -34,12 +35,12 @@ class Store: ObservableObject {
     @MainActor
     func requestProducts() async {
         do {
-            let storeProducts = try await Product.products(for: [RemoveAdsId])
+            let storeProducts = try await Product.products(for: [SmallTipId])
             if storeProducts.count > 0 {
                 let foundProduct = storeProducts[0]
                 
-                if foundProduct.type == .nonConsumable, foundProduct.id == RemoveAdsId {
-                    removeAdsProduct = foundProduct
+                if foundProduct.type == .consumable, foundProduct.id == SmallTipId {
+                    smallTipInAppPurchase = foundProduct
                 }
             }
         } catch {
@@ -62,8 +63,8 @@ class Store: ObservableObject {
             do {
                 let transaction = try checkVerified(result)
                 
-                if transaction.productType == .nonConsumable, transaction.productID == RemoveAdsId {
-                    hasPurchasedAdsProduct = true
+                if transaction.productType == .nonConsumable, transaction.productID == SmallTipId {
+                    hasPurchasedSmallTip = true
                 }
             } catch {
                 print("Failed to verify transactions")

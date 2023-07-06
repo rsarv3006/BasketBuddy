@@ -7,11 +7,9 @@
 
 import SwiftUI
 import CoreData
-import GoogleMobileAds
 
 struct AddItems: View {
     @Environment(\.presentationMode) var presentationMode
-    @EnvironmentObject var store: Store
     
     @State var itemName: String = ""
     @State var itemCount: String = ""
@@ -66,7 +64,10 @@ struct AddItems: View {
                 self._isStaple = State(initialValue: selectedItem.isStaple)
             } else {
                 self._selectedCategory = State(initialValue: tempCategories.first!)
-                self._selectedUnit = State(initialValue: tempUnits.first!)
+                let tempUnit = tempUnits.first { unitToCheck in
+                    return unitToCheck.name == "Item(s)"
+                }
+                self._selectedUnit = State(initialValue: tempUnit ?? tempUnits.first!)
             }
         } catch {
             fatalError("Init Problem")
@@ -76,11 +77,6 @@ struct AddItems: View {
     var body: some View {
         GeometryReader { reader in
             ScrollView(showsIndicators: false) {
-                if !store.hasPurchasedAdsProduct {
-                        GADAddItemsBannerViewController()
-                            .frame(width: GADAdSizeBanner.size.width, height: GADAdSizeBanner.size.height)
-                }
-                
                 Text("Add Item")
                     .padding(.top)
                     .foregroundColor(Color.Theme.seaGreen)
@@ -113,7 +109,7 @@ struct AddItems: View {
                     VStack {
                         TextField("#", text: $itemCount)
                             .foregroundColor(Color.Theme.seaGreen)
-                            .keyboardType(.numberPad)
+                            .keyboardType(.decimalPad)
                             .textFieldStyle(TextFieldDefaultBackgroundSeagreenBorder())
                         if itemCountError {
                             Text("Item Count is required")

@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import GoogleMobileAds
 
 struct Main: View {
     @Environment(\.presentationMode) var presentation
@@ -24,14 +23,10 @@ struct Main: View {
         animation: .default
     )
     private var listItems: SectionedFetchResults<String, ListItem>
-
+    
     var body: some View {
         NavigationView {
             VStack {
-                if !store.hasPurchasedAdsProduct {
-                    GADHomeScreenBannerViewController()
-                        .frame(width: GADAdSizeBanner.size.width, height: GADAdSizeBanner.size.height)
-                }
                 ZStack {
                     ListComponent(listItems: listItems)
                         .toolbar {
