@@ -62,6 +62,32 @@
 		784CDDC6277E483D0048BDEB /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CDDC0277E483C0048BDEB /* Category+CoreDataClass.swift */; };
 		7866AAA029C4159D005416ED /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 7866AA9F29C4159D005416ED /* .gitignore */; };
 		7866AAA329C63C02005416ED /* UIChangeMoveToBasketButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7866AAA229C63C02005416ED /* UIChangeMoveToBasketButton.swift */; };
+		7896CFF82AFBBC1900B40370 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7896CFF72AFBBC1900B40370 /* WidgetKit.framework */; };
+		7896CFFA2AFBBC1900B40370 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7896CFF92AFBBC1900B40370 /* SwiftUI.framework */; };
+		7896CFFD2AFBBC1900B40370 /* BasketBuddyWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7896CFFC2AFBBC1900B40370 /* BasketBuddyWidgetBundle.swift */; };
+		7896CFFF2AFBBC1900B40370 /* BasketBuddyWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7896CFFE2AFBBC1900B40370 /* BasketBuddyWidgetLiveActivity.swift */; };
+		7896D0012AFBBC1A00B40370 /* BasketBuddyWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7896D0002AFBBC1A00B40370 /* BasketBuddyWidget.swift */; };
+		7896D0032AFBBC1A00B40370 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7896D0022AFBBC1A00B40370 /* Assets.xcassets */; };
+		7896D0072AFBBC1A00B40370 /* BasketBuddyWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 7896CFF62AFBBC1900B40370 /* BasketBuddyWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7896D00C2AFBBC3900B40370 /* ListItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CDDBC277E483C0048BDEB /* ListItem+CoreDataClass.swift */; };
+		7896D00D2AFBBC8900B40370 /* ShareListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7836848429E0B82C0065CDBD /* ShareListItem.swift */; };
+		7896D00E2AFBBC9B00B40370 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7828010C2786850E002D5239 /* CategoryModel.swift */; };
+		7896D00F2AFBC9FE00B40370 /* ServiceErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7836848029E076F60065CDBD /* ServiceErrors.swift */; };
+		7896D0102AFBCA1800B40370 /* Unit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CDDBE277E483C0048BDEB /* Unit+CoreDataClass.swift */; };
+		7896D0112AFBCA2A00B40370 /* UnitsStarter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CDDBA277D82310048BDEB /* UnitsStarter.swift */; };
+		7896D0122AFBCA4200B40370 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CDDC0277E483C0048BDEB /* Category+CoreDataClass.swift */; };
+		7896D0132AFBCA7B00B40370 /* Unit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782800FF278402AA002D5239 /* Unit+CoreDataProperties.swift */; };
+		7896D0142AFBCA7E00B40370 /* ListItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782800FD278402AA002D5239 /* ListItem+CoreDataProperties.swift */; };
+		7896D0152AFBCA8200B40370 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782800FE278402AA002D5239 /* Category+CoreDataProperties.swift */; };
+		7896D0162AFBCA8A00B40370 /* CategoriesStarter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CDDB8277D7FF00048BDEB /* CategoriesStarter.swift */; };
+		7896D0172AFBCA9200B40370 /* ListItemSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782800DA278248EC002D5239 /* ListItemSort.swift */; };
+		7896D0192AFC380D00B40370 /* SimplifiedListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7896D0182AFC380D00B40370 /* SimplifiedListItem.swift */; };
+		7896D01A2AFC38C800B40370 /* SimplifiedListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7896D0182AFC380D00B40370 /* SimplifiedListItem.swift */; };
+		78BEB1582AFCA16500F5CB3A /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CDDB5277D5F5B0048BDEB /* UIColorExtension.swift */; };
+		78BEB15D2AFD348000F5CB3A /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BEB15C2AFD348000F5CB3A /* AppGroup.swift */; };
+		78BEB15E2AFD541400F5CB3A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CDDA0277D55A20048BDEB /* Persistence.swift */; };
+		78BEB15F2AFD546A00F5CB3A /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BEB15C2AFD348000F5CB3A /* AppGroup.swift */; };
+		78BEB1602AFD56D100F5CB3A /* ListApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 784CDDA2277D55A20048BDEB /* ListApp.xcdatamodeld */; };
 		78CD1BA629E3767E006F71C8 /* ShareListDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CD1BA529E3767E006F71C8 /* ShareListDto.swift */; };
 		78CD1BAB29E3BA6B006F71C8 /* ImportShareListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CD1BAA29E3BA6B006F71C8 /* ImportShareListView.swift */; };
 		78CD1BAD29E4B639006F71C8 /* ShareCodeAllowedValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CD1BAC29E4B639006F71C8 /* ShareCodeAllowedValues.swift */; };
@@ -73,6 +99,30 @@
 		78F1EE3229D3E0A300347A00 /* ShareListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F1EE3129D3E0A300347A00 /* ShareListView.swift */; };
 		78F1EE3429D3E19100347A00 /* ContactSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F1EE3329D3E19100347A00 /* ContactSupport.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7896D0052AFBBC1A00B40370 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 784CDD8C277D559F0048BDEB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7896CFF52AFBBC1900B40370;
+			remoteInfo = BasketBuddyWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7896D0082AFBBC1A00B40370 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				7896D0072AFBBC1A00B40370 /* BasketBuddyWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7801C836278AA0BE00831859 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
@@ -132,6 +182,18 @@
 		784CDDC0277E483C0048BDEB /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7866AA9F29C4159D005416ED /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		7866AAA229C63C02005416ED /* UIChangeMoveToBasketButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIChangeMoveToBasketButton.swift; sourceTree = "<group>"; };
+		7896CFF62AFBBC1900B40370 /* BasketBuddyWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BasketBuddyWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		7896CFF72AFBBC1900B40370 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		7896CFF92AFBBC1900B40370 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		7896CFFC2AFBBC1900B40370 /* BasketBuddyWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketBuddyWidgetBundle.swift; sourceTree = "<group>"; };
+		7896CFFE2AFBBC1900B40370 /* BasketBuddyWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketBuddyWidgetLiveActivity.swift; sourceTree = "<group>"; };
+		7896D0002AFBBC1A00B40370 /* BasketBuddyWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketBuddyWidget.swift; sourceTree = "<group>"; };
+		7896D0022AFBBC1A00B40370 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7896D0042AFBBC1A00B40370 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7896D0182AFC380D00B40370 /* SimplifiedListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplifiedListItem.swift; sourceTree = "<group>"; };
+		78BEB15A2AFD33BC00F5CB3A /* BasketBuddy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BasketBuddy.entitlements; sourceTree = "<group>"; };
+		78BEB15B2AFD340400F5CB3A /* BasketBuddyWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BasketBuddyWidgetExtension.entitlements; sourceTree = "<group>"; };
+		78BEB15C2AFD348000F5CB3A /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
 		78CD1BA529E3767E006F71C8 /* ShareListDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareListDto.swift; sourceTree = "<group>"; };
 		78CD1BAA29E3BA6B006F71C8 /* ImportShareListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportShareListView.swift; sourceTree = "<group>"; };
 		78CD1BAC29E4B639006F71C8 /* ShareCodeAllowedValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCodeAllowedValues.swift; sourceTree = "<group>"; };
@@ -153,6 +215,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7896CFF32AFBBC1900B40370 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7896CFFA2AFBBC1900B40370 /* SwiftUI.framework in Frameworks */,
+				7896CFF82AFBBC1900B40370 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -160,6 +231,8 @@
 			isa = PBXGroup;
 			children = (
 				781D17F329B3010000C1F5BF /* StoreKit.framework */,
+				7896CFF72AFBBC1900B40370 /* WidgetKit.framework */,
+				7896CFF92AFBBC1900B40370 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -247,8 +320,11 @@
 		784CDD8B277D559F0048BDEB = {
 			isa = PBXGroup;
 			children = (
+				78BEB15B2AFD340400F5CB3A /* BasketBuddyWidgetExtension.entitlements */,
+				78BEB15A2AFD33BC00F5CB3A /* BasketBuddy.entitlements */,
 				7866AA9F29C4159D005416ED /* .gitignore */,
 				784CDD96277D559F0048BDEB /* ListApp */,
+				7896CFFB2AFBBC1900B40370 /* BasketBuddyWidget */,
 				784CDD95277D559F0048BDEB /* Products */,
 				781D17F229B3010000C1F5BF /* Frameworks */,
 			);
@@ -258,6 +334,7 @@
 			isa = PBXGroup;
 			children = (
 				784CDD94277D559F0048BDEB /* BasketBuddy.app */,
+				7896CFF62AFBBC1900B40370 /* BasketBuddyWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -357,6 +434,7 @@
 			isa = PBXGroup;
 			children = (
 				784CDD97277D559F0048BDEB /* BasketBuddyApp.swift */,
+				78BEB15C2AFD348000F5CB3A /* AppGroup.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -367,6 +445,19 @@
 				7866AAA229C63C02005416ED /* UIChangeMoveToBasketButton.swift */,
 			);
 			path = FirstTimeModals;
+			sourceTree = "<group>";
+		};
+		7896CFFB2AFBBC1900B40370 /* BasketBuddyWidget */ = {
+			isa = PBXGroup;
+			children = (
+				7896CFFC2AFBBC1900B40370 /* BasketBuddyWidgetBundle.swift */,
+				7896CFFE2AFBBC1900B40370 /* BasketBuddyWidgetLiveActivity.swift */,
+				7896D0002AFBBC1A00B40370 /* BasketBuddyWidget.swift */,
+				7896D0022AFBBC1A00B40370 /* Assets.xcassets */,
+				7896D0042AFBBC1A00B40370 /* Info.plist */,
+				7896D0182AFC380D00B40370 /* SimplifiedListItem.swift */,
+			);
+			path = BasketBuddyWidget;
 			sourceTree = "<group>";
 		};
 		78CD1BA929E3BA44006F71C8 /* ImportShareList */ = {
@@ -399,10 +490,12 @@
 				784CDD90277D559F0048BDEB /* Sources */,
 				784CDD91277D559F0048BDEB /* Frameworks */,
 				784CDD92277D559F0048BDEB /* Resources */,
+				7896D0082AFBBC1A00B40370 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				7896D0062AFBBC1A00B40370 /* PBXTargetDependency */,
 			);
 			name = BasketBuddy;
 			packageProductDependencies = (
@@ -411,6 +504,23 @@
 			productReference = 784CDD94277D559F0048BDEB /* BasketBuddy.app */;
 			productType = "com.apple.product-type.application";
 		};
+		7896CFF52AFBBC1900B40370 /* BasketBuddyWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7896D00B2AFBBC1A00B40370 /* Build configuration list for PBXNativeTarget "BasketBuddyWidgetExtension" */;
+			buildPhases = (
+				7896CFF22AFBBC1900B40370 /* Sources */,
+				7896CFF32AFBBC1900B40370 /* Frameworks */,
+				7896CFF42AFBBC1900B40370 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BasketBuddyWidgetExtension;
+			productName = BasketBuddyWidgetExtension;
+			productReference = 7896CFF62AFBBC1900B40370 /* BasketBuddyWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -418,11 +528,14 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1320;
+				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
 					784CDD93277D559F0048BDEB = {
 						CreatedOnToolsVersion = 13.2.1;
+					};
+					7896CFF52AFBBC1900B40370 = {
+						CreatedOnToolsVersion = 15.0.1;
 					};
 				};
 			};
@@ -442,6 +555,7 @@
 			projectRoot = "";
 			targets = (
 				784CDD93277D559F0048BDEB /* BasketBuddy */,
+				7896CFF52AFBBC1900B40370 /* BasketBuddyWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -456,6 +570,14 @@
 				784CDD9C277D55A20048BDEB /* Assets.xcassets in Resources */,
 				7866AAA029C4159D005416ED /* .gitignore in Resources */,
 				7844766F29B99BC900917EC8 /* BasketBuddy.storekit in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7896CFF42AFBBC1900B40370 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7896D0032AFBBC1A00B40370 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +616,8 @@
 				781D17FB29B30E7900C1F5BF /* TermsAndConditions.swift in Sources */,
 				7836847F29E076D60065CDBD /* Networking.swift in Sources */,
 				780F306029D3E776002C7BA9 /* SettingsViewShareButtons.swift in Sources */,
+				78BEB15D2AFD348000F5CB3A /* AppGroup.swift in Sources */,
+				7896D0192AFC380D00B40370 /* SimplifiedListItem.swift in Sources */,
 				782801092786517F002D5239 /* SettingsBasketHistoryView.swift in Sources */,
 				7828010727865170002D5239 /* SettingsCategoriesView.swift in Sources */,
 				7828010D2786850E002D5239 /* CategoryModel.swift in Sources */,
@@ -528,7 +652,42 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7896CFF22AFBBC1900B40370 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78BEB1582AFCA16500F5CB3A /* UIColorExtension.swift in Sources */,
+				7896D0112AFBCA2A00B40370 /* UnitsStarter.swift in Sources */,
+				7896D0152AFBCA8200B40370 /* Category+CoreDataProperties.swift in Sources */,
+				78BEB15F2AFD546A00F5CB3A /* AppGroup.swift in Sources */,
+				7896D00D2AFBBC8900B40370 /* ShareListItem.swift in Sources */,
+				7896D0132AFBCA7B00B40370 /* Unit+CoreDataProperties.swift in Sources */,
+				7896D01A2AFC38C800B40370 /* SimplifiedListItem.swift in Sources */,
+				7896D00E2AFBBC9B00B40370 /* CategoryModel.swift in Sources */,
+				7896D0172AFBCA9200B40370 /* ListItemSort.swift in Sources */,
+				7896D0122AFBCA4200B40370 /* Category+CoreDataClass.swift in Sources */,
+				78BEB15E2AFD541400F5CB3A /* Persistence.swift in Sources */,
+				7896CFFD2AFBBC1900B40370 /* BasketBuddyWidgetBundle.swift in Sources */,
+				7896D0142AFBCA7E00B40370 /* ListItem+CoreDataProperties.swift in Sources */,
+				7896D0012AFBBC1A00B40370 /* BasketBuddyWidget.swift in Sources */,
+				7896D00C2AFBBC3900B40370 /* ListItem+CoreDataClass.swift in Sources */,
+				7896CFFF2AFBBC1900B40370 /* BasketBuddyWidgetLiveActivity.swift in Sources */,
+				7896D00F2AFBC9FE00B40370 /* ServiceErrors.swift in Sources */,
+				78BEB1602AFD56D100F5CB3A /* ListApp.xcdatamodeld in Sources */,
+				7896D0102AFBCA1800B40370 /* Unit+CoreDataClass.swift in Sources */,
+				7896D0162AFBCA8A00B40370 /* CategoriesStarter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7896D0062AFBBC1A00B40370 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7896CFF52AFBBC1900B40370 /* BasketBuddyWidgetExtension */;
+			targetProxy = 7896D0052AFBBC1A00B40370 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		784CDDA5277D55A20048BDEB /* Debug */ = {
@@ -650,8 +809,10 @@
 		784CDDA8277D55A20048BDEB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BasketBuddy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ListApp/Preview Content\"";
@@ -671,7 +832,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6.0;
+				MARKETING_VERSION = 1.7.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = rjs.app.dev.basketbuddy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -684,8 +845,10 @@
 		784CDDA9277D55A20048BDEB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BasketBuddy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ListApp/Preview Content\"";
@@ -705,10 +868,79 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6.0;
+				MARKETING_VERSION = 1.7.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = rjs.app.dev.basketbuddy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7896D0092AFBBC1A00B40370 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = BasketBuddyWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4QGR522B9M;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BasketBuddyWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BasketBuddyWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = rjs.app.dev.basketbuddy.BasketBuddyWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7896D00A2AFBBC1A00B40370 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = BasketBuddyWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4QGR522B9M;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BasketBuddyWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BasketBuddyWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = rjs.app.dev.basketbuddy.BasketBuddyWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -732,6 +964,15 @@
 			buildConfigurations = (
 				784CDDA8277D55A20048BDEB /* Debug */,
 				784CDDA9277D55A20048BDEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7896D00B2AFBBC1A00B40370 /* Build configuration list for PBXNativeTarget "BasketBuddyWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7896D0092AFBBC1A00B40370 /* Debug */,
+				7896D00A2AFBBC1A00B40370 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

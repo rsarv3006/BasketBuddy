@@ -13,6 +13,7 @@ struct Main: View {
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var selectedStore: SelectedStore
     @EnvironmentObject var store: Store
+    @Environment(\.scenePhase) var scenePhase
     
     @AppStorage("shouldShowFirstStartModalForUIChangeMoveToBasketButtonPlacement") var firstTimeModal = true
     
@@ -91,6 +92,16 @@ struct Main: View {
                 }
             }
             .background(Color.Theme.linen)
+            .onChange(of: scenePhase) { newPhase in
+                            if newPhase == .active {
+                                print("Active")
+                                viewContext.refreshAllObjects()
+                            } else if newPhase == .inactive {
+                                print("Inactive")
+                            } else if newPhase == .background {
+                                print("Background")
+                            }
+                        }
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }

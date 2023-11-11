@@ -7,6 +7,11 @@
 		<key>BasketBuddy.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+		<key>BasketBuddyWidgetExtension.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
 		<key>ListApp.xcscheme_^#shared#^_</key>
@@ -39,6 +44,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>784CDD93277D559F0048BDEB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7896CFF52AFBBC1900B40370</key>
 		<dict>
 			<key>primary</key>
 			<true/>
