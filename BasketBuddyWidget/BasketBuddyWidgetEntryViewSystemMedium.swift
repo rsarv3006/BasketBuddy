@@ -12,11 +12,20 @@ struct BasketBuddyWidgetEntryViewSystemMedium: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("BasketBuddy")
-                .font(.subheadline)
-                .fontWeight(.bold)
-                .padding(.bottom, 2)
-                .foregroundStyle(.seaGreen)
+            HStack
+            {
+                Text("BasketBuddy")
+                    .font(.headline)
+                    .fontWeight(.bold)
+                    .foregroundStyle(.seaGreen)
+                
+                if !entry.listItems.isEmpty {
+                    Spacer()
+                    CircleText(text: String(describing: entry.listItems.count))
+                }
+                
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
             
             if entry.listItems.isEmpty {
                 Text("0 Items")
@@ -24,7 +33,7 @@ struct BasketBuddyWidgetEntryViewSystemMedium: View {
                     .font(.footnote)
             }
             
-            ForEach(entry.listItems, id: \.self) { item in
+            ForEach(entry.listItems.prefix(4), id: \.self) { item in
                 Button(intent: MarkItemInBasketIntent(simplifiedListItem: item.name ?? "")) {
                     HStack {
                         Circle()

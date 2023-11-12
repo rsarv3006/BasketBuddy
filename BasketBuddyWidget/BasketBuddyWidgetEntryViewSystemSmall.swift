@@ -24,7 +24,8 @@ struct BasketBuddyWidgetEntryViewSystemSmall: View {
                     .font(.footnote)
             }
             
-            ForEach(entry.listItems, id: \.self) { item in
+            
+            ForEach(entry.listItems.prefix(4), id: \.self) { item in
                 Button(intent: MarkItemInBasketIntent(simplifiedListItem: item.name ?? "")) {
                     HStack {
                         Circle()

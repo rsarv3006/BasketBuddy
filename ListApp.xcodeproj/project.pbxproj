@@ -88,6 +88,7 @@
 		78BB44C42B001CB2000EA9F5 /* MarkItemInBasketIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB44C32B001CB2000EA9F5 /* MarkItemInBasketIntent.swift */; };
 		78BB44C62B001DB1000EA9F5 /* BasketBuddyWidgetEntryViewSystemMedium.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB44C52B001DB1000EA9F5 /* BasketBuddyWidgetEntryViewSystemMedium.swift */; };
 		78BB44C82B001E1C000EA9F5 /* BasketBuddyWidgetEntryViewSystemLarge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB44C72B001E1C000EA9F5 /* BasketBuddyWidgetEntryViewSystemLarge.swift */; };
+		78BB44CA2B0137D5000EA9F5 /* CircleText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB44C92B0137D5000EA9F5 /* CircleText.swift */; };
 		78BEB1582AFCA16500F5CB3A /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CDDB5277D5F5B0048BDEB /* UIColorExtension.swift */; };
 		78BEB15D2AFD348000F5CB3A /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BEB15C2AFD348000F5CB3A /* AppGroup.swift */; };
 		78BEB15E2AFD541400F5CB3A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CDDA0277D55A20048BDEB /* Persistence.swift */; };
@@ -201,6 +202,7 @@
 		78BB44C32B001CB2000EA9F5 /* MarkItemInBasketIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkItemInBasketIntent.swift; sourceTree = "<group>"; };
 		78BB44C52B001DB1000EA9F5 /* BasketBuddyWidgetEntryViewSystemMedium.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketBuddyWidgetEntryViewSystemMedium.swift; sourceTree = "<group>"; };
 		78BB44C72B001E1C000EA9F5 /* BasketBuddyWidgetEntryViewSystemLarge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketBuddyWidgetEntryViewSystemLarge.swift; sourceTree = "<group>"; };
+		78BB44C92B0137D5000EA9F5 /* CircleText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleText.swift; sourceTree = "<group>"; };
 		78BEB15A2AFD33BC00F5CB3A /* BasketBuddy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BasketBuddy.entitlements; sourceTree = "<group>"; };
 		78BEB15B2AFD340400F5CB3A /* BasketBuddyWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BasketBuddyWidgetExtension.entitlements; sourceTree = "<group>"; };
 		78BEB15C2AFD348000F5CB3A /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
@@ -471,6 +473,7 @@
 				78BB44C12B001C81000EA9F5 /* BasketBuddyWidgetProvider.swift */,
 				78BB44C32B001CB2000EA9F5 /* MarkItemInBasketIntent.swift */,
 				78BB44C72B001E1C000EA9F5 /* BasketBuddyWidgetEntryViewSystemLarge.swift */,
+				78BB44C92B0137D5000EA9F5 /* CircleText.swift */,
 			);
 			path = BasketBuddyWidget;
 			sourceTree = "<group>";
@@ -673,6 +676,7 @@
 			files = (
 				78BB44C82B001E1C000EA9F5 /* BasketBuddyWidgetEntryViewSystemLarge.swift in Sources */,
 				78BB44C62B001DB1000EA9F5 /* BasketBuddyWidgetEntryViewSystemMedium.swift in Sources */,
+				78BB44CA2B0137D5000EA9F5 /* CircleText.swift in Sources */,
 				78BEB1582AFCA16500F5CB3A /* UIColorExtension.swift in Sources */,
 				7896D0112AFBCA2A00B40370 /* UnitsStarter.swift in Sources */,
 				7896D0152AFBCA8200B40370 /* Category+CoreDataProperties.swift in Sources */,
