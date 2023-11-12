@@ -10,38 +10,6 @@ import SwiftUI
 import UIKit
 import CoreData
 
-struct Provider: TimelineProvider {
-    static let persistenceController = PersistenceController.shared
-    let managedObjectContext = Self.persistenceController.container.viewContext
-    
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), listItems: [])
-    }
-
-    func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), listItems: [])
-        completion(entry)
-    }
-
-    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = []
-       
-        var listItems: [SimplifiedListItem] = []
-        do {
-            listItems = try ListItem.getSimplifiedListItemsForWidget(managedObjectContext)
-        } catch {
-            print(error.localizedDescription)
-        }
-        
-        let entry = SimpleEntry(date: Date(), listItems: listItems)
-        
-        entries.append(entry)
-
-        let timeline = Timeline(entries: entries, policy: .atEnd)
-        completion(timeline)
-    }
-}
-
 struct SimpleEntry: TimelineEntry {
     let date: Date
     let listItems: [SimplifiedListItem]
@@ -53,79 +21,16 @@ struct BasketBuddyWidgetEntryView : View {
     @Environment(\.widgetFamily) var family
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("BasketBuddy")
-                .font(.subheadline)
-                .fontWeight(.bold)
-                .padding(.bottom, 2)
-                .foregroundStyle(.seaGreen)
-            
-            if entry.listItems.isEmpty {
-                Text("0 Items")
-                    .foregroundStyle(.seaGreen)
-                    .font(.footnote)
-            }
-            
-            ForEach(entry.listItems, id: \.self) { item in
-                switch family {
-                case .systemSmall:
-                    SmallSystemText(item: item)
-                        .foregroundStyle(.seaGreen)
-                        .font(.footnote)
-                case .systemMedium:
-                    MediumSystemText(item: item)
-                        .foregroundStyle(.seaGreen)
-                        .font(.footnote)
-                case .systemLarge:
-                    LargeSystemText(item: item)
-                        .foregroundStyle(.seaGreen)
-                        .font(.footnote)
-                default:
-                    SmallSystemText(item: item)
-                        .foregroundStyle(.seaGreen)
-                        .font(.footnote)
-                }
-            }
+        switch family {
+        case .systemExtraLarge:
+            BasketBuddyWidgetEntryViewSystemLarge(entry: entry)
+        case .systemLarge:
+            BasketBuddyWidgetEntryViewSystemLarge(entry: entry)
+        case .systemMedium:
+            BasketBuddyWidgetEntryViewSystemMedium(entry: entry)
+        default:
+            BasketBuddyWidgetEntryViewSystemSmall(entry: entry)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-    }
-}
-
-struct SmallSystemText : View {
-    var item: SimplifiedListItem
-    
-    var body: some View {
-        Button(intent: MarkItemInBasketIntent(simplifiedListItem: item.name ?? "")) {
-            HStack {
-                Circle()
-                    .strokeBorder(.seaGreen, lineWidth: 1.5)
-                    .frame(width: 12, height: 12)
-                    .padding(.trailing, -4)
-                Text(parseItemForMediumSystemItemText(item: item))
-                    .lineLimit(1)
-                .truncationMode(.tail)
-            }
-        }
-        .buttonStyle(.plain)
-    }
-}
-
-struct MediumSystemText : View {
-    var item: SimplifiedListItem
-    
-    var body: some View {
-        Button(intent: MarkItemInBasketIntent(simplifiedListItem: item.name ?? "")) {
-            HStack {
-                Circle()
-                    .strokeBorder(.seaGreen, lineWidth: 1.5)
-                    .frame(width: 12, height: 12)
-                    .padding(.trailing, -4)
-                Text(parseItemForMediumSystemItemText(item: item))
-                    .lineLimit(1)
-                .truncationMode(.tail)
-            }
-        }
-        .buttonStyle(.plain)
     }
 }
 
@@ -141,7 +46,7 @@ struct LargeSystemText : View {
                     .padding(.trailing, -4)
                 Text(parseItemForMediumSystemItemText(item: item))
                     .lineLimit(1)
-                .truncationMode(.tail)
+                    .truncationMode(.tail)
             }
         }
         .buttonStyle(.plain)
@@ -174,33 +79,7 @@ struct BasketBuddyWidget: Widget {
     }
 }
 
-import AppIntents
-
-struct MarkItemInBasketIntent: AppIntent {
-    init() {}
-    
-    static var title: LocalizedStringResource = "Mark Item In Basket"
-    static var description = IntentDescription("Mark an item as in the basket.")
-    
-    static let persistenceController = PersistenceController.shared
-    let managedObjectContext = Self.persistenceController.container.viewContext
-    
-    @Parameter(title: "SimplifiedListItem")
-    var simplifiedListItem: String
-
-    init(simplifiedListItem: String) {
-        self.simplifiedListItem = simplifiedListItem
-    }
-
-    func perform() async throws -> some IntentResult {
-        let listItem = try ListItem.getItemFromItemName(managedObjectContext, itemName: simplifiedListItem)
-        ListItem.addMoveToBasketDate(listItem)
-        return .result()
-    }
-}
-
-
-fileprivate let MockSimplifiedListItem: [SimplifiedListItem] = [
+let MockSimplifiedListItem: [SimplifiedListItem] = [
     SimplifiedListItem(count: "2", name: "waffles", unitAbbrv: "dz", categoryName: "frozen"),
     SimplifiedListItem(count: "1", name: "tortillas", unitAbbrv: "dz", categoryName: "bakery"),
     SimplifiedListItem(count: "3", name: "bags of chips", unitAbbrv: "", categoryName: "bulk"),

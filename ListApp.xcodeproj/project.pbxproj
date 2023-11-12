@@ -61,7 +61,7 @@
 		784CDDC4277E483D0048BDEB /* Unit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CDDBE277E483C0048BDEB /* Unit+CoreDataClass.swift */; };
 		784CDDC6277E483D0048BDEB /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CDDC0277E483C0048BDEB /* Category+CoreDataClass.swift */; };
 		7866AAA029C4159D005416ED /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 7866AA9F29C4159D005416ED /* .gitignore */; };
-		7866AAA329C63C02005416ED /* UIChangeMoveToBasketButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7866AAA229C63C02005416ED /* UIChangeMoveToBasketButton.swift */; };
+		7866AAA329C63C02005416ED /* VersionChangesUpdateModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7866AAA229C63C02005416ED /* VersionChangesUpdateModal.swift */; };
 		7896CFF82AFBBC1900B40370 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7896CFF72AFBBC1900B40370 /* WidgetKit.framework */; };
 		7896CFFA2AFBBC1900B40370 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7896CFF92AFBBC1900B40370 /* SwiftUI.framework */; };
 		7896CFFD2AFBBC1900B40370 /* BasketBuddyWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7896CFFC2AFBBC1900B40370 /* BasketBuddyWidgetBundle.swift */; };
@@ -83,6 +83,11 @@
 		7896D0172AFBCA9200B40370 /* ListItemSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782800DA278248EC002D5239 /* ListItemSort.swift */; };
 		7896D0192AFC380D00B40370 /* SimplifiedListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7896D0182AFC380D00B40370 /* SimplifiedListItem.swift */; };
 		7896D01A2AFC38C800B40370 /* SimplifiedListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7896D0182AFC380D00B40370 /* SimplifiedListItem.swift */; };
+		78BB44C02B001A82000EA9F5 /* BasketBuddyWidgetEntryViewSystemSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB44BF2B001A82000EA9F5 /* BasketBuddyWidgetEntryViewSystemSmall.swift */; };
+		78BB44C22B001C81000EA9F5 /* BasketBuddyWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB44C12B001C81000EA9F5 /* BasketBuddyWidgetProvider.swift */; };
+		78BB44C42B001CB2000EA9F5 /* MarkItemInBasketIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB44C32B001CB2000EA9F5 /* MarkItemInBasketIntent.swift */; };
+		78BB44C62B001DB1000EA9F5 /* BasketBuddyWidgetEntryViewSystemMedium.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB44C52B001DB1000EA9F5 /* BasketBuddyWidgetEntryViewSystemMedium.swift */; };
+		78BB44C82B001E1C000EA9F5 /* BasketBuddyWidgetEntryViewSystemLarge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB44C72B001E1C000EA9F5 /* BasketBuddyWidgetEntryViewSystemLarge.swift */; };
 		78BEB1582AFCA16500F5CB3A /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CDDB5277D5F5B0048BDEB /* UIColorExtension.swift */; };
 		78BEB15D2AFD348000F5CB3A /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BEB15C2AFD348000F5CB3A /* AppGroup.swift */; };
 		78BEB15E2AFD541400F5CB3A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CDDA0277D55A20048BDEB /* Persistence.swift */; };
@@ -181,7 +186,7 @@
 		784CDDBE277E483C0048BDEB /* Unit+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Unit+CoreDataClass.swift"; sourceTree = "<group>"; };
 		784CDDC0277E483C0048BDEB /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7866AA9F29C4159D005416ED /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		7866AAA229C63C02005416ED /* UIChangeMoveToBasketButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIChangeMoveToBasketButton.swift; sourceTree = "<group>"; };
+		7866AAA229C63C02005416ED /* VersionChangesUpdateModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionChangesUpdateModal.swift; sourceTree = "<group>"; };
 		7896CFF62AFBBC1900B40370 /* BasketBuddyWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BasketBuddyWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		7896CFF72AFBBC1900B40370 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		7896CFF92AFBBC1900B40370 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -191,6 +196,11 @@
 		7896D0022AFBBC1A00B40370 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7896D0042AFBBC1A00B40370 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7896D0182AFC380D00B40370 /* SimplifiedListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplifiedListItem.swift; sourceTree = "<group>"; };
+		78BB44BF2B001A82000EA9F5 /* BasketBuddyWidgetEntryViewSystemSmall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketBuddyWidgetEntryViewSystemSmall.swift; sourceTree = "<group>"; };
+		78BB44C12B001C81000EA9F5 /* BasketBuddyWidgetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketBuddyWidgetProvider.swift; sourceTree = "<group>"; };
+		78BB44C32B001CB2000EA9F5 /* MarkItemInBasketIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkItemInBasketIntent.swift; sourceTree = "<group>"; };
+		78BB44C52B001DB1000EA9F5 /* BasketBuddyWidgetEntryViewSystemMedium.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketBuddyWidgetEntryViewSystemMedium.swift; sourceTree = "<group>"; };
+		78BB44C72B001E1C000EA9F5 /* BasketBuddyWidgetEntryViewSystemLarge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketBuddyWidgetEntryViewSystemLarge.swift; sourceTree = "<group>"; };
 		78BEB15A2AFD33BC00F5CB3A /* BasketBuddy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BasketBuddy.entitlements; sourceTree = "<group>"; };
 		78BEB15B2AFD340400F5CB3A /* BasketBuddyWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BasketBuddyWidgetExtension.entitlements; sourceTree = "<group>"; };
 		78BEB15C2AFD348000F5CB3A /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
@@ -442,7 +452,7 @@
 		7866AAA129C63BD7005416ED /* FirstTimeModals */ = {
 			isa = PBXGroup;
 			children = (
-				7866AAA229C63C02005416ED /* UIChangeMoveToBasketButton.swift */,
+				7866AAA229C63C02005416ED /* VersionChangesUpdateModal.swift */,
 			);
 			path = FirstTimeModals;
 			sourceTree = "<group>";
@@ -456,6 +466,11 @@
 				7896D0022AFBBC1A00B40370 /* Assets.xcassets */,
 				7896D0042AFBBC1A00B40370 /* Info.plist */,
 				7896D0182AFC380D00B40370 /* SimplifiedListItem.swift */,
+				78BB44BF2B001A82000EA9F5 /* BasketBuddyWidgetEntryViewSystemSmall.swift */,
+				78BB44C52B001DB1000EA9F5 /* BasketBuddyWidgetEntryViewSystemMedium.swift */,
+				78BB44C12B001C81000EA9F5 /* BasketBuddyWidgetProvider.swift */,
+				78BB44C32B001CB2000EA9F5 /* MarkItemInBasketIntent.swift */,
+				78BB44C72B001E1C000EA9F5 /* BasketBuddyWidgetEntryViewSystemLarge.swift */,
 			);
 			path = BasketBuddyWidget;
 			sourceTree = "<group>";
@@ -602,7 +617,7 @@
 				784CDDC4277E483D0048BDEB /* Unit+CoreDataClass.swift in Sources */,
 				7828010B278651A0002D5239 /* SettingsEditStaplesView.swift in Sources */,
 				7836848129E076F60065CDBD /* ServiceErrors.swift in Sources */,
-				7866AAA329C63C02005416ED /* UIChangeMoveToBasketButton.swift in Sources */,
+				7866AAA329C63C02005416ED /* VersionChangesUpdateModal.swift in Sources */,
 				784CDDB0277D59B60048BDEB /* ListComponent.swift in Sources */,
 				784CDDAC277D56BF0048BDEB /* Main.swift in Sources */,
 				78CD1BAF29E65A47006F71C8 /* ItemsToBeAddedView.swift in Sources */,
@@ -656,16 +671,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78BB44C82B001E1C000EA9F5 /* BasketBuddyWidgetEntryViewSystemLarge.swift in Sources */,
+				78BB44C62B001DB1000EA9F5 /* BasketBuddyWidgetEntryViewSystemMedium.swift in Sources */,
 				78BEB1582AFCA16500F5CB3A /* UIColorExtension.swift in Sources */,
 				7896D0112AFBCA2A00B40370 /* UnitsStarter.swift in Sources */,
 				7896D0152AFBCA8200B40370 /* Category+CoreDataProperties.swift in Sources */,
+				78BB44C02B001A82000EA9F5 /* BasketBuddyWidgetEntryViewSystemSmall.swift in Sources */,
 				78BEB15F2AFD546A00F5CB3A /* AppGroup.swift in Sources */,
 				7896D00D2AFBBC8900B40370 /* ShareListItem.swift in Sources */,
 				7896D0132AFBCA7B00B40370 /* Unit+CoreDataProperties.swift in Sources */,
+				78BB44C42B001CB2000EA9F5 /* MarkItemInBasketIntent.swift in Sources */,
 				7896D01A2AFC38C800B40370 /* SimplifiedListItem.swift in Sources */,
 				7896D00E2AFBBC9B00B40370 /* CategoryModel.swift in Sources */,
 				7896D0172AFBCA9200B40370 /* ListItemSort.swift in Sources */,
 				7896D0122AFBCA4200B40370 /* Category+CoreDataClass.swift in Sources */,
+				78BB44C22B001C81000EA9F5 /* BasketBuddyWidgetProvider.swift in Sources */,
 				78BEB15E2AFD541400F5CB3A /* Persistence.swift in Sources */,
 				7896CFFD2AFBBC1900B40370 /* BasketBuddyWidgetBundle.swift in Sources */,
 				7896D0142AFBCA7E00B40370 /* ListItem+CoreDataProperties.swift in Sources */,

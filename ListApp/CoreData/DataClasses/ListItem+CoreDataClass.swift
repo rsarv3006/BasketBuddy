@@ -134,10 +134,11 @@ public class ListItem: NSManagedObject {
             for item in staples {
                 item.isVisible = true
             }
+            
             try context.save()
             WidgetCenter.shared.reloadTimelines(ofKind: "BasketBuddyWidget")
             return true
-        } catch let error as NSError {
+        } catch let error as NSError{
             print(error.userInfo)
             return false
         }
@@ -212,7 +213,7 @@ public class ListItem: NSManagedObject {
         let fetchRequest: NSFetchRequest<ListItem> = ListItem.fetchRequest()
         fetchRequest.sortDescriptors = []
         if !itemName.isEmpty {
-            fetchRequest.predicate = NSPredicate(format: "name = %@", itemName )
+            fetchRequest.predicate = NSPredicate(format: "name = %@ AND isVisible = %@", itemName, NSNumber(value: true))
             
             let listItems = try context.fetch(fetchRequest)
            
@@ -226,3 +227,4 @@ public class ListItem: NSManagedObject {
         }
     }
 }
+

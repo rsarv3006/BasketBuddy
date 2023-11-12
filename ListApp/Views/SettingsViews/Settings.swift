@@ -46,6 +46,7 @@ struct Settings: View {
                 }
                 
                 Button("Load Pantry Staples", action: {
+                    viewContext.refreshAllObjects()
                     isStapleLoadSuccess = ListItem.loadStaples(viewContext)
                     isStapleAlertVisible.toggle()
                 })

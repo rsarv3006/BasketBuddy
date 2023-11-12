@@ -15,7 +15,7 @@ struct Main: View {
     @EnvironmentObject var store: Store
     @Environment(\.scenePhase) var scenePhase
     
-    @AppStorage("shouldShowFirstStartModalForUIChangeMoveToBasketButtonPlacement") var firstTimeModal = true
+    @AppStorage("versionUpdateModal1.7.0") var firstTimeModal = true
     
     @SectionedFetchRequest(
         sectionIdentifier: ListItemSort.default.section,
@@ -24,6 +24,7 @@ struct Main: View {
         animation: .default
     )
     private var listItems: SectionedFetchResults<String, ListItem>
+    
     
     var body: some View {
         NavigationView {
@@ -85,7 +86,7 @@ struct Main: View {
                     )
                 }
                 .sheet(isPresented: $firstTimeModal) {
-                    UIChangeMoveToBasketButton {
+                    VersionChangesUpdateModal {
                         firstTimeModal = false
                     }
                     .presentationDetents([.medium])
@@ -94,12 +95,8 @@ struct Main: View {
             .background(Color.Theme.linen)
             .onChange(of: scenePhase) { newPhase in
                             if newPhase == .active {
-                                print("Active")
-                                viewContext.refreshAllObjects()
-                            } else if newPhase == .inactive {
-                                print("Inactive")
-                            } else if newPhase == .background {
-                                print("Background")
+                                listItems.nsPredicate = NSPredicate(format: "isVisible = %@", NSNumber(value: false))
+                                listItems.nsPredicate = NSPredicate(format: "isVisible = %@", NSNumber(value: true))
                             }
                         }
         }
