@@ -33,32 +33,29 @@ struct PersistenceController {
     let container: NSPersistentContainer
     
     private static func createContainer() -> NSPersistentContainer {
-        print("creating container")
         let container = NSPersistentContainer(name: "ListApp")
         let storeURL = AppGroup.basketBuddy.containerURL.appendingPathComponent("ListApp.sqlite")
 
-        print("debug 1")
         var defaultURL: URL?
         if let storeDescription = container.persistentStoreDescriptions.first, let url = storeDescription.url {
             defaultURL = FileManager.default.fileExists(atPath: url.path) ? url : nil
         }
-        print("debug 2")
+        
         if defaultURL == nil {
             container.persistentStoreDescriptions = [NSPersistentStoreDescription(url: storeURL)]
         }
-        print("debug 3")
+        
         container.loadPersistentStores(completionHandler: { [unowned container] (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
-            print("debug 4")
+            
             if let url = defaultURL, url.absoluteString != storeURL.absoluteString {
                 let coordinator = container.persistentStoreCoordinator
                 if let oldStore = coordinator.persistentStore(for: url) {
                     do {
                         try coordinator.migratePersistentStore(oldStore, to: storeURL, options: nil, withType: NSSQLiteStoreType)
                     } catch {
-                        print("HOWDY")
                         print(error.localizedDescription)
                     }
 
@@ -68,7 +65,6 @@ struct PersistenceController {
                         do {
                             try FileManager.default.removeItem(at: url)
                         } catch {
-                            print("HOWDY 1")
                             print(error.localizedDescription)
                         }
                     })

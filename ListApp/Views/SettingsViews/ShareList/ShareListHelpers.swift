@@ -24,6 +24,18 @@ func buildItemsDisplayString(_ items: Set<ListItem>) -> String {
     return returnString
 }
 
+func getTotalItemsCount(_ listItems: SectionedFetchResults<String, ListItem>) -> Int {
+    var totalItemsCount = 0
+    
+    listItems.forEach { section in
+        section.forEach { item in
+            totalItemsCount += 1
+        }
+    }
+    
+    return totalItemsCount
+}
+
 func areAllItemsSelected(_ items: SectionedFetchResults<String, ListItem>, _ selectedItems: Set<ListItem>) -> Bool {
-    return items.count > 0 && selectedItems.count == items.count
+    return items.count > 0 && selectedItems.count == getTotalItemsCount(items)
 }

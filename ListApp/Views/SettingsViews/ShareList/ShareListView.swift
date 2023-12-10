@@ -39,7 +39,7 @@ struct ShareListView: View {
                     }
                 }
             }) {
-                Text(listItems.count > 0 && selectedItems.count == listItems.count ? "DeSelect All" : "Select All")
+                Text(listItems.count > 0 && selectedItems.count == getTotalItemsCount(listItems) ? "DeSelect All" : "Select All")
                     .padding(.horizontal)
                     .padding(.vertical, 8)
                     .foregroundColor(Color.Theme.linen)
@@ -93,10 +93,16 @@ struct ShareListView: View {
                 Button {
                     Task {
                         do {
-                            let itemsToShare = ShareService.convertListItemsToShareListDto(listItems: selectedItems)
-                            shareCode = try await ShareService.createShare(items: itemsToShare)
+                            if selectedItems.count > 0 {
+                                let itemsToShare = ShareService.convertListItemsToShareListDto(listItems: selectedItems)
+                                shareCode = try await ShareService.createShare(items: itemsToShare)
+                                shouldPresentShareCodeAlert = true
+                            } else {
+                                shareCodeError = "No items have been selected."
+                                didShareCodeAttemptError = true
+                            }
                             
-                            shouldPresentShareCodeAlert = true
+                                
                         } catch {
                             shareCodeError = error.localizedDescription
                             didShareCodeAttemptError = true
