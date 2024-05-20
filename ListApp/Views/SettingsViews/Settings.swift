@@ -1,50 +1,26 @@
-//
-//  Settings.swift
-//  ListApp
-//
-//  Created by rjs on 12/29/21.
-//
-
-import SwiftUI
 import StoreKit
+import SwiftUI
 
 struct Settings: View {
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var store: Store
-    
-    @State var isCategoriesViewVisible: Bool = false
-    @State var isbasketHistoryViewVisible: Bool = false
-    @State var isEditStaplesViewVisible: Bool = false
+
     @State var isStapleAlertVisible: Bool = false
     @State var isStapleLoadSuccess: Bool = false
-    @State var isLegalViewVisible: Bool = false
-    
+
     var body: some View {
         VStack {
             ScrollView {
-                
-                NavigationLink(destination: SettingsCategoriesView(), isActive: $isCategoriesViewVisible) {
-                    Button("Categories", action: {
-                        isCategoriesViewVisible.toggle()
-                    })
+                NavigationLink("Categories", destination: SettingsCategoriesView())
                     .buttonStyle(.bordered)
-                }
-                NavigationLink(
-                    destination: SettingsBasketHistoryView(viewContext: viewContext),
-                    isActive: $isbasketHistoryViewVisible) {
-                        Button("Basket History", action: {
-                            isbasketHistoryViewVisible.toggle()
-                        })
-                        .buttonStyle(.bordered)
-                    }
-                NavigationLink(destination: SettingsEditStaplesView(), isActive: $isEditStaplesViewVisible) {
-                    Button("Edit Pantry Staples", action: {
-                        isEditStaplesViewVisible.toggle()
-                    })
+
+                NavigationLink("Basket History", destination: SettingsBasketHistoryView(viewContext: viewContext))
+                    .buttonStyle(.bordered)
+
+                NavigationLink("Edit Pantry Staples", destination: SettingsEditStaplesView())
                     .buttonStyle(.bordered)
                     .padding(.top)
-                }
-                
+
                 Button("Load Pantry Staples", action: {
                     viewContext.refreshAllObjects()
                     isStapleLoadSuccess = ListItem.loadStaples(viewContext)
@@ -52,23 +28,20 @@ struct Settings: View {
                 })
                 .buttonStyle(.bordered)
                 .alert(isStapleLoadSuccess
-                       ? "Loaded Staples successfully."
-                       : "Issue encountered loading staples, please try again.", isPresented: $isStapleAlertVisible) {
+                    ? "Loaded Staples successfully."
+                    : "Issue encountered loading staples, please try again.", isPresented: $isStapleAlertVisible)
+                {
                     Button("OK", role: .cancel) {}
                 }
                 .padding(.bottom)
-                
+
                 SettingsViewShareButtons()
-                
+
                 ContactSupport()
-                
-                NavigationLink(destination: SettingsLegalView(), isActive: $isLegalViewVisible) {
-                    Button("Legal Information", action: {
-                        isLegalViewVisible.toggle()
-                    })
+
+                NavigationLink("Legal Information", destination: SettingsLegalView())
                     .buttonStyle(.bordered)
-                }
-                
+
                 if let product = store.smallTipInAppPurchase {
                     SettingsInAppPurchases(product: product)
                         .padding(.top)
@@ -79,7 +52,19 @@ struct Settings: View {
                 HStack {
                     Spacer()
                 }
-                
+            }
+
+            HStack {
+                Spacer()
+
+                Button {
+                    if let url = URL(string: "https://shiner.rjs-app-dev.us/") {
+                        UIApplication.shared.open(url)
+                    }
+                } label: {
+                    Image(systemName: "pawprint.circle")
+                }
+                .padding(.horizontal)
             }
         }
         .frame(

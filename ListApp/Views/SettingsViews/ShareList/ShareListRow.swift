@@ -1,10 +1,3 @@
-//
-//  ShareListRow.swift
-//  BasketBuddy
-//
-//  Created by Robert J. Sarvis Jr on 3/30/23.
-//
-
 import SwiftUI
 
 struct ShareListRow: View {

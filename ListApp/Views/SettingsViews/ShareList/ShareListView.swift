@@ -1,10 +1,3 @@
-//
-//  ShareListView.swift
-//  BasketBuddy
-//
-//  Created by Robert J. Sarvis Jr on 3/28/23.
-//
-
 import SwiftUI
 import UniformTypeIdentifiers
 

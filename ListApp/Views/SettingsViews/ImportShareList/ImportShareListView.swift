@@ -1,10 +1,3 @@
-//
-//  ImportShareListView.swift
-//  BasketBuddy
-//
-//  Created by Robert J. Sarvis Jr on 4/9/23.
-//
-
 import SwiftUI
 import Combine
 

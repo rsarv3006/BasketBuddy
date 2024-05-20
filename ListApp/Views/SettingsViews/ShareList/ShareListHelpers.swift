@@ -1,10 +1,3 @@
-//
-//  ShareListHelpers.swift
-//  BasketBuddy
-//
-//  Created by Robert J. Sarvis Jr on 3/30/23.
-//
-
 import SwiftUI
 
 func buildItemsDisplayString(_ items: Set<ListItem>) -> String {

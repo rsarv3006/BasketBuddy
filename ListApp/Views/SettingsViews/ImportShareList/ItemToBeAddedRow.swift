@@ -1,10 +1,3 @@
-//
-//  ItemToBeAddedRow.swift
-//  BasketBuddy
-//
-//  Created by Robert J. Sarvis Jr on 4/11/23.
-//
-
 import SwiftUI
 
 import SwiftUI
