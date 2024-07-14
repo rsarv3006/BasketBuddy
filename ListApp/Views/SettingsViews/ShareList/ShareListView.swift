@@ -120,6 +120,7 @@ struct ShareListView: View {
                     Button("OK", role: .cancel) {}
                 }
             }
+            .padding(.bottom)
         }
         .background(Color.Theme.linen)
     }
