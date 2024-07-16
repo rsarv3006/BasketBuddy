@@ -38,7 +38,7 @@ struct VersionCheckViewModifier: ViewModifier {
             }
             .alert("Update Required", isPresented: $showUpdateAlert) {
                 Button("Update") {
-                    if let url = URL(string: "itms-apps://apple.com/app/id<YOUR_APP_ID>") {
+                    if let url = URL(string: "itms-apps://apple.com/app/id6446040498") {
                         UIApplication.shared.open(url)
                     }
                 }
