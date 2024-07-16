@@ -1,15 +1,8 @@
-//
-//  ShareService.swift
-//  BasketBuddy
-//
-//  Created by Robert J. Sarvis Jr on 4/7/23.
-//
-
 import Foundation
 
 struct ShareService {
     static func createShare(items: ShareListDto) async throws -> String {
-        let url = try Networking.createUrl(endPoint: "/share/create")
+        let url = try await Networking.createUrl(endPoint: "/share/create")
         
         let shareListItemData = try JSONEncoder().encode(items)
 
@@ -28,7 +21,7 @@ struct ShareService {
     }
     
     static func getShare(shareId: String) async throws -> ShareDataReturnModel {
-        let url = try Networking.createUrl(endPoint: "/share/accept/\(shareId)")
+        let url = try await Networking.createUrl(endPoint: "/share/accept/\(shareId)")
     
         let (data, response) = try await Networking.post(url: url)
         

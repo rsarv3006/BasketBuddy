@@ -1,10 +1,3 @@
-//
-//  Networking.swift
-//  BasketBuddy
-//
-//  Created by Robert J. Sarvis Jr on 4/7/23.
-//
-
 import Foundation
 import Combine
 
@@ -18,7 +11,7 @@ enum HttpMethod: String {
 
 struct Networking {
     private static func apiCall(httpMethod: HttpMethod, url: URL, body: Data? = nil) async throws -> (Data, URLResponse) {
-        guard let token = getKeyValueFromPlist(plistFileName: "Supabase", key: "AnonToken") else {
+        guard let token = await ConfigService.shared.getConfig()?.anonToken else {
             throw ServiceErrors.custom(message: "Token not found.")
         }
         
@@ -57,8 +50,8 @@ struct Networking {
         try await apiCall(httpMethod: .delete, url: url, body: body)
     }
     
-    static func createUrl(endPoint: String) throws -> URL {
-        guard let baseUrl = getKeyValueFromPlist(plistFileName: "Supabase", key: "ApiUrl") else {
+    static func createUrl(endPoint: String) async throws -> URL {
+        guard let baseUrl = await ConfigService.shared.getConfig()?.apiUrl else {
             throw ServiceErrors.baseUrlNotConfigured
         }
         

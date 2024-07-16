@@ -1,3 +1,5 @@
 ListApp/Admob*.plist
 ListApp/Admob.plist
 ListApp/Supabase.plist
+ListApp/Config.plist
+ListApp/DeftaultConfig.json

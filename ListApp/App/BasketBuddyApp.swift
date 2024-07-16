@@ -23,6 +23,7 @@ struct BasketBuddyApp: App {
                     Category.addOnLoad(viewContext: persistenceController.container.viewContext)
                     Unit.addOnLoad(viewContext: persistenceController.container.viewContext)
                 })
+                .checkAppVersion()
         }
     }
 }
