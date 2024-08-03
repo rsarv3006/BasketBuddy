@@ -1,10 +1,3 @@
-//
-//  AppGroup.swift
-//  BasketBuddy
-//
-//  Created by Robert J. Sarvis Jr on 11/9/23.
-//
-
 import Foundation
 
 public enum AppGroup: String {

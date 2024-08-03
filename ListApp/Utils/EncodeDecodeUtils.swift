@@ -1,10 +1,3 @@
-//
-//  EncodeDecodeUtils.swift
-//  BasketBuddy
-//
-//  Created by Robert J. Sarvis Jr on 4/4/23.
-//
-
 import Foundation
 
 struct EncodeDecodeUtils {

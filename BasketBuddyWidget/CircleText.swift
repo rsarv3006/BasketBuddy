@@ -1,10 +1,3 @@
-//
-//  CircleText.swift
-//  BasketBuddyWidgetExtension
-//
-//  Created by Robert J. Sarvis Jr on 11/12/23.
-//
-
 import SwiftUI
 
 struct CircleText: View {

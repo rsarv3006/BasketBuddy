@@ -13,24 +13,6 @@ public struct Config: GenericConfig {
     }
 }
 
-public let decoder = JSONDecoder()
-
-public func loadJSON<T: Codable>(filename: String) -> T? {
-    guard let path = Bundle.main.path(forResource: filename, ofType: "json") else {
-        print("JSON file not found")
-        return nil
-    }
-
-    do {
-        let data = try Data(contentsOf: URL(fileURLWithPath: path))
-        let result = try decoder.decode(T.self, from: data)
-        return result
-    } catch {
-        print("Error decoding JSON: \(error)")
-        return nil
-    }
-}
-
 public extension ConfigService where T == Config {
     convenience init() {
         self.init(
@@ -64,12 +46,12 @@ public class RemoteConfigLoader: ConfigLoader {
             let (data, response) = try await URLSession.shared.data(for: request)
 
             if let response = response as? HTTPURLResponse, response.statusCode == 200 {
-                let configReturn = try decoder.decode(ConfigReturnDto<Config>.self, from: data)
+                let configReturn = try JsonHelpers.decoder.decode(ConfigReturnDto<Config>.self, from: data)
                 let config = configReturn.data.config
                 return config
 
             } else {
-                let serverError = try decoder.decode(ServerErrorMessage.self, from: data)
+                let serverError = try JsonHelpers.decoder.decode(ServerErrorMessage.self, from: data)
                 throw ServiceErrors.custom(message: serverError.error)
             }
         } catch {
@@ -83,6 +65,6 @@ public class LocalConfigLoader: ConfigLoader {
     public init() {}
 
     public func loadConfig() async -> Config? {
-        return loadJSON(filename: "DefaultConfig")
+        return JsonHelpers.loadJSON(filename: "DefaultConfig")
     }
 }

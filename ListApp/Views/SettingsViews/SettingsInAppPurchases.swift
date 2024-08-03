@@ -1,10 +1,3 @@
-//
-//  SettingsInAppPurchases.swift
-//  BasketBuddy
-//
-//  Created by Robert J. Sarvis Jr on 3/8/23.
-//
-
 import SwiftUI
 import StoreKit
 

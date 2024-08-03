@@ -1,10 +1,3 @@
-//
-//  AddItems.swift
-//  ListApp
-//
-//  Created by rjs on 12/29/21.
-//
-
 import SwiftUI
 import CoreData
 

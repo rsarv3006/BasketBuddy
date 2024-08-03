@@ -1,10 +1,3 @@
-//
-//  BasketBuddyTests.swift
-//  BasketBuddyTests
-//
-//  Created by Robert J. Sarvis Jr on 7/15/24.
-//
-
 import XCTest
 
 final class BasketBuddyTests: XCTestCase {

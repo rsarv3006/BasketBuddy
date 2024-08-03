@@ -1,10 +1,3 @@
-//
-//  DateExtension.swift
-//  ListApp
-//
-//  Created by rjs on 1/8/22.
-//
-
 import Foundation
 
 extension Date {

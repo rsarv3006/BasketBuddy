@@ -1,10 +1,3 @@
-//
-//  PrivacyPolicy.swift
-//  BasketBuddy
-//
-//  Created by Robert J. Sarvis Jr on 3/3/23.
-//
-
 import Foundation
 
 let PrivacyPolicy = """

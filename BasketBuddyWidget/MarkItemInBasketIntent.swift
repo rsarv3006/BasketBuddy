@@ -1,10 +1,3 @@
-//
-//  MarkItemInBasketIntent.swift
-//  BasketBuddyWidgetExtension
-//
-//  Created by Robert J. Sarvis Jr on 11/11/23.
-//
-
 import AppIntents
 import CoreData
 

@@ -1,10 +1,3 @@
-//
-//  TextFieldExtension.swift
-//  ListApp
-//
-//  Created by Robert J. Sarvis Jr on 2/25/23.
-//
-
 import SwiftUI
 
 public struct TextFieldDefaultBackgroundSeagreenBorder: TextFieldStyle {

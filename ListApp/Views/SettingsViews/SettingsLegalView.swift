@@ -1,10 +1,3 @@
-//
-//  SettingsLegalView.swift
-//  BasketBuddy
-//
-//  Created by Robert J. Sarvis Jr on 3/3/23.
-//
-
 import SwiftUI
 
 struct SettingsLegalView: View {

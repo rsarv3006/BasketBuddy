@@ -1,10 +1,3 @@
-//
-//  BottomToolbar.swift
-//  ListApp
-//
-//  Created by rjs on 1/3/22.
-//
-
 import SwiftUI
 
 struct ListComponentBottomToolbar: ToolbarContent {

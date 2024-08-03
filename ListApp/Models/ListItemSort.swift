@@ -1,10 +1,3 @@
-//
-//  ListItemSort.swift
-//  ListApp
-//
-//  Created by rjs on 1/2/22.
-//
-
 import Foundation
 
 struct ListItemSort: Hashable, Identifiable {

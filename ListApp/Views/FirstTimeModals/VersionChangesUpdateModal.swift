@@ -1,10 +1,3 @@
-//
-//  UIChangeMoveToBasketButton.swift
-//  BasketBuddy
-//
-//  Created by Robert J. Sarvis Jr on 3/18/23.
-//
-
 import SwiftUI
 
 struct VersionChangesUpdateModal: View {

@@ -1,10 +1,3 @@
-//
-//  BasketBuddyWidgetProvider.swift
-//  BasketBuddyWidgetExtension
-//
-//  Created by Robert J. Sarvis Jr on 11/11/23.
-//
-
 import WidgetKit
 import SwiftUI
 import UIKit

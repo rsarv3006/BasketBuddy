@@ -1,10 +1,3 @@
-//
-//  BasketBuddyWidgetLiveActivity.swift
-//  BasketBuddyWidget
-//
-//  Created by Robert J. Sarvis Jr on 11/8/23.
-//
-
 import ActivityKit
 import WidgetKit
 import SwiftUI

@@ -1,10 +1,3 @@
-//
-//  SettingsCategoriesItem.swift
-//  ListApp
-//
-//  Created by rjs on 1/5/22.
-//
-
 import SwiftUI
 
 struct SettingsCategoriesItem: View {

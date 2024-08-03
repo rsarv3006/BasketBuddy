@@ -1,7 +1,5 @@
 import SwiftUI
 
-import SwiftUI
-
 struct ItemToBeAddedRow: View {
     var item: ShareListItem
     var isSelected: Bool

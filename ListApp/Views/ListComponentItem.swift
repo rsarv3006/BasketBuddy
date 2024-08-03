@@ -1,10 +1,3 @@
-//
-//  ListComponentItem.swift
-//  ListApp
-//
-//  Created by rjs on 1/2/22.
-//
-
 import SwiftUI
 
 struct ListComponentItem: View {
