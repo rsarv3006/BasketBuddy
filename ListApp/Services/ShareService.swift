@@ -1,4 +1,5 @@
 import Foundation
+import Bedrock
 
 struct ShareService {
     static func createShare(items: ShareListDto) async throws -> String {

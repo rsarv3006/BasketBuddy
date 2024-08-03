@@ -10,6 +10,8 @@
 		7801C837278AA0BE00831859 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7801C836278AA0BE00831859 /* DateExtension.swift */; };
 		7801C839278AAD4400831859 /* SettingsBasketHistoryClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7801C838278AAD4400831859 /* SettingsBasketHistoryClearButton.swift */; };
 		780F13F22C5D89DC00756754 /* Bedrock in Frameworks */ = {isa = PBXBuildFile; productRef = 780F13F12C5D89DC00756754 /* Bedrock */; };
+		780F13F42C5DBED500756754 /* DefaultConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = 780F13F32C5DBED500756754 /* DefaultConfig.json */; };
+		780F13F62C5DC6F800756754 /* Bedrock in Frameworks */ = {isa = PBXBuildFile; productRef = 780F13F52C5DC6F800756754 /* Bedrock */; };
 		780F306029D3E776002C7BA9 /* SettingsViewShareButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780F305F29D3E776002C7BA9 /* SettingsViewShareButtons.swift */; };
 		781B51AF29AB1E7F00957E6A /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B51AE29AB1E7F00957E6A /* TextFieldExtension.swift */; };
 		781D17F429B3010000C1F5BF /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 781D17F329B3010000C1F5BF /* StoreKit.framework */; };
@@ -35,7 +37,6 @@
 		7836847B29E0766B0065CDBD /* ShareService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7836847A29E0766B0065CDBD /* ShareService.swift */; };
 		7836847D29E076B80065CDBD /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7836847C29E076B80065CDBD /* Config.plist */; };
 		7836847F29E076D60065CDBD /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7836847E29E076D60065CDBD /* Networking.swift */; };
-		7836848129E076F60065CDBD /* ServiceErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7836848029E076F60065CDBD /* ServiceErrors.swift */; };
 		7836848529E0B82C0065CDBD /* ShareListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7836848429E0B82C0065CDBD /* ShareListItem.swift */; };
 		7836848729E0BF840065CDBD /* ShareCodeReturnModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7836848629E0BF840065CDBD /* ShareCodeReturnModel.swift */; };
 		7836848929E0C8130065CDBD /* ShareDataReturnModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7836848829E0C8130065CDBD /* ShareDataReturnModel.swift */; };
@@ -75,7 +76,6 @@
 		7896D00C2AFBBC3900B40370 /* ListItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CDDBC277E483C0048BDEB /* ListItem+CoreDataClass.swift */; };
 		7896D00D2AFBBC8900B40370 /* ShareListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7836848429E0B82C0065CDBD /* ShareListItem.swift */; };
 		7896D00E2AFBBC9B00B40370 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7828010C2786850E002D5239 /* CategoryModel.swift */; };
-		7896D00F2AFBC9FE00B40370 /* ServiceErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7836848029E076F60065CDBD /* ServiceErrors.swift */; };
 		7896D0102AFBCA1800B40370 /* Unit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CDDBE277E483C0048BDEB /* Unit+CoreDataClass.swift */; };
 		7896D0112AFBCA2A00B40370 /* UnitsStarter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CDDBA277D82310048BDEB /* UnitsStarter.swift */; };
 		7896D0122AFBCA4200B40370 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CDDC0277E483C0048BDEB /* Category+CoreDataClass.swift */; };
@@ -143,6 +143,7 @@
 /* Begin PBXFileReference section */
 		7801C836278AA0BE00831859 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		7801C838278AAD4400831859 /* SettingsBasketHistoryClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBasketHistoryClearButton.swift; sourceTree = "<group>"; };
+		780F13F32C5DBED500756754 /* DefaultConfig.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DefaultConfig.json; sourceTree = "<group>"; };
 		780F305F29D3E776002C7BA9 /* SettingsViewShareButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewShareButtons.swift; sourceTree = "<group>"; };
 		781B51AE29AB1E7F00957E6A /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
 		781B51B529AC618000957E6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -169,7 +170,6 @@
 		7836847A29E0766B0065CDBD /* ShareService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareService.swift; sourceTree = "<group>"; };
 		7836847C29E076B80065CDBD /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		7836847E29E076D60065CDBD /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
-		7836848029E076F60065CDBD /* ServiceErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceErrors.swift; sourceTree = "<group>"; };
 		7836848429E0B82C0065CDBD /* ShareListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareListItem.swift; sourceTree = "<group>"; };
 		7836848629E0BF840065CDBD /* ShareCodeReturnModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCodeReturnModel.swift; sourceTree = "<group>"; };
 		7836848829E0C8130065CDBD /* ShareDataReturnModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareDataReturnModel.swift; sourceTree = "<group>"; };
@@ -252,6 +252,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				780F13F62C5DC6F800756754 /* Bedrock in Frameworks */,
 				7896CFFA2AFBBC1900B40370 /* SwiftUI.framework in Frameworks */,
 				7896CFF82AFBBC1900B40370 /* WidgetKit.framework in Frameworks */,
 			);
@@ -334,7 +335,6 @@
 			children = (
 				7836847A29E0766B0065CDBD /* ShareService.swift */,
 				7836847E29E076D60065CDBD /* Networking.swift */,
-				7836848029E076F60065CDBD /* ServiceErrors.swift */,
 				783ACC8A2C4474FD00DEA57B /* ConfigService.swift */,
 				783ACC9D2C45C81D00DEA57B /* VersionCheckService.swift */,
 			);
@@ -402,6 +402,7 @@
 				784CDD9D277D55A20048BDEB /* Preview Content */,
 				7844766E29B99BC900917EC8 /* BasketBuddy.storekit */,
 				7836847C29E076B80065CDBD /* Config.plist */,
+				780F13F32C5DBED500756754 /* DefaultConfig.json */,
 			);
 			path = ListApp;
 			sourceTree = "<group>";
@@ -586,6 +587,9 @@
 			dependencies = (
 			);
 			name = BasketBuddyWidgetExtension;
+			packageProductDependencies = (
+				780F13F52C5DC6F800756754 /* Bedrock */,
+			);
 			productName = BasketBuddyWidgetExtension;
 			productReference = 7896CFF62AFBBC1900B40370 /* BasketBuddyWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -652,6 +656,7 @@
 				784CDD9C277D55A20048BDEB /* Assets.xcassets in Resources */,
 				7866AAA029C4159D005416ED /* .gitignore in Resources */,
 				7844766F29B99BC900917EC8 /* BasketBuddy.storekit in Resources */,
+				780F13F42C5DBED500756754 /* DefaultConfig.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -691,7 +696,6 @@
 				7836848529E0B82C0065CDBD /* ShareListItem.swift in Sources */,
 				784CDDC4277E483D0048BDEB /* Unit+CoreDataClass.swift in Sources */,
 				7828010B278651A0002D5239 /* SettingsEditStaplesView.swift in Sources */,
-				7836848129E076F60065CDBD /* ServiceErrors.swift in Sources */,
 				7866AAA329C63C02005416ED /* VersionChangesUpdateModal.swift in Sources */,
 				784CDDB0277D59B60048BDEB /* ListComponent.swift in Sources */,
 				784CDDAC277D56BF0048BDEB /* Main.swift in Sources */,
@@ -769,7 +773,6 @@
 				7896D0012AFBBC1A00B40370 /* BasketBuddyWidget.swift in Sources */,
 				7896D00C2AFBBC3900B40370 /* ListItem+CoreDataClass.swift in Sources */,
 				7896CFFF2AFBBC1900B40370 /* BasketBuddyWidgetLiveActivity.swift in Sources */,
-				7896D00F2AFBC9FE00B40370 /* ServiceErrors.swift in Sources */,
 				78BEB1602AFD56D100F5CB3A /* ListApp.xcdatamodeld in Sources */,
 				7896D0102AFBCA1800B40370 /* Unit+CoreDataClass.swift in Sources */,
 				7896D0162AFBCA8A00B40370 /* CategoriesStarter.swift in Sources */,
@@ -1152,6 +1155,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		780F13F12C5D89DC00756754 /* Bedrock */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 780F13F02C5D89DC00756754 /* XCRemoteSwiftPackageReference "bedrock" */;
+			productName = Bedrock;
+		};
+		780F13F52C5DC6F800756754 /* Bedrock */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 780F13F02C5D89DC00756754 /* XCRemoteSwiftPackageReference "bedrock" */;
 			productName = Bedrock;

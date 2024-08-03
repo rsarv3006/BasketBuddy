@@ -2,14 +2,6 @@ import Foundation
 import Bedrock
 import Combine
 
-enum HttpMethod: String {
-    case get = "GET"
-    case post = "POST"
-    case delete = "DELETE"
-    case put = "PUT"
-    case patch = "PATCH"
-}
-
 struct Networking {
     private static func apiCall(httpMethod: HttpMethod, url: URL, body: Data? = nil) async throws -> (Data, URLResponse) {
         guard let token = await ConfigService.shared.getConfig()?.anonToken else {
@@ -63,21 +55,6 @@ struct Networking {
         }
         
         return url
-    }
-    
-    struct helpers {
-        static func createQueryString(items: [String]) -> String {
-            var returnString = ""
-            for item in items {
-                returnString += "\(item),"
-            }
-            
-            if returnString.last == "," {
-                _ = returnString.popLast()
-            }
-            
-            return returnString
-        }
     }
 }
 

@@ -1,14 +1,7 @@
-//
-//  ListItem+CoreDataClass.swift
-//  ListApp
-//
-//  Created by rjs on 12/30/21.
-//
-//
-
 import Foundation
 import CoreData
 import WidgetKit
+import Bedrock
 
 @objc(ListItem)
 public class ListItem: NSManagedObject {
