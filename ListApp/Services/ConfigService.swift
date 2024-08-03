@@ -1,22 +1,7 @@
 import Foundation
+import Bedrock
 
-public protocol ConfigLoader {
-    func loadConfig() async -> Config?
-}
-
-public protocol ConfigCacheStrategy {
-    func shouldLoadNewConfig(lastLoadedDate: Date?) -> Bool
-}
-
-public struct ConfigReturnDto: Codable {
-    public let data: ConfigReturnData
-}
-
-public struct ConfigReturnData: Codable {
-    public let config: Config
-}
-
-public struct Config: Codable {
+public struct Config: GenericConfig {
     public let apiUrl: String?
     public let anonToken: String?
     public let minAppVersion: String?
@@ -46,84 +31,24 @@ public func loadJSON<T: Codable>(filename: String) -> T? {
     }
 }
 
-public class ConfigService {
-    private var remoteLoader: ConfigLoader
-    private var localLoader: ConfigLoader
-    private var cacheStrategy: ConfigCacheStrategy
-
-    private var config: Config?
-    private var lastLoadedConfig: Date?
-
-    init(remoteLoader: ConfigLoader, localLoader: ConfigLoader, cacheStrategy: ConfigCacheStrategy) {
-        self.remoteLoader = remoteLoader
-        self.localLoader = localLoader
-        self.cacheStrategy = cacheStrategy
+public extension ConfigService where T == Config {
+    convenience init() {
+        self.init(
+            remoteLoader: RemoteConfigLoader(),
+            localLoader: LocalConfigLoader(),
+            cacheStrategy: TimeBasedCacheStrategy()
+        )
     }
-
-    public func getConfig() async -> Config? {
-        if let lastLoadedConfig,
-           !cacheStrategy.shouldLoadNewConfig(lastLoadedDate: lastLoadedConfig),
-           let config
-        {
-            return config
-        }
-
-        let remoteConfig = await remoteLoader.loadConfig()
-        if let remoteConfig = remoteConfig {
-            lastLoadedConfig = Date()
-            config = remoteConfig
-            return remoteConfig
-        }
-
-        let localConfig = await localLoader.loadConfig()
-        if let localConfig = localConfig {
-            lastLoadedConfig = Date()
-            config = localConfig
-            return localConfig
-        }
-
-        return config
-    }
-
-    public static func resetForTesting(remoteLoader: ConfigLoader,
-                                       localLoader: ConfigLoader,
-                                       cacheStrategy: ConfigCacheStrategy)
-    {
-        shared.remoteLoader = remoteLoader
-        shared.localLoader = localLoader
-        shared.cacheStrategy = cacheStrategy
-        shared.config = nil
-        shared.lastLoadedConfig = nil
-    }
-}
-
-public extension ConfigService {
-    static let shared = ConfigService(
-        remoteLoader: RemoteConfigLoader(),
-        localLoader: LocalConfigLoader(),
-        cacheStrategy: TimeBabasedCacheStrategy()
-    )
-}
-
-public class TimeBasedCacheStrategy: ConfigCacheStrategy {
-    let cacheTimeInSeconds: Double
-
-    public init(cacheTimeInSeconds: Double = 300) {
-        self.cacheTimeInSeconds = cacheTimeInSeconds
-    }
-
-    public func shouldLoadNewConfig(lastLoadedDate: Date?) -> Bool {
-        guard let lastLoadedDate = lastLoadedDate else { return true }
-        return Date().timeIntervalSince(lastLoadedDate) > cacheTimeInSeconds
-    }
+    
+    static let shared = ConfigService.init()
 }
 
 public class RemoteConfigLoader: ConfigLoader {
     public init() {}
 
     public func loadConfig() async -> Config? {
-        let configApiUrl = getKeyValueFromPlist(plistFileName: "Config", key: "ConfigApiUrl")
-        let configApiToken = getKeyValueFromPlist(plistFileName: "Config", key: "ConfigApiToken")
+        let configApiUrl = PlistHelpers.getKeyValueFromPlist(plistFileName: "Config", key: "ConfigApiUrl")
+        let configApiToken = PlistHelpers.getKeyValueFromPlist(plistFileName: "Config", key: "ConfigApiToken")
         guard let configApiUrl,
               let configApiToken,
               let url = URL(string: "\(configApiUrl)/api/v1/config/basketbuddy")
@@ -139,7 +64,7 @@ public class RemoteConfigLoader: ConfigLoader {
             let (data, response) = try await URLSession.shared.data(for: request)
 
             if let response = response as? HTTPURLResponse, response.statusCode == 200 {
-                let configReturn = try decoder.decode(ConfigReturnDto.self, from: data)
+                let configReturn = try decoder.decode(ConfigReturnDto<Config>.self, from: data)
                 let config = configReturn.data.config
                 return config
 
@@ -159,18 +84,5 @@ public class LocalConfigLoader: ConfigLoader {
 
     public func loadConfig() async -> Config? {
         return loadJSON(filename: "DefaultConfig")
-    }
-}
-
-public class TimeBabasedCacheStrategy: ConfigCacheStrategy {
-    let cacheTimeInSeconds: Double
-
-    init(cacheTimeInSeconds: Double = 300) { // 5 minutes default
-        self.cacheTimeInSeconds = cacheTimeInSeconds
-    }
-
-    public func shouldLoadNewConfig(lastLoadedDate: Date?) -> Bool {
-        guard let lastLoadedDate = lastLoadedDate else { return true }
-        return Date().timeIntervalSince(lastLoadedDate) > cacheTimeInSeconds
     }
 }

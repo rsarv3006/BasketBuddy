@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7801C837278AA0BE00831859 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7801C836278AA0BE00831859 /* DateExtension.swift */; };
 		7801C839278AAD4400831859 /* SettingsBasketHistoryClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7801C838278AAD4400831859 /* SettingsBasketHistoryClearButton.swift */; };
+		780F13F22C5D89DC00756754 /* Bedrock in Frameworks */ = {isa = PBXBuildFile; productRef = 780F13F12C5D89DC00756754 /* Bedrock */; };
 		780F306029D3E776002C7BA9 /* SettingsViewShareButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780F305F29D3E776002C7BA9 /* SettingsViewShareButtons.swift */; };
 		781B51AF29AB1E7F00957E6A /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B51AE29AB1E7F00957E6A /* TextFieldExtension.swift */; };
 		781D17F429B3010000C1F5BF /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 781D17F329B3010000C1F5BF /* StoreKit.framework */; };
@@ -35,7 +36,6 @@
 		7836847D29E076B80065CDBD /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7836847C29E076B80065CDBD /* Config.plist */; };
 		7836847F29E076D60065CDBD /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7836847E29E076D60065CDBD /* Networking.swift */; };
 		7836848129E076F60065CDBD /* ServiceErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7836848029E076F60065CDBD /* ServiceErrors.swift */; };
-		7836848329E078FC0065CDBD /* plistHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7836848229E078FC0065CDBD /* plistHelpers.swift */; };
 		7836848529E0B82C0065CDBD /* ShareListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7836848429E0B82C0065CDBD /* ShareListItem.swift */; };
 		7836848729E0BF840065CDBD /* ShareCodeReturnModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7836848629E0BF840065CDBD /* ShareCodeReturnModel.swift */; };
 		7836848929E0C8130065CDBD /* ShareDataReturnModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7836848829E0C8130065CDBD /* ShareDataReturnModel.swift */; };
@@ -43,7 +43,6 @@
 		783ACC8B2C4474FD00DEA57B /* ConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783ACC8A2C4474FD00DEA57B /* ConfigService.swift */; };
 		783ACC8D2C44B9AD00DEA57B /* DefaultConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = 783ACC8C2C44B9AD00DEA57B /* DefaultConfig.json */; };
 		783ACC952C453A1200DEA57B /* BasketBuddyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783ACC942C453A1200DEA57B /* BasketBuddyTests.swift */; };
-		783ACC9C2C453A2E00DEA57B /* ConfigServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783ACC9B2C453A2E00DEA57B /* ConfigServiceTests.swift */; };
 		783ACC9E2C45C81D00DEA57B /* VersionCheckService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783ACC9D2C45C81D00DEA57B /* VersionCheckService.swift */; };
 		783D527A29B840B30031DDCB /* EULA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783D527929B840B30031DDCB /* EULA.swift */; };
 		783D527C29B84BCF0031DDCB /* Storekit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783D527B29B84BCF0031DDCB /* Storekit.swift */; };
@@ -172,7 +171,6 @@
 		7836847C29E076B80065CDBD /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		7836847E29E076D60065CDBD /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		7836848029E076F60065CDBD /* ServiceErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceErrors.swift; sourceTree = "<group>"; };
-		7836848229E078FC0065CDBD /* plistHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = plistHelpers.swift; sourceTree = "<group>"; };
 		7836848429E0B82C0065CDBD /* ShareListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareListItem.swift; sourceTree = "<group>"; };
 		7836848629E0BF840065CDBD /* ShareCodeReturnModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCodeReturnModel.swift; sourceTree = "<group>"; };
 		7836848829E0C8130065CDBD /* ShareDataReturnModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareDataReturnModel.swift; sourceTree = "<group>"; };
@@ -181,7 +179,6 @@
 		783ACC8C2C44B9AD00DEA57B /* DefaultConfig.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DefaultConfig.json; sourceTree = "<group>"; };
 		783ACC922C453A1200DEA57B /* BasketBuddyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BasketBuddyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		783ACC942C453A1200DEA57B /* BasketBuddyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketBuddyTests.swift; sourceTree = "<group>"; };
-		783ACC9B2C453A2E00DEA57B /* ConfigServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigServiceTests.swift; sourceTree = "<group>"; };
 		783ACC9D2C45C81D00DEA57B /* VersionCheckService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionCheckService.swift; sourceTree = "<group>"; };
 		783D527929B840B30031DDCB /* EULA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EULA.swift; sourceTree = "<group>"; };
 		783D527B29B84BCF0031DDCB /* Storekit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storekit.swift; sourceTree = "<group>"; };
@@ -249,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				781D17F429B3010000C1F5BF /* StoreKit.framework in Frameworks */,
+				780F13F22C5D89DC00756754 /* Bedrock in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,7 +347,6 @@
 			isa = PBXGroup;
 			children = (
 				783ACC942C453A1200DEA57B /* BasketBuddyTests.swift */,
-				783ACC9B2C453A2E00DEA57B /* ConfigServiceTests.swift */,
 			);
 			path = BasketBuddyTests;
 			sourceTree = "<group>";
@@ -359,7 +356,6 @@
 			children = (
 				783D527B29B84BCF0031DDCB /* Storekit.swift */,
 				7836847529DD26890065CDBD /* EncodeDecodeUtils.swift */,
-				7836848229E078FC0065CDBD /* plistHelpers.swift */,
 				78CD1BAC29E4B639006F71C8 /* ShareCodeAllowedValues.swift */,
 			);
 			path = Utils;
@@ -574,6 +570,7 @@
 			);
 			name = BasketBuddy;
 			packageProductDependencies = (
+				780F13F12C5D89DC00756754 /* Bedrock */,
 			);
 			productName = ListApp;
 			productReference = 784CDD94277D559F0048BDEB /* BasketBuddy.app */;
@@ -628,6 +625,7 @@
 			);
 			mainGroup = 784CDD8B277D559F0048BDEB;
 			packageReferences = (
+				780F13F02C5D89DC00756754 /* XCRemoteSwiftPackageReference "bedrock" */,
 			);
 			productRefGroup = 784CDD95277D559F0048BDEB /* Products */;
 			projectDirPath = "";
@@ -677,7 +675,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				783ACC952C453A1200DEA57B /* BasketBuddyTests.swift in Sources */,
-				783ACC9C2C453A2E00DEA57B /* ConfigServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -740,7 +737,6 @@
 				783ACC9E2C45C81D00DEA57B /* VersionCheckService.swift in Sources */,
 				781B51AF29AB1E7F00957E6A /* TextFieldExtension.swift in Sources */,
 				7828011427869BE8002D5239 /* SettingsCategoriesItem.swift in Sources */,
-				7836848329E078FC0065CDBD /* plistHelpers.swift in Sources */,
 				784CDD9A277D559F0048BDEB /* ContentView.swift in Sources */,
 				781D17F929B30D4200C1F5BF /* PrivacyPolicy.swift in Sources */,
 				78280102278402AA002D5239 /* Unit+CoreDataProperties.swift in Sources */,
@@ -991,7 +987,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.7.2;
+				MARKETING_VERSION = 1.7.4;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = rjs.app.dev.basketbuddy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1027,7 +1023,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.7.2;
+				MARKETING_VERSION = 1.7.4;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = rjs.app.dev.basketbuddy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1146,6 +1142,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		780F13F02C5D89DC00756754 /* XCRemoteSwiftPackageReference "bedrock" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rsarv3006/bedrock";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		780F13F12C5D89DC00756754 /* Bedrock */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 780F13F02C5D89DC00756754 /* XCRemoteSwiftPackageReference "bedrock" */;
+			productName = Bedrock;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		784CDDA2277D55A20048BDEB /* ListApp.xcdatamodeld */ = {

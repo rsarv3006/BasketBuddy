@@ -1,10 +1,11 @@
 import SwiftUI
+import Bedrock
 
 class VersionCheckService: ObservableObject {
     @Published var isOutdated = false
-    private let configService: ConfigService
+    private let configService: ConfigService<Config>
     
-    init(configService: ConfigService = .shared) {
+    init(configService: ConfigService<Config> = .shared) {
         self.configService = configService
     }
     

@@ -8,23 +8,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "574101E5-CC1A-4830-AA17-48767BD387E5"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ListApp/Services/VersionCheckService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "checkVersion()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "FF87B37F-288A-481B-B09D-E5544515E07C"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ListApp/Services/VersionCheckService.swift"
@@ -39,6 +23,22 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "FF87B37F-288A-481B-B09D-E5544515E07C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ListApp/Services/VersionCheckService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "checkVersion()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             uuid = "99640281-8825-4857-8C62-BB29EA8E3072"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -46,8 +46,8 @@
             filePath = "ListApp/Services/VersionCheckService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
             landmarkName = "compareVersions(_:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +62,8 @@
             filePath = "ListApp/Services/VersionCheckService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "body(content:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -72,16 +72,60 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "F07D05B2-DDDA-4A5B-8FEA-B4E5481527C2"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ListApp/Services/VersionCheckService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "13"
-            endingLineNumber = "13"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
             landmarkName = "checkVersion()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F07D05B2-DDDA-4A5B-8FEA-B4E5481527C2 - 8c04f73d2267dc31"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for BasketBuddy.VersionCheckService.checkVersion() async -&gt; ()"
+                  moduleName = "BasketBuddy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rjs/dev/listapp/ListApp/Services/VersionCheckService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14">
+               </Location>
+               <Location
+                  uuid = "F07D05B2-DDDA-4A5B-8FEA-B4E5481527C2 - 6dee56135160e94"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for BasketBuddy.VersionCheckService.checkVersion() async -&gt; ()"
+                  moduleName = "BasketBuddy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rjs/dev/listapp/ListApp/Services/VersionCheckService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14">
+               </Location>
+               <Location
+                  uuid = "F07D05B2-DDDA-4A5B-8FEA-B4E5481527C2 - d5f19a8e6720302b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for BasketBuddy.VersionCheckService.checkVersion() async -&gt; ()"
+                  moduleName = "BasketBuddy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rjs/dev/listapp/ListApp/Services/VersionCheckService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -94,8 +138,8 @@
             filePath = "ListApp/Services/ConfigService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "loadConfig()"
             landmarkType = "7">
          </BreakpointContent>
@@ -110,8 +154,8 @@
             filePath = "ListApp/Services/ConfigService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "loadConfig()"
             landmarkType = "7">
          </BreakpointContent>
