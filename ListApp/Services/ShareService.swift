@@ -3,11 +3,11 @@ import Bedrock
 
 struct ShareService {
     static func createShare(items: ShareListDto) async throws -> String {
-        let url = try await Networking.createUrl(endPoint: "/share/create")
+        let url = try await Networking.shared.createUrl(endPoint: "/share/create")
         
         let shareListItemData = try JSONEncoder().encode(items)
 
-        let (data, response) = try await Networking.post(url: url, body: shareListItemData)
+        let (data, response) = try await Networking.shared.post(url: url, body: shareListItemData)
         
         let decoder = JSONDecoder()
         
@@ -22,9 +22,9 @@ struct ShareService {
     }
     
     static func getShare(shareId: String) async throws -> ShareDataReturnModel {
-        let url = try await Networking.createUrl(endPoint: "/share/accept/\(shareId)")
+        let url = try await Networking.shared.createUrl(endPoint: "/share/accept/\(shareId)")
     
-        let (data, response) = try await Networking.post(url: url)
+        let (data, response) = try await Networking.shared.post(url: url)
         
         let decoder = JSONDecoder()
         

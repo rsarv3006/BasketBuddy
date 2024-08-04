@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/rsarv3006/bedrock",
       "state" : {
-        "revision" : "4da7bd67f51f3fb6f5126e7e4041024e2d48d560",
-        "version" : "1.0.4"
+        "revision" : "d1650562e9619e8f8e2d98e4aa07dbc4170c073d",
+        "version" : "1.0.5"
       }
     }
   ],
