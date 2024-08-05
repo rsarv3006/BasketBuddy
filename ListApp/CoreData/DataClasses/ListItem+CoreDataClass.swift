@@ -150,6 +150,22 @@ public class ListItem: NSManagedObject {
         }
     }
     
+    @nonobjc public class func clearAllItems(_ context: NSManagedObjectContext) {
+        let fetchRequest: NSFetchRequest<ListItem> = ListItem.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "isVisible == true")
+        
+        do {
+            let items = try context.fetch(fetchRequest)
+            for item in items {
+                item.isVisible = false
+            }
+            
+            try context.save()
+        } catch {
+            print("Failed to clear items: \(error)")
+        }
+    }
+    
     @nonobjc public class func clearMoveToBasketHistory(_ context: NSManagedObjectContext) {
         let fetchRequest: NSFetchRequest<ListItem> = ListItem.fetchRequest()
         fetchRequest.sortDescriptors = []

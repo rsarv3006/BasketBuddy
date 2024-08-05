@@ -7,6 +7,8 @@ struct Settings: View {
 
     @State var isStapleAlertVisible: Bool = false
     @State var isStapleLoadSuccess: Bool = false
+    @State var shouldShowClearBasketConfirmModal = false
+    @State var didClearBasketSuccessfully = false
 
     var body: some View {
         VStack {
@@ -32,6 +34,28 @@ struct Settings: View {
                     : "Issue encountered loading staples, please try again.", isPresented: $isStapleAlertVisible)
                 {
                     Button("OK", role: .cancel) {}
+                }
+                .padding(.bottom)
+                
+                Button("Clear Basket") {
+                    shouldShowClearBasketConfirmModal = true
+                }
+                .buttonStyle(.bordered)
+                .alert("Are you sure you want to clear all items from your list?", isPresented: $shouldShowClearBasketConfirmModal) {
+                    Button("No") {
+                        shouldShowClearBasketConfirmModal = false
+                    }
+                    
+                    Button("Yes") {
+                        shouldShowClearBasketConfirmModal = false
+                        ListItem.clearAllItems(viewContext)
+                        didClearBasketSuccessfully = true
+                    }
+                }
+                .alert("List cleared!", isPresented: $didClearBasketSuccessfully) {
+                    Button("Ok") {
+                        didClearBasketSuccessfully = false
+                    }
                 }
                 .padding(.bottom)
 
