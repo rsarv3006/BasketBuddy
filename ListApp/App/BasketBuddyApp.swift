@@ -2,21 +2,48 @@ import SwiftUI
 
 @main
 struct BasketBuddyApp: App {
+    @State var deeplinkTarget: DeeplinkManager.DeeplinkTarget?
+    
     let persistenceController = PersistenceController.shared
     @StateObject private var selectedStore = SelectedStore()
     @StateObject var store: Store = Store()
     
     var body: some Scene {
         WindowGroup {
-            Main()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-                .environmentObject(selectedStore)
-                .environmentObject(store)
-                .onAppear(perform: {
-                    Category.addOnLoad(viewContext: persistenceController.container.viewContext)
-                    Unit.addOnLoad(viewContext: persistenceController.container.viewContext)
-                })
-                .checkAppVersion()
+            Group {
+                switch self.deeplinkTarget {
+                case .home:
+                    Main()
+                        .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                        .environmentObject(selectedStore)
+                        .environmentObject(store)
+                        .onAppear(perform: {
+                            Category.addOnLoad(viewContext: persistenceController.container.viewContext)
+                            Unit.addOnLoad(viewContext: persistenceController.container.viewContext)
+                        })
+                        .checkAppVersion()
+                case .share(let shareCode):
+                    NavigationView {
+                        ImportShareListView(shareCodeId: shareCode, deeplinkTarget: $deeplinkTarget)
+                    }
+                case .none:
+                    Main()
+                        .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                        .environmentObject(selectedStore)
+                        .environmentObject(store)
+                        .onAppear(perform: {
+                            Category.addOnLoad(viewContext: persistenceController.container.viewContext)
+                            Unit.addOnLoad(viewContext: persistenceController.container.viewContext)
+                        })
+                        .checkAppVersion()
+                }
+                
+            }
+            .onOpenURL(perform: { url in
+                let deeplinkManager = DeeplinkManager()
+                let deeplink = deeplinkManager.manage(url: url)
+                self.deeplinkTarget = deeplink
+            })
         }
     }
 }

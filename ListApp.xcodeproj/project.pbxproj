@@ -66,6 +66,7 @@
 		784CDDC6277E483D0048BDEB /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CDDC0277E483C0048BDEB /* Category+CoreDataClass.swift */; };
 		7866AAA029C4159D005416ED /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 7866AA9F29C4159D005416ED /* .gitignore */; };
 		7866AAA329C63C02005416ED /* VersionChangesUpdateModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7866AAA229C63C02005416ED /* VersionChangesUpdateModal.swift */; };
+		786B50822C639818008E2979 /* DeeplinkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786B50812C639818008E2979 /* DeeplinkManager.swift */; };
 		7896CFF82AFBBC1900B40370 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7896CFF72AFBBC1900B40370 /* WidgetKit.framework */; };
 		7896CFFA2AFBBC1900B40370 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7896CFF92AFBBC1900B40370 /* SwiftUI.framework */; };
 		7896CFFD2AFBBC1900B40370 /* BasketBuddyWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7896CFFC2AFBBC1900B40370 /* BasketBuddyWidgetBundle.swift */; };
@@ -201,6 +202,7 @@
 		784CDDC0277E483C0048BDEB /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7866AA9F29C4159D005416ED /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		7866AAA229C63C02005416ED /* VersionChangesUpdateModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionChangesUpdateModal.swift; sourceTree = "<group>"; };
+		786B50812C639818008E2979 /* DeeplinkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkManager.swift; sourceTree = "<group>"; };
 		7896CFF62AFBBC1900B40370 /* BasketBuddyWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BasketBuddyWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		7896CFF72AFBBC1900B40370 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		7896CFF92AFBBC1900B40370 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -337,6 +339,7 @@
 				7836847E29E076D60065CDBD /* Networking.swift */,
 				783ACC8A2C4474FD00DEA57B /* ConfigService.swift */,
 				783ACC9D2C45C81D00DEA57B /* VersionCheckService.swift */,
+				786B50812C639818008E2979 /* DeeplinkManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -722,6 +725,7 @@
 				7836848B29E10ED10065CDBD /* ServerErrorMessage.swift in Sources */,
 				78280110278687B8002D5239 /* BottomCenterButton.swift in Sources */,
 				783D527C29B84BCF0031DDCB /* Storekit.swift in Sources */,
+				786B50822C639818008E2979 /* DeeplinkManager.swift in Sources */,
 				78CD1BB329E65BEF006F71C8 /* ItemToBeAddedRow.swift in Sources */,
 				78D5705A29D6896600B986DB /* ShareListRow.swift in Sources */,
 				781D17F629B30B2400C1F5BF /* SettingsLegalView.swift in Sources */,

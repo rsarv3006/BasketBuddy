@@ -2,6 +2,7 @@ import SwiftUI
 import Combine
 
 struct ImportShareListView: View {
+    @Environment(\.presentationMode) var presentationMode
     @State private var shareCodeInput = ""
     @State private var codeErrorString = ""
     @State private var didImportError = false
@@ -9,10 +10,15 @@ struct ImportShareListView: View {
     @State private var isButtonDisabled = false
     @State private var sharedItems: [ShareListItem] = []
     @State private var isLoading = false
-    
+    @Binding private var deeplinkTarget: DeeplinkManager.DeeplinkTarget?
+
+    init(shareCodeId: String = "", deeplinkTarget: Binding<DeeplinkManager.DeeplinkTarget?> = .constant(nil)) {
+        print(shareCodeId)
+        self._shareCodeInput = State(initialValue: shareCodeId)
+        self._deeplinkTarget = deeplinkTarget
+    }
     var body: some View {
         VStack (alignment: .center) {
-            
             VStack {
                 Text("Import Shared List")
                     .font(.title)
@@ -94,6 +100,21 @@ struct ImportShareListView: View {
             Spacer()
         }
         .background(Color.Theme.linen)
+        .navigationBarItems(leading: Group {
+            if deeplinkTarget != nil {
+                Button(action: {
+                    deeplinkTarget = nil
+                }) {
+                    HStack {
+                        Image(systemName: "chevron.left")
+                            .font(.system(size: 17, weight: .bold))
+                            .foregroundColor(Color.Theme.seaGreen)
+                        Text("Back")
+                            .foregroundColor(Color.Theme.seaGreen)
+                    }
+                }
+            }
+        })
     }
 }
 
