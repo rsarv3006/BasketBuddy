@@ -25,6 +25,14 @@ struct BasketBuddyApp: App {
                 case .share(let shareCode):
                     NavigationView {
                         ImportShareListView(shareCodeId: shareCode, deeplinkTarget: $deeplinkTarget)
+                            .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                            .environmentObject(selectedStore)
+                            .environmentObject(store)
+                            .onAppear(perform: {
+                                Category.addOnLoad(viewContext: persistenceController.container.viewContext)
+                                Unit.addOnLoad(viewContext: persistenceController.container.viewContext)
+                            })
+                            .checkAppVersion()
                     }
                 case .none:
                     Main()

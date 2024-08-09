@@ -8,14 +8,14 @@ class DeeplinkManager {
     }
     
     class DeepLinkConstants {
-        static let scheme = "basketbuddy"
-        static let host = "rjs.app.dev.basketbuddy.deeplink"
+        static let host = "basketbuddy.rjs-app-dev.us"
         static let detailsPath = "/share"
         static let query = "shareCodeId"
     }
     
     func manage(url: URL) -> DeeplinkTarget {
-        guard url.scheme == DeepLinkConstants.scheme,
+        print(url)
+        guard url.scheme == "https",
               url.host == DeepLinkConstants.host,
               url.path == DeepLinkConstants.detailsPath,
               let components = URLComponents(url: url, resolvingAgainstBaseURL: true),

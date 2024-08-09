@@ -113,7 +113,8 @@ struct ShareListView: View {
                     Button("OK") {
                     }
                     Button("Copy to Clipboard", role: .cancel) {
-                        UIPasteboard.general.setValue("Someone has shared a BasketBudy list with you! Use the code \(shareCode ?? "") to access the list.", forPasteboardType: UTType.plainText.identifier)
+
+                        UIPasteboard.general.setValue("Someone has shared a BasketBudy list with you! Click this link basketbuddy://rjs.app.dev.basketbuddy.deeplink/share?shareCodeId=\(shareCode ?? "")\nTo download Basketbuddy - https://apps.apple.com/us/app/basketbuddy/id6446040498", forPasteboardType: UTType.plainText.identifier)
                     }
                 }
                 .alert("Error encountered trying to share your list. Error: \(shareCodeError ?? "")", isPresented: $didShareCodeAttemptError) {

@@ -67,8 +67,6 @@ struct ImportShareListView: View {
 
                             let getShareResult = try await ShareService.getShare(shareId: shareCodeInput)
 
-
-
                             sharedItems = getShareResult.data
                             isButtonDisabled = false
                             isLoading = false
