@@ -8,7 +8,7 @@ struct Main: View {
     @EnvironmentObject var store: Store
     @Environment(\.scenePhase) var scenePhase
     
-    @AppStorage("versionUpdateModal1.7.0") var firstTimeModal = true
+    @AppStorage("versionUpdateModal1.7.6") var firstTimeModal = true
     
     @SectionedFetchRequest(
         sectionIdentifier: ListItemSort.default.section,

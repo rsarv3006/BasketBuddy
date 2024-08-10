@@ -9,7 +9,7 @@ struct VersionChangesUpdateModal: View {
                 .font(.largeTitle)
                 .foregroundColor(.Theme.seaGreen)
                 .padding(.bottom)
-            Text("We've added a widget! We've taken advantage of changes in the latest iOS 17 release to include a widget where you can see and mark things off your list without opening the app!")
+            Text("In the latest version when you share or recieve a list you can open it by clicking the link. This opens the share screen with the code already filled in to save you time!")
                 .foregroundColor(.Theme.seaGreen)
                 .padding(.bottom)
             Spacer()
