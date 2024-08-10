@@ -1,5 +1,6 @@
 import SwiftUI
 import UniformTypeIdentifiers
+import Bedrock
 
 struct ShareListView: View {
     @EnvironmentObject var store: Store
@@ -113,8 +114,15 @@ struct ShareListView: View {
                     Button("OK") {
                     }
                     Button("Copy to Clipboard", role: .cancel) {
-
-                        UIPasteboard.general.setValue("Someone has shared a BasketBudy list with you! The code is \(shareCode ?? ""). https://basketbuddy.rjs-app-dev.us/share?shareCodeId=\(shareCode ?? "")", forPasteboardType: UTType.plainText.identifier)
+                        Task {
+                            var pasteString = "Someone has shared a BasketBuddy list with you! The code is \(shareCode ?? "")."
+                            
+                            if let isDeeplinkShareEnabled = await ConfigService.shared.getConfig()?.isDeeplinkShareEnabled, isDeeplinkShareEnabled {
+                                pasteString = "Someone has shared a BasketBuddy list with you! The code is \(shareCode ?? ""). https://basketbuddy.rjs-app-dev.us/share?shareCodeId=\(shareCode ?? "")"
+                            }
+                            
+                            UIPasteboard.general.setValue(pasteString, forPasteboardType: UTType.plainText.identifier)
+                        }
                     }
                 }
                 .alert("Error encountered trying to share your list. Error: \(shareCodeError ?? "")", isPresented: $didShareCodeAttemptError) {

@@ -5,11 +5,13 @@ public struct Config: GenericConfig {
     public let apiUrl: String?
     public let anonToken: String?
     public let minAppVersion: String?
+    public let isDeeplinkShareEnabled: Bool?
 
-    public init(apiUrl: String, anonToken: String, minAppVersion: String) {
+    public init(apiUrl: String?, anonToken: String?, minAppVersion: String?, isDeeplinkShareEnabled: Bool?) {
         self.apiUrl = apiUrl
         self.anonToken = anonToken
         self.minAppVersion = minAppVersion
+        self.isDeeplinkShareEnabled = isDeeplinkShareEnabled
     }
 }
 
