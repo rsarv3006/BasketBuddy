@@ -4,8 +4,14 @@ import SwiftUI
 
 struct BasketBuddyWidgetAttributes: ActivityAttributes {
     public struct ContentState: Codable, Hashable {
+        public init(itemCount: Int, nextItem: SimplifiedListItem) {
+            self.itemCount = itemCount
+            self.nextItem = nextItem
+        }
+        
         // Dynamic stateful properties about your activity go here!
-        var emoji: String
+        var itemCount: Int
+        var nextItem: SimplifiedListItem
     }
 
     // Fixed non-changing properties about your activity go here!
@@ -17,7 +23,8 @@ struct BasketBuddyWidgetLiveActivity: Widget {
         ActivityConfiguration(for: BasketBuddyWidgetAttributes.self) { context in
             // Lock screen/banner UI goes here
             VStack {
-                Text("Hello \(context.state.emoji)")
+                Text("Items Left: \(context.state.itemCount)")
+                Text("Next: \(parseItemForMediumSystemItemText(item: context.state.nextItem))")
             }
             .activityBackgroundTint(Color.cyan)
             .activitySystemActionForegroundColor(Color.black)
@@ -27,21 +34,21 @@ struct BasketBuddyWidgetLiveActivity: Widget {
                 // Expanded UI goes here.  Compose the expanded UI through
                 // various regions, like leading/trailing/center/bottom
                 DynamicIslandExpandedRegion(.leading) {
-                    Text("Leading")
+                    Text("\(context.state.itemCount) Left")
                 }
                 DynamicIslandExpandedRegion(.trailing) {
-                    Text("Trailing")
+                    EmptyView()
                 }
                 DynamicIslandExpandedRegion(.bottom) {
-                    Text("Bottom \(context.state.emoji)")
+                    Text("Next: \(parseItemForMediumSystemItemText(item: context.state.nextItem))")
                     // more content
                 }
             } compactLeading: {
-                Text("L")
+                Text("\(context.state.itemCount)")
             } compactTrailing: {
-                Text("T \(context.state.emoji)")
+                Text("\(context.state.nextItem.name ?? "")")
             } minimal: {
-                Text(context.state.emoji)
+                Text("\(context.state.nextItem.name ?? "")")
             }
             .widgetURL(URL(string: "http://www.apple.com"))
             .keylineTint(Color.red)
@@ -55,19 +62,12 @@ extension BasketBuddyWidgetAttributes {
     }
 }
 
-extension BasketBuddyWidgetAttributes.ContentState {
-    fileprivate static var smiley: BasketBuddyWidgetAttributes.ContentState {
-        BasketBuddyWidgetAttributes.ContentState(emoji: "😀")
-     }
-     
-     fileprivate static var starEyes: BasketBuddyWidgetAttributes.ContentState {
-         BasketBuddyWidgetAttributes.ContentState(emoji: "🤩")
-     }
-}
-
-#Preview("Notification", as: .content, using: BasketBuddyWidgetAttributes.preview) {
-   BasketBuddyWidgetLiveActivity()
-} contentStates: {
-    BasketBuddyWidgetAttributes.ContentState.smiley
-    BasketBuddyWidgetAttributes.ContentState.starEyes
-}
+//extension BasketBuddyWidgetAttributes.ContentState {
+//    fileprivate static var smiley: BasketBuddyWidgetAttributes.ContentState {
+//        BasketBuddyWidgetAttributes.ContentState(emoji: "😀", itemCount: 2)
+//     }
+//     
+//     fileprivate static var starEyes: BasketBuddyWidgetAttributes.ContentState {
+//         BasketBuddyWidgetAttributes.ContentState(emoji: "🤩", itemCount: 2)
+//     }
+//}

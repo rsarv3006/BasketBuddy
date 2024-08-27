@@ -106,6 +106,11 @@
 		78D5705829D6892D00B986DB /* ShareListHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D5705729D6892D00B986DB /* ShareListHelpers.swift */; };
 		78D5705A29D6896600B986DB /* ShareListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D5705929D6896600B986DB /* ShareListRow.swift */; };
 		78D5705C29D68A0400B986DB /* AppVersionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D5705B29D68A0400B986DB /* AppVersionView.swift */; };
+		78E8D0612C7D5B5D00C3812A /* StartLiveActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E8D0602C7D5B5D00C3812A /* StartLiveActivityView.swift */; };
+		78E8D0632C7D5B6C00C3812A /* StartLiveActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E8D0622C7D5B6C00C3812A /* StartLiveActivityViewModel.swift */; };
+		78E8D0642C7D5CB000C3812A /* BasketBuddyWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7896CFFE2AFBBC1900B40370 /* BasketBuddyWidgetLiveActivity.swift */; };
+		78E8D0662C7DF20700C3812A /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E8D0652C7DF20700C3812A /* Helpers.swift */; };
+		78E8D0672C7DF20700C3812A /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E8D0652C7DF20700C3812A /* Helpers.swift */; };
 		78F1EE3229D3E0A300347A00 /* ShareListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F1EE3129D3E0A300347A00 /* ShareListView.swift */; };
 		78F1EE3429D3E19100347A00 /* ContactSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F1EE3329D3E19100347A00 /* ContactSupport.swift */; };
 /* End PBXBuildFile section */
@@ -229,6 +234,9 @@
 		78D5705729D6892D00B986DB /* ShareListHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareListHelpers.swift; sourceTree = "<group>"; };
 		78D5705929D6896600B986DB /* ShareListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareListRow.swift; sourceTree = "<group>"; };
 		78D5705B29D68A0400B986DB /* AppVersionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionView.swift; sourceTree = "<group>"; };
+		78E8D0602C7D5B5D00C3812A /* StartLiveActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartLiveActivityView.swift; sourceTree = "<group>"; };
+		78E8D0622C7D5B6C00C3812A /* StartLiveActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartLiveActivityViewModel.swift; sourceTree = "<group>"; };
+		78E8D0652C7DF20700C3812A /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		78F1EE3129D3E0A300347A00 /* ShareListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareListView.swift; sourceTree = "<group>"; };
 		78F1EE3329D3E19100347A00 /* ContactSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactSupport.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -421,6 +429,7 @@
 		784CDDAA277D56B10048BDEB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				78E8D05F2C7D5B1300C3812A /* LiveActivity */,
 				7866AAA129C63BD7005416ED /* FirstTimeModals */,
 				7828010E278687A3002D5239 /* Components */,
 				7828010527865150002D5239 /* SettingsViews */,
@@ -510,6 +519,7 @@
 				78BB44C32B001CB2000EA9F5 /* MarkItemInBasketIntent.swift */,
 				78BB44C72B001E1C000EA9F5 /* BasketBuddyWidgetEntryViewSystemLarge.swift */,
 				78BB44C92B0137D5000EA9F5 /* CircleText.swift */,
+				78E8D0652C7DF20700C3812A /* Helpers.swift */,
 			);
 			path = BasketBuddyWidget;
 			sourceTree = "<group>";
@@ -532,6 +542,15 @@
 				78D5705929D6896600B986DB /* ShareListRow.swift */,
 			);
 			path = ShareList;
+			sourceTree = "<group>";
+		};
+		78E8D05F2C7D5B1300C3812A /* LiveActivity */ = {
+			isa = PBXGroup;
+			children = (
+				78E8D0602C7D5B5D00C3812A /* StartLiveActivityView.swift */,
+				78E8D0622C7D5B6C00C3812A /* StartLiveActivityViewModel.swift */,
+			);
+			path = LiveActivity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -704,6 +723,7 @@
 				784CDDAC277D56BF0048BDEB /* Main.swift in Sources */,
 				78CD1BAF29E65A47006F71C8 /* ItemsToBeAddedView.swift in Sources */,
 				783D527A29B840B30031DDCB /* EULA.swift in Sources */,
+				78E8D0642C7D5CB000C3812A /* BasketBuddyWidgetLiveActivity.swift in Sources */,
 				78CD1BAB29E3BA6B006F71C8 /* ImportShareListView.swift in Sources */,
 				784CDDA1277D55A20048BDEB /* Persistence.swift in Sources */,
 				782801042785289B002D5239 /* SelectedStore.swift in Sources */,
@@ -722,6 +742,9 @@
 				78280100278402AA002D5239 /* ListItem+CoreDataProperties.swift in Sources */,
 				7836848729E0BF840065CDBD /* ShareCodeReturnModel.swift in Sources */,
 				784CDDB3277D5CFB0048BDEB /* AddItems.swift in Sources */,
+				78E8D0662C7DF20700C3812A /* Helpers.swift in Sources */,
+				78E8D0632C7D5B6C00C3812A /* StartLiveActivityViewModel.swift in Sources */,
+				78E8D0612C7D5B5D00C3812A /* StartLiveActivityView.swift in Sources */,
 				7836848B29E10ED10065CDBD /* ServerErrorMessage.swift in Sources */,
 				78280110278687B8002D5239 /* BottomCenterButton.swift in Sources */,
 				783D527C29B84BCF0031DDCB /* Storekit.swift in Sources */,
@@ -778,6 +801,7 @@
 				7896D00C2AFBBC3900B40370 /* ListItem+CoreDataClass.swift in Sources */,
 				7896CFFF2AFBBC1900B40370 /* BasketBuddyWidgetLiveActivity.swift in Sources */,
 				78BEB1602AFD56D100F5CB3A /* ListApp.xcdatamodeld in Sources */,
+				78E8D0672C7DF20700C3812A /* Helpers.swift in Sources */,
 				7896D0102AFBCA1800B40370 /* Unit+CoreDataClass.swift in Sources */,
 				7896D0162AFBCA8A00B40370 /* CategoriesStarter.swift in Sources */,
 			);
@@ -985,7 +1009,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1021,7 +1045,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
