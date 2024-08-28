@@ -1,5 +1,5 @@
-import Foundation
 import AppIntents
+import Foundation
 
 public struct SimplifiedListItem: Codable {
     let count: String
@@ -11,11 +11,12 @@ public struct SimplifiedListItem: Codable {
 extension SimplifiedListItem: Hashable {}
 
 // MARK: - init from ListItem
+
 public extension SimplifiedListItem {
     init(listItem: ListItem) {
-        self.count = listItem.count
-        self.name = listItem.name
-        self.unitAbbrv = listItem.unit?.abbreviation
-        self.categoryName = listItem.category?.name
+        count = listItem.count
+        name = listItem.name
+        unitAbbrv = listItem.unit?.abbreviation
+        categoryName = listItem.category?.name
     }
 }

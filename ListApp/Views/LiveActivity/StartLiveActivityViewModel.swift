@@ -153,6 +153,21 @@ final class StartLiveActivityViewModel: ObservableObject {
         currentActivity = nil
         activityViewState = nil
     }
+
+    func updateLiveActivity(updatedItems: [SimplifiedListItem]) async {
+            guard let currentActivity = currentActivity else { return }
+
+            let nextItem: SimplifiedListItem 
+            if let item = updatedItems.first {
+                nextItem = item
+            } else {
+                nextItem = SimplifiedListItem(count: "", name: "No Items Left!", unitAbbrv: nil, categoryName: nil)
+            }
+
+            let contentState = BasketBuddyWidgetAttributes.ContentState(itemCount: updatedItems.count, nextItem: nextItem)
+
+        await currentActivity.update(ActivityContent<BasketBuddyWidgetAttributes.ContentState>(state: contentState, staleDate: Date.now + 15))
+    }
 }
 
 extension Data {

@@ -2,13 +2,7 @@ import SwiftUI
 import CoreData
 
 struct StartLiveActivityView: View {
-    private var viewContext: NSManagedObjectContext
-    @StateObject var viewModel: StartLiveActivityViewModel 
-
-    init(viewContext: NSManagedObjectContext) {
-        self.viewContext = viewContext
-        _viewModel = StateObject(wrappedValue: StartLiveActivityViewModel(viewContext: viewContext))
-    }
+    @EnvironmentObject var viewModel: StartLiveActivityViewModel
     
     var body: some View {
         VStack(alignment: .leading) {
