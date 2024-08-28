@@ -71,7 +71,7 @@ struct Settings: View {
                         .padding(.top)
                 }
                 
-                StartLiveActivityView()
+                StartLiveActivityView(viewContext: viewContext)
                     .padding(.top)
 
                 AppVersionView()

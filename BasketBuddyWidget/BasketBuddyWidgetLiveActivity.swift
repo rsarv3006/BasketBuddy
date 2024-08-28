@@ -13,9 +13,6 @@ struct BasketBuddyWidgetAttributes: ActivityAttributes {
         var itemCount: Int
         var nextItem: SimplifiedListItem
     }
-
-    // Fixed non-changing properties about your activity go here!
-    var name: String
 }
 
 struct BasketBuddyWidgetLiveActivity: Widget {
@@ -58,7 +55,7 @@ struct BasketBuddyWidgetLiveActivity: Widget {
 
 extension BasketBuddyWidgetAttributes {
     fileprivate static var preview: BasketBuddyWidgetAttributes {
-        BasketBuddyWidgetAttributes(name: "World")
+        BasketBuddyWidgetAttributes()
     }
 }
 

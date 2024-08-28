@@ -1,7 +1,14 @@
 import SwiftUI
+import CoreData
 
 struct StartLiveActivityView: View {
-    @StateObject var viewModel = StartLiveActivityViewModel()
+    private var viewContext: NSManagedObjectContext
+    @StateObject var viewModel: StartLiveActivityViewModel 
+
+    init(viewContext: NSManagedObjectContext) {
+        self.viewContext = viewContext
+        _viewModel = StateObject(wrappedValue: StartLiveActivityViewModel(viewContext: viewContext))
+    }
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -28,8 +35,4 @@ struct StartLiveActivityView: View {
             }
         }
     }
-}
-
-#Preview {
-    StartLiveActivityView()
 }
