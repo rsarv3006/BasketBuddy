@@ -2,6 +2,8 @@ import SwiftUI
 
 @main
 struct BasketBuddyApp: App {
+    @StateObject private var backgroundUpdater = BackgroundUpdater.shared
+    
     @State var deeplinkTarget: DeeplinkManager.DeeplinkTarget?
     
     let persistenceController = PersistenceController.shared
@@ -19,6 +21,7 @@ struct BasketBuddyApp: App {
                         .environmentObject(selectedStore)
                         .environmentObject(store)
                         .environmentObject(liveActivityViewModel)
+                        .environmentObject(backgroundUpdater)
                         .onAppear(perform: {
                             Category.addOnLoad(viewContext: persistenceController.container.viewContext)
                             Unit.addOnLoad(viewContext: persistenceController.container.viewContext)
@@ -31,6 +34,7 @@ struct BasketBuddyApp: App {
                             .environmentObject(selectedStore)
                             .environmentObject(store)
                             .environmentObject(liveActivityViewModel)
+                            .environmentObject(backgroundUpdater)
                             .onAppear(perform: {
                                 Category.addOnLoad(viewContext: persistenceController.container.viewContext)
                                 Unit.addOnLoad(viewContext: persistenceController.container.viewContext)
@@ -43,6 +47,7 @@ struct BasketBuddyApp: App {
                         .environmentObject(selectedStore)
                         .environmentObject(store)
                         .environmentObject(liveActivityViewModel)
+                        .environmentObject(backgroundUpdater)
                         .onAppear(perform: {
                             Category.addOnLoad(viewContext: persistenceController.container.viewContext)
                             Unit.addOnLoad(viewContext: persistenceController.container.viewContext)

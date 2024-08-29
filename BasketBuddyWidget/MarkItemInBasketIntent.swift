@@ -20,6 +20,11 @@ struct MarkItemInBasketIntent: AppIntent {
     func perform() async throws -> some IntentResult {
         let listItem = try ListItem.getItemFromItemName(managedObjectContext, itemName: simplifiedListItem)
         ListItem.addMoveToBasketDate(listItem)
+        
+        let sharedDefaults = UserDefaults(suiteName: "group.rjs.app.dev.basketbuddy")
+        sharedDefaults?.set(true, forKey: kCoreDataChangedKey)
+        sharedDefaults?.synchronize()
+        
         return .result()
     }
 }

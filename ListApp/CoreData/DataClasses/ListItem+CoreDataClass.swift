@@ -5,8 +5,6 @@ import WidgetKit
 
 @objc(ListItem)
 public class ListItem: NSManagedObject {
-    @nonobjc public class func liveActivityUpdate(viewContext _: NSManagedObjectContext) async throws {}
-
     @nonobjc public class func addItemsFromShareList(viewContext: NSManagedObjectContext, items: Set<ShareListItem>) throws {
         try items.forEach { itemToAdd in
             let unit = Unit.getUnitByName(viewContext: viewContext, name: itemToAdd.unitName)

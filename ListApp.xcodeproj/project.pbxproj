@@ -111,6 +111,11 @@
 		78E8D0642C7D5CB000C3812A /* BasketBuddyWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7896CFFE2AFBBC1900B40370 /* BasketBuddyWidgetLiveActivity.swift */; };
 		78E8D0662C7DF20700C3812A /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E8D0652C7DF20700C3812A /* Helpers.swift */; };
 		78E8D0672C7DF20700C3812A /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E8D0652C7DF20700C3812A /* Helpers.swift */; };
+		78E8D0692C7F6B9100C3812A /* CoreDataPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E8D0682C7F6B9100C3812A /* CoreDataPublisher.swift */; };
+		78E8D06A2C7F6B9100C3812A /* CoreDataPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E8D0682C7F6B9100C3812A /* CoreDataPublisher.swift */; };
+		78ED58052C800527006C2D59 /* BackgroundUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ED58042C800527006C2D59 /* BackgroundUpdater.swift */; };
+		78ED58072C800570006C2D59 /* UserDefaultsSharedKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ED58062C800570006C2D59 /* UserDefaultsSharedKeys.swift */; };
+		78ED58082C800570006C2D59 /* UserDefaultsSharedKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ED58062C800570006C2D59 /* UserDefaultsSharedKeys.swift */; };
 		78F1EE3229D3E0A300347A00 /* ShareListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F1EE3129D3E0A300347A00 /* ShareListView.swift */; };
 		78F1EE3429D3E19100347A00 /* ContactSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F1EE3329D3E19100347A00 /* ContactSupport.swift */; };
 /* End PBXBuildFile section */
@@ -237,6 +242,9 @@
 		78E8D0602C7D5B5D00C3812A /* StartLiveActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartLiveActivityView.swift; sourceTree = "<group>"; };
 		78E8D0622C7D5B6C00C3812A /* StartLiveActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartLiveActivityViewModel.swift; sourceTree = "<group>"; };
 		78E8D0652C7DF20700C3812A /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		78E8D0682C7F6B9100C3812A /* CoreDataPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataPublisher.swift; sourceTree = "<group>"; };
+		78ED58042C800527006C2D59 /* BackgroundUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundUpdater.swift; sourceTree = "<group>"; };
+		78ED58062C800570006C2D59 /* UserDefaultsSharedKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsSharedKeys.swift; sourceTree = "<group>"; };
 		78F1EE3129D3E0A300347A00 /* ShareListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareListView.swift; sourceTree = "<group>"; };
 		78F1EE3329D3E19100347A00 /* ContactSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactSupport.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -366,6 +374,7 @@
 				783D527B29B84BCF0031DDCB /* Storekit.swift */,
 				7836847529DD26890065CDBD /* EncodeDecodeUtils.swift */,
 				78CD1BAC29E4B639006F71C8 /* ShareCodeAllowedValues.swift */,
+				78ED58062C800570006C2D59 /* UserDefaultsSharedKeys.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -483,6 +492,7 @@
 			children = (
 				782800EE2783B7FC002D5239 /* DataProperties */,
 				782800ED2783B7ED002D5239 /* DataClasses */,
+				78E8D0682C7F6B9100C3812A /* CoreDataPublisher.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -492,6 +502,7 @@
 			children = (
 				784CDD97277D559F0048BDEB /* BasketBuddyApp.swift */,
 				78BEB15C2AFD348000F5CB3A /* AppGroup.swift */,
+				78ED58042C800527006C2D59 /* BackgroundUpdater.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -725,6 +736,7 @@
 				783D527A29B840B30031DDCB /* EULA.swift in Sources */,
 				78E8D0642C7D5CB000C3812A /* BasketBuddyWidgetLiveActivity.swift in Sources */,
 				78CD1BAB29E3BA6B006F71C8 /* ImportShareListView.swift in Sources */,
+				78E8D0692C7F6B9100C3812A /* CoreDataPublisher.swift in Sources */,
 				784CDDA1277D55A20048BDEB /* Persistence.swift in Sources */,
 				782801042785289B002D5239 /* SelectedStore.swift in Sources */,
 				78280101278402AA002D5239 /* Category+CoreDataProperties.swift in Sources */,
@@ -736,6 +748,7 @@
 				780F306029D3E776002C7BA9 /* SettingsViewShareButtons.swift in Sources */,
 				78BEB15D2AFD348000F5CB3A /* AppGroup.swift in Sources */,
 				7896D0192AFC380D00B40370 /* SimplifiedListItem.swift in Sources */,
+				78ED58052C800527006C2D59 /* BackgroundUpdater.swift in Sources */,
 				782801092786517F002D5239 /* SettingsBasketHistoryView.swift in Sources */,
 				7828010727865170002D5239 /* SettingsCategoriesView.swift in Sources */,
 				7828010D2786850E002D5239 /* CategoryModel.swift in Sources */,
@@ -767,6 +780,7 @@
 				784CDD9A277D559F0048BDEB /* ContentView.swift in Sources */,
 				781D17F929B30D4200C1F5BF /* PrivacyPolicy.swift in Sources */,
 				78280102278402AA002D5239 /* Unit+CoreDataProperties.swift in Sources */,
+				78ED58072C800570006C2D59 /* UserDefaultsSharedKeys.swift in Sources */,
 				782800DB278248EC002D5239 /* ListItemSort.swift in Sources */,
 				782800E42783A601002D5239 /* ListComponentBottomToolbar.swift in Sources */,
 				784CDD98277D559F0048BDEB /* BasketBuddyApp.swift in Sources */,
@@ -793,11 +807,13 @@
 				7896D00E2AFBBC9B00B40370 /* CategoryModel.swift in Sources */,
 				7896D0172AFBCA9200B40370 /* ListItemSort.swift in Sources */,
 				7896D0122AFBCA4200B40370 /* Category+CoreDataClass.swift in Sources */,
+				78E8D06A2C7F6B9100C3812A /* CoreDataPublisher.swift in Sources */,
 				78BB44C22B001C81000EA9F5 /* BasketBuddyWidgetProvider.swift in Sources */,
 				78BEB15E2AFD541400F5CB3A /* Persistence.swift in Sources */,
 				7896CFFD2AFBBC1900B40370 /* BasketBuddyWidgetBundle.swift in Sources */,
 				7896D0142AFBCA7E00B40370 /* ListItem+CoreDataProperties.swift in Sources */,
 				7896D0012AFBBC1A00B40370 /* BasketBuddyWidget.swift in Sources */,
+				78ED58082C800570006C2D59 /* UserDefaultsSharedKeys.swift in Sources */,
 				7896D00C2AFBBC3900B40370 /* ListItem+CoreDataClass.swift in Sources */,
 				7896CFFF2AFBBC1900B40370 /* BasketBuddyWidgetLiveActivity.swift in Sources */,
 				78BEB1602AFD56D100F5CB3A /* ListApp.xcdatamodeld in Sources */,
@@ -1004,6 +1020,8 @@
 				INFOPLIST_FILE = ListApp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = BasketBuddy;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				INFOPLIST_KEY_NSSupportsLiveActivitiesFrequentUpdates = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1040,6 +1058,8 @@
 				INFOPLIST_FILE = ListApp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = BasketBuddy;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				INFOPLIST_KEY_NSSupportsLiveActivitiesFrequentUpdates = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
