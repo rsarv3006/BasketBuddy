@@ -2,19 +2,6 @@ import ActivityKit
 import WidgetKit
 import SwiftUI
 
-struct BasketBuddyWidgetAttributes: ActivityAttributes {
-    public struct ContentState: Codable, Hashable {
-        public init(itemCount: Int, nextItem: SimplifiedListItem) {
-            self.itemCount = itemCount
-            self.nextItem = nextItem
-        }
-        
-        // Dynamic stateful properties about your activity go here!
-        var itemCount: Int
-        var nextItem: SimplifiedListItem
-    }
-}
-
 struct BasketBuddyWidgetLiveActivity: Widget {
     var body: some WidgetConfiguration {
         ActivityConfiguration(for: BasketBuddyWidgetAttributes.self) { context in
@@ -38,7 +25,6 @@ struct BasketBuddyWidgetLiveActivity: Widget {
                 }
                 DynamicIslandExpandedRegion(.bottom) {
                     Text("Next: \(parseItemForMediumSystemItemText(item: context.state.nextItem))")
-                    // more content
                 }
             } compactLeading: {
                 Text("\(context.state.itemCount)")

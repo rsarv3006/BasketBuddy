@@ -10,6 +10,8 @@ public struct SimplifiedListItem: Codable {
 
 extension SimplifiedListItem: Hashable {}
 
+extension SimplifiedListItem: Sendable {}
+
 // MARK: - init from ListItem
 
 public extension SimplifiedListItem {

@@ -7,7 +7,6 @@ struct Main: View {
     @EnvironmentObject var selectedStore: SelectedStore
     @EnvironmentObject var store: Store
     @Environment(\.scenePhase) var scenePhase
-    @EnvironmentObject private var backgroundUpdater: BackgroundUpdater
     
     @AppStorage("versionUpdateModal1.7.6") var firstTimeModal = true
     
@@ -95,8 +94,5 @@ struct Main: View {
                         }
         }
         .navigationViewStyle(StackNavigationViewStyle())
-        .onAppear {
-            backgroundUpdater.scheduleAppRefresh()
-        }
     }
 }

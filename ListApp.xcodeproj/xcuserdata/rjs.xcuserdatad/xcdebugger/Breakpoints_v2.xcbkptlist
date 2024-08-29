@@ -126,8 +126,8 @@
             filePath = "ListApp/App/BasketBuddyApp.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -142,8 +142,8 @@
             filePath = "ListApp/App/BasketBuddyApp.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -158,8 +158,8 @@
             filePath = "ListApp/App/BasketBuddyApp.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -264,7 +264,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "D85663C9-1A86-4392-9FCC-E174EE8B9B72"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ListApp/Views/LiveActivity/StartLiveActivityViewModel.swift"
@@ -274,71 +274,13 @@
             endingLineNumber = "177"
             landmarkName = "observeActivity(for:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "D85663C9-1A86-4392-9FCC-E174EE8B9B72 - 9852a0fd21bb344c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for closure #3 @Sendable () async -&gt; () in closure #1 (inout Swift.TaskGroup&lt;()&gt;) async -&gt; () in closure #1 @Sendable () async -&gt; () in BasketBuddy.StartLiveActivityViewModel.observeActivity(for: ActivityKit.Activity&lt;BasketBuddy.BasketBuddyWidgetAttributes&gt;) -&gt; ()"
-                  moduleName = "BasketBuddy"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rjs/dev/listapp/ListApp/Views/LiveActivity/StartLiveActivityViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "177"
-                  endingLineNumber = "177">
-               </Location>
-               <Location
-                  uuid = "D85663C9-1A86-4392-9FCC-E174EE8B9B72 - 8fa9dc3ae24c922b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(4) await resume partial function for closure #3 @Sendable () async -&gt; () in closure #1 (inout Swift.TaskGroup&lt;()&gt;) async -&gt; () in closure #1 @Sendable () async -&gt; () in BasketBuddy.StartLiveActivityViewModel.observeActivity(for: ActivityKit.Activity&lt;BasketBuddy.BasketBuddyWidgetAttributes&gt;) -&gt; ()"
-                  moduleName = "BasketBuddy"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rjs/dev/listapp/ListApp/Views/LiveActivity/StartLiveActivityViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "177"
-                  endingLineNumber = "177">
-               </Location>
-               <Location
-                  uuid = "D85663C9-1A86-4392-9FCC-E174EE8B9B72 - e066723aec42504e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(5) suspend resume partial function for closure #3 @Sendable () async -&gt; () in closure #1 (inout Swift.TaskGroup&lt;()&gt;) async -&gt; () in closure #1 @Sendable () async -&gt; () in BasketBuddy.StartLiveActivityViewModel.observeActivity(for: ActivityKit.Activity&lt;BasketBuddy.BasketBuddyWidgetAttributes&gt;) -&gt; ()"
-                  moduleName = "BasketBuddy"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rjs/dev/listapp/ListApp/Views/LiveActivity/StartLiveActivityViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "177"
-                  endingLineNumber = "177">
-               </Location>
-               <Location
-                  uuid = "D85663C9-1A86-4392-9FCC-E174EE8B9B72 - 8c61db55c95de24f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(6) suspend resume partial function for closure #3 @Sendable () async -&gt; () in closure #1 (inout Swift.TaskGroup&lt;()&gt;) async -&gt; () in closure #1 @Sendable () async -&gt; () in BasketBuddy.StartLiveActivityViewModel.observeActivity(for: ActivityKit.Activity&lt;BasketBuddy.BasketBuddyWidgetAttributes&gt;) -&gt; ()"
-                  moduleName = "BasketBuddy"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rjs/dev/listapp/ListApp/Views/LiveActivity/StartLiveActivityViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "177"
-                  endingLineNumber = "177">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "B5104DF6-E883-4ACE-B8FC-76238E157F91"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ListApp/Views/LiveActivity/StartLiveActivityViewModel.swift"

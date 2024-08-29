@@ -1,26 +1,26 @@
+import Foundation
 import AppIntents
-import CoreData
 import ActivityKit
 
-struct MarkItemInBasketIntent: AppIntent {
+struct UpdateLiveActivityInfo: Codable, Hashable, Sendable {
+    let itemCount: Int
+    let nextItem: SimplifiedListItem
+}
+
+struct UpdateLiveActivityIntent: LiveActivityIntent {
     init() {}
     
-    static var title: LocalizedStringResource = "Mark Item In Basket"
-    static var description = IntentDescription("Mark an item as in the basket.")
+    static var title: LocalizedStringResource = "Update Live Activity from App Changes"
     
-    @Parameter(title: "SimplifiedListItem")
-    var simplifiedListItem: String
+    @Parameter(title: "recordId")
+    var recordId: String
     
-    init(simplifiedListItem: String) {
-        self.simplifiedListItem = simplifiedListItem
+    init(recordId: String) {
+        self.recordId = recordId
     }
-    
+   
     func perform() async throws -> some IntentResult {
-        let listItem = try ListItem.getItemFromItemName(PersistenceController.shared.container.viewContext, itemName: simplifiedListItem)
-        ListItem.addMoveToBasketDate(listItem)
-        
         self.updateLiveActivity()
-        
         return .result()
     }
     
@@ -46,5 +46,5 @@ struct MarkItemInBasketIntent: AppIntent {
             print("Failed to fetch latest entity: \(error)")
         }
     }
-    
 }
+
