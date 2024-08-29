@@ -1,7 +1,7 @@
-import Foundation
-import CoreData
-import WidgetKit
 import Bedrock
+import CoreData
+import Foundation
+import WidgetKit
 
 @objc(ListItem)
 public class ListItem: NSManagedObject {
@@ -9,17 +9,17 @@ public class ListItem: NSManagedObject {
         try items.forEach { itemToAdd in
             let unit = Unit.getUnitByName(viewContext: viewContext, name: itemToAdd.unitName)
             let category = CategoryModel.getCategoryByName(viewContext: viewContext, name: itemToAdd.categoryName)
-            
+
             guard let unit, let category else {
                 throw ServiceErrors.custom(message: "Unable to find a matching unit and/or Category")
             }
-            
+
             self.addItem(itemName: itemToAdd.itemName, itemCount: itemToAdd.itemCount, unit: unit, category: category, isStaple: false, viewContext: viewContext)
         }
-        
+
         WidgetCenter.shared.reloadTimelines(ofKind: "BasketBuddyWidget")
     }
-    
+
     @nonobjc public class func addItem(
         itemName: String,
         itemCount: String,
@@ -36,7 +36,7 @@ public class ListItem: NSManagedObject {
         item.dateAdded = Date()
         item.isStaple = isStaple
         item.isVisible = true
-        
+
         do {
             try viewContext.save()
             WidgetCenter.shared.reloadTimelines(ofKind: "BasketBuddyWidget")
@@ -45,7 +45,7 @@ public class ListItem: NSManagedObject {
             print(error.userInfo)
         }
     }
-    
+
     @nonobjc public class func editItem(
         itemToEdit: ListItem,
         itemName: String,
@@ -55,7 +55,7 @@ public class ListItem: NSManagedObject {
         isStaple: Bool
     ) {
         guard let context = itemToEdit.managedObjectContext else { return }
-        
+
         itemToEdit.name = itemName
         itemToEdit.count = itemCount
         itemToEdit.unit = unit
@@ -63,7 +63,7 @@ public class ListItem: NSManagedObject {
         itemToEdit.dateAdded = Date()
         itemToEdit.isStaple = isStaple
         itemToEdit.isVisible = true
-        
+
         do {
             try context.save()
             WidgetCenter.shared.reloadTimelines(ofKind: "BasketBuddyWidget")
@@ -71,12 +71,12 @@ public class ListItem: NSManagedObject {
             print(error.userInfo)
         }
     }
-    
+
     @nonobjc public class func deleteItem(_ item: ListItem) {
         guard let context = item.managedObjectContext else { return }
-        
+
         context.delete(item)
-        
+
         do {
             try context.save()
         } catch {
@@ -84,11 +84,11 @@ public class ListItem: NSManagedObject {
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
         }
     }
-    
+
     @nonobjc public class func makeNotVisible(_ item: ListItem) {
         guard let context = item.managedObjectContext else { return }
         item.isVisible = false
-        
+
         do {
             try context.save()
             WidgetCenter.shared.reloadTimelines(ofKind: "BasketBuddyWidget")
@@ -97,10 +97,10 @@ public class ListItem: NSManagedObject {
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
         }
     }
-    
+
     @nonobjc public class func addMoveToBasketDate(_ item: ListItem) {
         guard let context = item.managedObjectContext else { return }
-        
+
         item.isVisible = false
         if var datesMoved = item.datesMovedToBasket {
             datesMoved.append(Date())
@@ -108,7 +108,7 @@ public class ListItem: NSManagedObject {
         } else {
             item.datesMovedToBasket = [Date()]
         }
-        
+
         do {
             try context.save()
             WidgetCenter.shared.reloadTimelines(ofKind: "BasketBuddyWidget")
@@ -116,32 +116,32 @@ public class ListItem: NSManagedObject {
             print(error.userInfo)
         }
     }
-    
+
     @nonobjc public class func loadStaples(_ context: NSManagedObjectContext) -> Bool {
         let fetchRequest: NSFetchRequest<ListItem> = ListItem.fetchRequest()
         fetchRequest.sortDescriptors = []
         fetchRequest.predicate = NSPredicate(format: "isStaple = %@", NSNumber(value: true))
-        
+
         do {
             let staples = try context.fetch(fetchRequest)
             for item in staples {
                 item.isVisible = true
             }
-            
+
             try context.save()
             WidgetCenter.shared.reloadTimelines(ofKind: "BasketBuddyWidget")
             return true
-        } catch let error as NSError{
+        } catch let error as NSError {
             print(error.userInfo)
             return false
         }
     }
-    
+
     @nonobjc public class func makeItemVisible(_ item: ListItem) {
         guard let context = item.managedObjectContext else { return }
-        
+
         item.isVisible = true
-        
+
         do {
             try context.save()
             WidgetCenter.shared.reloadTimelines(ofKind: "BasketBuddyWidget")
@@ -149,28 +149,29 @@ public class ListItem: NSManagedObject {
             print(error.userInfo)
         }
     }
-    
+
     @nonobjc public class func clearAllItems(_ context: NSManagedObjectContext) {
         let fetchRequest: NSFetchRequest<ListItem> = ListItem.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "isVisible == true")
-        
+
         do {
             let items = try context.fetch(fetchRequest)
             for item in items {
                 item.isVisible = false
             }
-            
+
             try context.save()
+            WidgetCenter.shared.reloadTimelines(ofKind: "BasketBuddyWidget")
         } catch {
             print("Failed to clear items: \(error)")
         }
     }
-    
+
     @nonobjc public class func clearMoveToBasketHistory(_ context: NSManagedObjectContext) {
         let fetchRequest: NSFetchRequest<ListItem> = ListItem.fetchRequest()
         fetchRequest.sortDescriptors = []
         fetchRequest.predicate = NSPredicate(value: true)
-        
+
         do {
             let listItems = try context.fetch(fetchRequest)
             for item in listItems {
@@ -184,19 +185,19 @@ public class ListItem: NSManagedObject {
             print(error.userInfo)
         }
     }
-    
-    @nonobjc public class func getSimplifiedListItemsForWidget(_ context: NSManagedObjectContext) throws -> [SimplifiedListItem]  {
+
+    @nonobjc public class func getSimplifiedListItemsForWidget(_ context: NSManagedObjectContext) throws -> [SimplifiedListItem] {
         let fetchRequest: NSFetchRequest<ListItem> = ListItem.fetchRequest()
         fetchRequest.sortDescriptors = []
         fetchRequest.predicate = NSPredicate(format: "isVisible = %@", NSNumber(value: true))
-        
+
         let listItems = try context.fetch(fetchRequest)
-        
+
         return listItems.map { item in
-            return SimplifiedListItem(listItem: item)
+            SimplifiedListItem(listItem: item)
         }
     }
-    
+
     @nonobjc public class func getItemFromSimplifiedListItem(_ context: NSManagedObjectContext, simplifiedListItem: SimplifiedListItem) throws -> ListItem {
         let fetchRequest: NSFetchRequest<ListItem> = ListItem.fetchRequest()
         fetchRequest.sortDescriptors = []
@@ -205,9 +206,9 @@ public class ListItem: NSManagedObject {
            let categoryName = simplifiedListItem.categoryName
         {
             fetchRequest.predicate = NSPredicate(format: "name = %@ AND unit = %@ AND category = %@", name, unit, categoryName)
-            
+
             let listItems = try context.fetch(fetchRequest)
-            
+
             if listItems.count == 1 {
                 return listItems[0]
             } else {
@@ -217,15 +218,15 @@ public class ListItem: NSManagedObject {
             throw ServiceErrors.custom(message: "Bad simplified list item")
         }
     }
-    
+
     @nonobjc public class func getItemFromItemName(_ context: NSManagedObjectContext, itemName: String) throws -> ListItem {
         let fetchRequest: NSFetchRequest<ListItem> = ListItem.fetchRequest()
         fetchRequest.sortDescriptors = []
         if !itemName.isEmpty {
             fetchRequest.predicate = NSPredicate(format: "name = %@ AND isVisible = %@", itemName, NSNumber(value: true))
-            
+
             let listItems = try context.fetch(fetchRequest)
-           
+
             if listItems.count == 1 {
                 return listItems[0]
             } else {
@@ -236,4 +237,3 @@ public class ListItem: NSManagedObject {
         }
     }
 }
-

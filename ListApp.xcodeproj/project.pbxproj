@@ -106,6 +106,17 @@
 		78D5705829D6892D00B986DB /* ShareListHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D5705729D6892D00B986DB /* ShareListHelpers.swift */; };
 		78D5705A29D6896600B986DB /* ShareListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D5705929D6896600B986DB /* ShareListRow.swift */; };
 		78D5705C29D68A0400B986DB /* AppVersionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D5705B29D68A0400B986DB /* AppVersionView.swift */; };
+		78E8D0612C7D5B5D00C3812A /* StartLiveActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E8D0602C7D5B5D00C3812A /* StartLiveActivityView.swift */; };
+		78E8D0632C7D5B6C00C3812A /* StartLiveActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E8D0622C7D5B6C00C3812A /* StartLiveActivityViewModel.swift */; };
+		78E8D0662C7DF20700C3812A /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E8D0652C7DF20700C3812A /* Helpers.swift */; };
+		78E8D0672C7DF20700C3812A /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E8D0652C7DF20700C3812A /* Helpers.swift */; };
+		78E8D0692C7F6B9100C3812A /* CoreDataPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E8D0682C7F6B9100C3812A /* CoreDataPublisher.swift */; };
+		78E8D06A2C7F6B9100C3812A /* CoreDataPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E8D0682C7F6B9100C3812A /* CoreDataPublisher.swift */; };
+		78ED580B2C808C9B006C2D59 /* UpdateLiveActivityIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ED58092C808C9B006C2D59 /* UpdateLiveActivityIntent.swift */; };
+		78ED580D2C809094006C2D59 /* BasketBuddyWidgetAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ED580C2C809094006C2D59 /* BasketBuddyWidgetAttributes.swift */; };
+		78ED580E2C809094006C2D59 /* BasketBuddyWidgetAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ED580C2C809094006C2D59 /* BasketBuddyWidgetAttributes.swift */; };
+		78ED580F2C80927D006C2D59 /* UpdateLiveActivityIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ED58092C808C9B006C2D59 /* UpdateLiveActivityIntent.swift */; };
+		78ED58102C809357006C2D59 /* MarkItemInBasketIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB44C32B001CB2000EA9F5 /* MarkItemInBasketIntent.swift */; };
 		78F1EE3229D3E0A300347A00 /* ShareListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F1EE3129D3E0A300347A00 /* ShareListView.swift */; };
 		78F1EE3429D3E19100347A00 /* ContactSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F1EE3329D3E19100347A00 /* ContactSupport.swift */; };
 /* End PBXBuildFile section */
@@ -229,6 +240,12 @@
 		78D5705729D6892D00B986DB /* ShareListHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareListHelpers.swift; sourceTree = "<group>"; };
 		78D5705929D6896600B986DB /* ShareListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareListRow.swift; sourceTree = "<group>"; };
 		78D5705B29D68A0400B986DB /* AppVersionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionView.swift; sourceTree = "<group>"; };
+		78E8D0602C7D5B5D00C3812A /* StartLiveActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartLiveActivityView.swift; sourceTree = "<group>"; };
+		78E8D0622C7D5B6C00C3812A /* StartLiveActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartLiveActivityViewModel.swift; sourceTree = "<group>"; };
+		78E8D0652C7DF20700C3812A /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		78E8D0682C7F6B9100C3812A /* CoreDataPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataPublisher.swift; sourceTree = "<group>"; };
+		78ED58092C808C9B006C2D59 /* UpdateLiveActivityIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLiveActivityIntent.swift; sourceTree = "<group>"; };
+		78ED580C2C809094006C2D59 /* BasketBuddyWidgetAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketBuddyWidgetAttributes.swift; sourceTree = "<group>"; };
 		78F1EE3129D3E0A300347A00 /* ShareListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareListView.swift; sourceTree = "<group>"; };
 		78F1EE3329D3E19100347A00 /* ContactSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactSupport.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -421,6 +438,7 @@
 		784CDDAA277D56B10048BDEB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				78E8D05F2C7D5B1300C3812A /* LiveActivity */,
 				7866AAA129C63BD7005416ED /* FirstTimeModals */,
 				7828010E278687A3002D5239 /* Components */,
 				7828010527865150002D5239 /* SettingsViews */,
@@ -474,6 +492,7 @@
 			children = (
 				782800EE2783B7FC002D5239 /* DataProperties */,
 				782800ED2783B7ED002D5239 /* DataClasses */,
+				78E8D0682C7F6B9100C3812A /* CoreDataPublisher.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -510,6 +529,9 @@
 				78BB44C32B001CB2000EA9F5 /* MarkItemInBasketIntent.swift */,
 				78BB44C72B001E1C000EA9F5 /* BasketBuddyWidgetEntryViewSystemLarge.swift */,
 				78BB44C92B0137D5000EA9F5 /* CircleText.swift */,
+				78E8D0652C7DF20700C3812A /* Helpers.swift */,
+				78ED58092C808C9B006C2D59 /* UpdateLiveActivityIntent.swift */,
+				78ED580C2C809094006C2D59 /* BasketBuddyWidgetAttributes.swift */,
 			);
 			path = BasketBuddyWidget;
 			sourceTree = "<group>";
@@ -532,6 +554,15 @@
 				78D5705929D6896600B986DB /* ShareListRow.swift */,
 			);
 			path = ShareList;
+			sourceTree = "<group>";
+		};
+		78E8D05F2C7D5B1300C3812A /* LiveActivity */ = {
+			isa = PBXGroup;
+			children = (
+				78E8D0602C7D5B5D00C3812A /* StartLiveActivityView.swift */,
+				78E8D0622C7D5B6C00C3812A /* StartLiveActivityViewModel.swift */,
+			);
+			path = LiveActivity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -703,8 +734,11 @@
 				784CDDB0277D59B60048BDEB /* ListComponent.swift in Sources */,
 				784CDDAC277D56BF0048BDEB /* Main.swift in Sources */,
 				78CD1BAF29E65A47006F71C8 /* ItemsToBeAddedView.swift in Sources */,
+				78ED580F2C80927D006C2D59 /* UpdateLiveActivityIntent.swift in Sources */,
 				783D527A29B840B30031DDCB /* EULA.swift in Sources */,
 				78CD1BAB29E3BA6B006F71C8 /* ImportShareListView.swift in Sources */,
+				78ED58102C809357006C2D59 /* MarkItemInBasketIntent.swift in Sources */,
+				78E8D0692C7F6B9100C3812A /* CoreDataPublisher.swift in Sources */,
 				784CDDA1277D55A20048BDEB /* Persistence.swift in Sources */,
 				782801042785289B002D5239 /* SelectedStore.swift in Sources */,
 				78280101278402AA002D5239 /* Category+CoreDataProperties.swift in Sources */,
@@ -722,6 +756,9 @@
 				78280100278402AA002D5239 /* ListItem+CoreDataProperties.swift in Sources */,
 				7836848729E0BF840065CDBD /* ShareCodeReturnModel.swift in Sources */,
 				784CDDB3277D5CFB0048BDEB /* AddItems.swift in Sources */,
+				78E8D0662C7DF20700C3812A /* Helpers.swift in Sources */,
+				78E8D0632C7D5B6C00C3812A /* StartLiveActivityViewModel.swift in Sources */,
+				78E8D0612C7D5B5D00C3812A /* StartLiveActivityView.swift in Sources */,
 				7836848B29E10ED10065CDBD /* ServerErrorMessage.swift in Sources */,
 				78280110278687B8002D5239 /* BottomCenterButton.swift in Sources */,
 				783D527C29B84BCF0031DDCB /* Storekit.swift in Sources */,
@@ -733,6 +770,7 @@
 				78CD1BA629E3767E006F71C8 /* ShareListDto.swift in Sources */,
 				78F1EE3229D3E0A300347A00 /* ShareListView.swift in Sources */,
 				784CDDC6277E483D0048BDEB /* Category+CoreDataClass.swift in Sources */,
+				78ED580D2C809094006C2D59 /* BasketBuddyWidgetAttributes.swift in Sources */,
 				784CDDB6277D5F5B0048BDEB /* UIColorExtension.swift in Sources */,
 				784CDDA4277D55A20048BDEB /* ListApp.xcdatamodeld in Sources */,
 				783D528029B93BA00031DDCB /* SettingsInAppPurchases.swift in Sources */,
@@ -761,6 +799,7 @@
 				78BEB1582AFCA16500F5CB3A /* UIColorExtension.swift in Sources */,
 				7896D0112AFBCA2A00B40370 /* UnitsStarter.swift in Sources */,
 				7896D0152AFBCA8200B40370 /* Category+CoreDataProperties.swift in Sources */,
+				78ED580B2C808C9B006C2D59 /* UpdateLiveActivityIntent.swift in Sources */,
 				78BB44C02B001A82000EA9F5 /* BasketBuddyWidgetEntryViewSystemSmall.swift in Sources */,
 				78BEB15F2AFD546A00F5CB3A /* AppGroup.swift in Sources */,
 				7896D00D2AFBBC8900B40370 /* ShareListItem.swift in Sources */,
@@ -770,6 +809,7 @@
 				7896D00E2AFBBC9B00B40370 /* CategoryModel.swift in Sources */,
 				7896D0172AFBCA9200B40370 /* ListItemSort.swift in Sources */,
 				7896D0122AFBCA4200B40370 /* Category+CoreDataClass.swift in Sources */,
+				78E8D06A2C7F6B9100C3812A /* CoreDataPublisher.swift in Sources */,
 				78BB44C22B001C81000EA9F5 /* BasketBuddyWidgetProvider.swift in Sources */,
 				78BEB15E2AFD541400F5CB3A /* Persistence.swift in Sources */,
 				7896CFFD2AFBBC1900B40370 /* BasketBuddyWidgetBundle.swift in Sources */,
@@ -777,7 +817,9 @@
 				7896D0012AFBBC1A00B40370 /* BasketBuddyWidget.swift in Sources */,
 				7896D00C2AFBBC3900B40370 /* ListItem+CoreDataClass.swift in Sources */,
 				7896CFFF2AFBBC1900B40370 /* BasketBuddyWidgetLiveActivity.swift in Sources */,
+				78ED580E2C809094006C2D59 /* BasketBuddyWidgetAttributes.swift in Sources */,
 				78BEB1602AFD56D100F5CB3A /* ListApp.xcdatamodeld in Sources */,
+				78E8D0672C7DF20700C3812A /* Helpers.swift in Sources */,
 				7896D0102AFBCA1800B40370 /* Unit+CoreDataClass.swift in Sources */,
 				7896D0162AFBCA8A00B40370 /* CategoriesStarter.swift in Sources */,
 			);
@@ -980,12 +1022,14 @@
 				INFOPLIST_FILE = ListApp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = BasketBuddy;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				INFOPLIST_KEY_NSSupportsLiveActivitiesFrequentUpdates = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1016,12 +1060,14 @@
 				INFOPLIST_FILE = ListApp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = BasketBuddy;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				INFOPLIST_KEY_NSSupportsLiveActivitiesFrequentUpdates = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -46,12 +46,6 @@ struct LargeSystemText : View {
     }
 }
 
-func parseItemForMediumSystemItemText(item: SimplifiedListItem) -> String {
-    var unitAbbrv = item.unitAbbrv ?? ""
-    unitAbbrv = unitAbbrv.isEmpty ? "" : "\(unitAbbrv) "
-    return "\(item.count) \(unitAbbrv)\(item.name ?? "")"
-}
-
 struct BasketBuddyWidget: Widget {
     let kind: String = "BasketBuddyWidget"
     

@@ -7,6 +7,7 @@ struct BasketBuddyApp: App {
     let persistenceController = PersistenceController.shared
     @StateObject private var selectedStore = SelectedStore()
     @StateObject var store: Store = Store()
+    @StateObject private var liveActivityViewModel = StartLiveActivityViewModel(viewContext: PersistenceController.shared.container.viewContext)
     
     var body: some Scene {
         WindowGroup {
@@ -17,6 +18,7 @@ struct BasketBuddyApp: App {
                         .environment(\.managedObjectContext, persistenceController.container.viewContext)
                         .environmentObject(selectedStore)
                         .environmentObject(store)
+                        .environmentObject(liveActivityViewModel)
                         .onAppear(perform: {
                             Category.addOnLoad(viewContext: persistenceController.container.viewContext)
                             Unit.addOnLoad(viewContext: persistenceController.container.viewContext)
@@ -28,6 +30,7 @@ struct BasketBuddyApp: App {
                             .environment(\.managedObjectContext, persistenceController.container.viewContext)
                             .environmentObject(selectedStore)
                             .environmentObject(store)
+                            .environmentObject(liveActivityViewModel)
                             .onAppear(perform: {
                                 Category.addOnLoad(viewContext: persistenceController.container.viewContext)
                                 Unit.addOnLoad(viewContext: persistenceController.container.viewContext)
@@ -39,6 +42,7 @@ struct BasketBuddyApp: App {
                         .environment(\.managedObjectContext, persistenceController.container.viewContext)
                         .environmentObject(selectedStore)
                         .environmentObject(store)
+                        .environmentObject(liveActivityViewModel)
                         .onAppear(perform: {
                             Category.addOnLoad(viewContext: persistenceController.container.viewContext)
                             Unit.addOnLoad(viewContext: persistenceController.container.viewContext)

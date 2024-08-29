@@ -70,8 +70,13 @@ struct Settings: View {
                     SettingsInAppPurchases(product: product)
                         .padding(.top)
                 }
+                
+                StartLiveActivityView()
+                    .padding(.top)
 
                 AppVersionView()
+                
+                
 
                 HStack {
                     Spacer()
