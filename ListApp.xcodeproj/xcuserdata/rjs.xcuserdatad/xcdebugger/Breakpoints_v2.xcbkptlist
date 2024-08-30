@@ -292,5 +292,295 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CD8CB51C-13BE-4984-A75F-59FB5D328A55"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ListApp/Services/ShareService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "6"
+            endingLineNumber = "6"
+            landmarkName = "createShare(items:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7CA2EB3E-8AB9-4E85-A1AD-5523F2E93DBA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ListApp/Services/ShareService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "8"
+            endingLineNumber = "8"
+            landmarkName = "createShare(items:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B4A59C2A-DFF3-404F-B009-AC63DCEBEC7C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ListApp/Services/ShareService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "10"
+            endingLineNumber = "10"
+            landmarkName = "createShare(items:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6CCE5DD5-650B-44D5-A18F-1664565B20A3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ListApp/Services/ShareService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "createShare(items:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A79D7E09-DAB1-4342-B94E-BA590FE65D70"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ListApp/Services/ShareService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "getShare(shareId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C8244E38-C4DD-4AB2-8C0C-10C7148A2EC8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ListApp/Services/ShareService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "getShare(shareId:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C8244E38-C4DD-4AB2-8C0C-10C7148A2EC8 - 71e2095016c23f9b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for static BasketBuddy.ShareService.getShare(shareId: Swift.String) async throws -&gt; BasketBuddy.ShareDataReturnModel"
+                  moduleName = "BasketBuddy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rjs/dev/listapp/ListApp/Services/ShareService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31">
+               </Location>
+               <Location
+                  uuid = "C8244E38-C4DD-4AB2-8C0C-10C7148A2EC8 - 71e2095016c23f9b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for static BasketBuddy.ShareService.getShare(shareId: Swift.String) async throws -&gt; BasketBuddy.ShareDataReturnModel"
+                  moduleName = "BasketBuddy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rjs/dev/listapp/ListApp/Services/ShareService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0854D764-2B29-440C-A89F-C200A4FE1F59"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ListApp/Services/ShareService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "getShare(shareId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "192875FF-BC5A-4809-BF6B-F13B60B4B9D9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ListApp/Services/ShareService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "getShare(shareId:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "192875FF-BC5A-4809-BF6B-F13B60B4B9D9 - 86412e317aebfb1d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for static BasketBuddy.ShareService.getShare(shareId: Swift.String) async throws -&gt; BasketBuddy.ShareDataReturnModel"
+                  moduleName = "BasketBuddy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rjs/dev/listapp/ListApp/Services/ShareService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27">
+               </Location>
+               <Location
+                  uuid = "192875FF-BC5A-4809-BF6B-F13B60B4B9D9 - f77c0c44b4fd4501"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) await resume partial function for static BasketBuddy.ShareService.getShare(shareId: Swift.String) async throws -&gt; BasketBuddy.ShareDataReturnModel"
+                  moduleName = "BasketBuddy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rjs/dev/listapp/ListApp/Services/ShareService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27">
+               </Location>
+               <Location
+                  uuid = "192875FF-BC5A-4809-BF6B-F13B60B4B9D9 - 71e2095016c23f1f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for static BasketBuddy.ShareService.getShare(shareId: Swift.String) async throws -&gt; BasketBuddy.ShareDataReturnModel"
+                  moduleName = "BasketBuddy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rjs/dev/listapp/ListApp/Services/ShareService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27">
+               </Location>
+               <Location
+                  uuid = "192875FF-BC5A-4809-BF6B-F13B60B4B9D9 - 3d9f7470b2b96319"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(7) suspend resume partial function for static BasketBuddy.ShareService.getShare(shareId: Swift.String) async throws -&gt; BasketBuddy.ShareDataReturnModel"
+                  moduleName = "BasketBuddy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rjs/dev/listapp/ListApp/Services/ShareService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0254CBEF-63F5-4587-BF04-83FA3B1EA0CB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ListApp/Services/ShareService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "getShare(shareId:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0254CBEF-63F5-4587-BF04-83FA3B1EA0CB - daa5c312de34b6dd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for static BasketBuddy.ShareService.getShare(shareId: Swift.String) async throws -&gt; BasketBuddy.ShareDataReturnModel"
+                  moduleName = "BasketBuddy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rjs/dev/listapp/ListApp/Services/ShareService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25">
+               </Location>
+               <Location
+                  uuid = "0254CBEF-63F5-4587-BF04-83FA3B1EA0CB - 265c8631198600c9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for static BasketBuddy.ShareService.getShare(shareId: Swift.String) async throws -&gt; BasketBuddy.ShareDataReturnModel"
+                  moduleName = "BasketBuddy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rjs/dev/listapp/ListApp/Services/ShareService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25">
+               </Location>
+               <Location
+                  uuid = "0254CBEF-63F5-4587-BF04-83FA3B1EA0CB - 86412e317aebfad3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for static BasketBuddy.ShareService.getShare(shareId: Swift.String) async throws -&gt; BasketBuddy.ShareDataReturnModel"
+                  moduleName = "BasketBuddy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rjs/dev/listapp/ListApp/Services/ShareService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25">
+               </Location>
+               <Location
+                  uuid = "0254CBEF-63F5-4587-BF04-83FA3B1EA0CB - 17cd9ac060d5c0d0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) suspend resume partial function for static BasketBuddy.ShareService.getShare(shareId: Swift.String) async throws -&gt; BasketBuddy.ShareDataReturnModel"
+                  moduleName = "BasketBuddy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rjs/dev/listapp/ListApp/Services/ShareService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
