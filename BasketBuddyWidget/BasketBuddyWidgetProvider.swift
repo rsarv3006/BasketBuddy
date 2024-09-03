@@ -4,9 +4,6 @@ import UIKit
 import CoreData
 
 struct Provider: TimelineProvider {
-    static let persistenceController = PersistenceController.shared
-    let managedObjectContext = Self.persistenceController.container.viewContext
-    
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date(), listItems: [])
     }
@@ -17,6 +14,8 @@ struct Provider: TimelineProvider {
     }
     
     func getTimeline(in context: Context, completion: @escaping (Timeline<SimpleEntry>) -> ()) {
+        let managedObjectContext = PersistenceController.shared.container.viewContext
+        
         var entries: [SimpleEntry] = []
         
         var listItems: [SimplifiedListItem] = []

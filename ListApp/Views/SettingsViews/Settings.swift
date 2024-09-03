@@ -1,14 +1,16 @@
 import StoreKit
 import SwiftUI
+import Bedrock
 
 struct Settings: View {
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var store: Store
-
+    
     @State var isStapleAlertVisible: Bool = false
     @State var isStapleLoadSuccess: Bool = false
     @State var shouldShowClearBasketConfirmModal = false
     @State var didClearBasketSuccessfully = false
+    @State var isLiveActivityEnabled = false
 
     var body: some View {
         VStack {
@@ -70,14 +72,15 @@ struct Settings: View {
                     SettingsInAppPurchases(product: product)
                         .padding(.top)
                 }
+              
                 
-                StartLiveActivityView()
-                    .padding(.top)
+                if isLiveActivityEnabled {
+                    StartLiveActivityView()
+                        .padding(.top)
+                }
 
                 AppVersionView()
                 
-                
-
                 HStack {
                     Spacer()
                 }
@@ -111,5 +114,16 @@ struct Settings: View {
             }
         }
         .background(Color.Theme.linen)
+        .onAppear {
+            checkIfLiveActivityIsEnabled()
+        }
+    }
+    
+    func checkIfLiveActivityIsEnabled() {
+        Task {
+            if let config = await ConfigService.shared.getConfig(), let isLiveActivityEnabled = config.isLiveActivityEnabled {
+                self.isLiveActivityEnabled = isLiveActivityEnabled
+            }
+        }
     }
 }

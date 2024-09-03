@@ -1,7 +1,6 @@
 import WidgetKit
 import SwiftUI
 import UIKit
-import CoreData
 
 struct SimpleEntry: TimelineEntry {
     let date: Date

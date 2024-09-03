@@ -10,7 +10,7 @@ struct BasketBuddyWidgetLiveActivity: Widget {
                 Text("Items Left: \(context.state.itemCount)")
                 Text("Next: \(parseItemForMediumSystemItemText(item: context.state.nextItem))")
             }
-            .activityBackgroundTint(Color.cyan)
+            .activityBackgroundTint(Color("SeaGreen"))
             .activitySystemActionForegroundColor(Color.black)
 
         } dynamicIsland: { context in
@@ -34,7 +34,7 @@ struct BasketBuddyWidgetLiveActivity: Widget {
                 Text("\(context.state.nextItem.name ?? "")")
             }
             .widgetURL(URL(string: "http://www.apple.com"))
-            .keylineTint(Color.red)
+            .keylineTint(Color("SeaGreen"))
         }
     }
 }

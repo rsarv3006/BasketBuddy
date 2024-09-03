@@ -9,9 +9,7 @@
 /* Begin PBXBuildFile section */
 		7801C837278AA0BE00831859 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7801C836278AA0BE00831859 /* DateExtension.swift */; };
 		7801C839278AAD4400831859 /* SettingsBasketHistoryClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7801C838278AAD4400831859 /* SettingsBasketHistoryClearButton.swift */; };
-		780F13F22C5D89DC00756754 /* Bedrock in Frameworks */ = {isa = PBXBuildFile; productRef = 780F13F12C5D89DC00756754 /* Bedrock */; };
 		780F13F42C5DBED500756754 /* DefaultConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = 780F13F32C5DBED500756754 /* DefaultConfig.json */; };
-		780F13F62C5DC6F800756754 /* Bedrock in Frameworks */ = {isa = PBXBuildFile; productRef = 780F13F52C5DC6F800756754 /* Bedrock */; };
 		780F306029D3E776002C7BA9 /* SettingsViewShareButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780F305F29D3E776002C7BA9 /* SettingsViewShareButtons.swift */; };
 		781B51AF29AB1E7F00957E6A /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B51AE29AB1E7F00957E6A /* TextFieldExtension.swift */; };
 		781D17F429B3010000C1F5BF /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 781D17F329B3010000C1F5BF /* StoreKit.framework */; };
@@ -106,6 +104,8 @@
 		78D5705829D6892D00B986DB /* ShareListHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D5705729D6892D00B986DB /* ShareListHelpers.swift */; };
 		78D5705A29D6896600B986DB /* ShareListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D5705929D6896600B986DB /* ShareListRow.swift */; };
 		78D5705C29D68A0400B986DB /* AppVersionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D5705B29D68A0400B986DB /* AppVersionView.swift */; };
+		78DB55592C873332002F4D18 /* Bedrock in Frameworks */ = {isa = PBXBuildFile; productRef = 78DB55582C873332002F4D18 /* Bedrock */; };
+		78DB555B2C873337002F4D18 /* Bedrock in Frameworks */ = {isa = PBXBuildFile; productRef = 78DB555A2C873337002F4D18 /* Bedrock */; };
 		78E8D0612C7D5B5D00C3812A /* StartLiveActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E8D0602C7D5B5D00C3812A /* StartLiveActivityView.swift */; };
 		78E8D0632C7D5B6C00C3812A /* StartLiveActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E8D0622C7D5B6C00C3812A /* StartLiveActivityViewModel.swift */; };
 		78E8D0662C7DF20700C3812A /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E8D0652C7DF20700C3812A /* Helpers.swift */; };
@@ -263,7 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				781D17F429B3010000C1F5BF /* StoreKit.framework in Frameworks */,
-				780F13F22C5D89DC00756754 /* Bedrock in Frameworks */,
+				78DB55592C873332002F4D18 /* Bedrock in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,7 +271,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				780F13F62C5DC6F800756754 /* Bedrock in Frameworks */,
+				78DB555B2C873337002F4D18 /* Bedrock in Frameworks */,
 				7896CFFA2AFBBC1900B40370 /* SwiftUI.framework in Frameworks */,
 				7896CFF82AFBBC1900B40370 /* WidgetKit.framework in Frameworks */,
 			);
@@ -602,7 +602,7 @@
 			);
 			name = BasketBuddy;
 			packageProductDependencies = (
-				780F13F12C5D89DC00756754 /* Bedrock */,
+				78DB55582C873332002F4D18 /* Bedrock */,
 			);
 			productName = ListApp;
 			productReference = 784CDD94277D559F0048BDEB /* BasketBuddy.app */;
@@ -622,7 +622,7 @@
 			);
 			name = BasketBuddyWidgetExtension;
 			packageProductDependencies = (
-				780F13F52C5DC6F800756754 /* Bedrock */,
+				78DB555A2C873337002F4D18 /* Bedrock */,
 			);
 			productName = BasketBuddyWidgetExtension;
 			productReference = 7896CFF62AFBBC1900B40370 /* BasketBuddyWidgetExtension.appex */;
@@ -660,7 +660,7 @@
 			);
 			mainGroup = 784CDD8B277D559F0048BDEB;
 			packageReferences = (
-				780F13F02C5D89DC00756754 /* XCRemoteSwiftPackageReference "bedrock" */,
+				78DB55572C87332B002F4D18 /* XCRemoteSwiftPackageReference "bedrock" */,
 			);
 			productRefGroup = 784CDD95277D559F0048BDEB /* Products */;
 			projectDirPath = "";
@@ -1193,25 +1193,25 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		780F13F02C5D89DC00756754 /* XCRemoteSwiftPackageReference "bedrock" */ = {
+		78DB55572C87332B002F4D18 /* XCRemoteSwiftPackageReference "bedrock" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/rsarv3006/bedrock";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.2;
+				minimumVersion = 1.0.6;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		780F13F12C5D89DC00756754 /* Bedrock */ = {
+		78DB55582C873332002F4D18 /* Bedrock */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 780F13F02C5D89DC00756754 /* XCRemoteSwiftPackageReference "bedrock" */;
+			package = 78DB55572C87332B002F4D18 /* XCRemoteSwiftPackageReference "bedrock" */;
 			productName = Bedrock;
 		};
-		780F13F52C5DC6F800756754 /* Bedrock */ = {
+		78DB555A2C873337002F4D18 /* Bedrock */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 780F13F02C5D89DC00756754 /* XCRemoteSwiftPackageReference "bedrock" */;
+			package = 78DB55572C87332B002F4D18 /* XCRemoteSwiftPackageReference "bedrock" */;
 			productName = Bedrock;
 		};
 /* End XCSwiftPackageProductDependency section */

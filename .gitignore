@@ -5,3 +5,5 @@ ListApp/Config.plist
 ListApp/DeftaultConfig.json
 **/DefaultConfig.json
 **/.DS_Store
+**/**/*.DS_Store
+**/**/*.idea

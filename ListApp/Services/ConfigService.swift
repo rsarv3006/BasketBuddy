@@ -6,12 +6,20 @@ public struct Config: GenericConfig {
     public let anonToken: String?
     public let minAppVersion: String?
     public let isDeeplinkShareEnabled: Bool?
+    public let isLiveActivityEnabled: Bool?
 
-    public init(apiUrl: String?, anonToken: String?, minAppVersion: String?, isDeeplinkShareEnabled: Bool?) {
+    public init(
+        apiUrl: String?,
+        anonToken: String?,
+        minAppVersion: String?,
+        isDeeplinkShareEnabled: Bool?,
+        isLiveActivityEnabled: Bool?
+    ) {
         self.apiUrl = apiUrl
         self.anonToken = anonToken
         self.minAppVersion = minAppVersion
         self.isDeeplinkShareEnabled = isDeeplinkShareEnabled
+        self.isLiveActivityEnabled = isLiveActivityEnabled
     }
 }
 

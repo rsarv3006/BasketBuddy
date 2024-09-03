@@ -77,9 +77,7 @@ final class StartLiveActivityViewModel: ObservableObject {
     }
     
     func onStartShoppingActivityButtonPressed() {
-        print("on start pressed")
         if ActivityAuthorizationInfo().areActivitiesEnabled {
-            print("activities are enabled")
             do {
                 let basketBuddyAttributes = BasketBuddyWidgetAttributes()
               

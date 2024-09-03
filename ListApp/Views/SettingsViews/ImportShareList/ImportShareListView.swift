@@ -13,7 +13,6 @@ struct ImportShareListView: View {
     @Binding private var deeplinkTarget: DeeplinkManager.DeeplinkTarget?
 
     init(shareCodeId: String = "", deeplinkTarget: Binding<DeeplinkManager.DeeplinkTarget?> = .constant(nil)) {
-        print(shareCodeId)
         self._shareCodeInput = State(initialValue: shareCodeId)
         self._deeplinkTarget = deeplinkTarget
     }

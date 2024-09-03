@@ -9,6 +9,7 @@ struct AddItems: View {
     @State var itemNameError: Bool = false
     @State var itemCountError: Bool = false
     @State var isStaple: Bool = false
+    @State var aisleNumber: String = ""
 
     @FetchRequest private var categories: FetchedResults<Category>
     @State private var selectedCategory: Category

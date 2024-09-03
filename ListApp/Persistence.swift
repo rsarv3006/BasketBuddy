@@ -29,15 +29,17 @@ struct PersistenceController {
         let container = NSPersistentContainer(name: "ListApp")
         let storeURL = AppGroup.basketBuddy.containerURL.appendingPathComponent("ListApp.sqlite")
 
+        // Set up persistent store description with migration options
+        let description = NSPersistentStoreDescription(url: storeURL)
+        description.setOption(true as NSNumber, forKey: NSMigratePersistentStoresAutomaticallyOption)
+        description.setOption(true as NSNumber, forKey: NSInferMappingModelAutomaticallyOption)
+        container.persistentStoreDescriptions = [description]
+
         var defaultURL: URL?
         if let storeDescription = container.persistentStoreDescriptions.first, let url = storeDescription.url {
             defaultURL = FileManager.default.fileExists(atPath: url.path) ? url : nil
         }
-        
-        if defaultURL == nil {
-            container.persistentStoreDescriptions = [NSPersistentStoreDescription(url: storeURL)]
-        }
-        
+
         container.loadPersistentStores(completionHandler: { [unowned container] (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
@@ -64,7 +66,6 @@ struct PersistenceController {
                 }
             }
         })
-        print("returning container")
         return container
     }
     
