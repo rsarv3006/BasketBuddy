@@ -6,6 +6,7 @@ public struct SimplifiedListItem: Codable {
     let name: String?
     let unitAbbrv: String?
     let categoryName: String?
+    let aisleNumber: String?
 }
 
 extension SimplifiedListItem: Hashable {}
@@ -20,5 +21,6 @@ public extension SimplifiedListItem {
         name = listItem.name
         unitAbbrv = listItem.unit?.abbreviation
         categoryName = listItem.category?.name
+        aisleNumber = listItem.aisleNumber
     }
 }

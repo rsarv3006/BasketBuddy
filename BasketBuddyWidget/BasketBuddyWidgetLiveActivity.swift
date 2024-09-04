@@ -9,6 +9,9 @@ struct BasketBuddyWidgetLiveActivity: Widget {
             VStack {
                 Text("Items Left: \(context.state.itemCount)")
                 Text("Next: \(parseItemForMediumSystemItemText(item: context.state.nextItem))")
+                if let aisleInfo = context.state.nextItem.aisleNumber, !aisleInfo.isEmpty {
+                    Text("Aisle: \(aisleInfo)")
+                }
             }
             .activityBackgroundTint(Color("SeaGreen"))
             .activitySystemActionForegroundColor(Color.black)
@@ -25,6 +28,9 @@ struct BasketBuddyWidgetLiveActivity: Widget {
                 }
                 DynamicIslandExpandedRegion(.bottom) {
                     Text("Next: \(parseItemForMediumSystemItemText(item: context.state.nextItem))")
+                    if let aisleInfo = context.state.nextItem.aisleNumber, !aisleInfo.isEmpty {
+                        Text("Aisle: \(aisleInfo)")
+                    }
                 }
             } compactLeading: {
                 Text("\(context.state.itemCount)")

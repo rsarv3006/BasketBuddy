@@ -38,6 +38,6 @@ struct ItemToBeAddedRow: View {
 
 struct ItemToBeAddedRow_Previews: PreviewProvider {
     static var previews: some View {
-        ItemToBeAddedRow(item: ShareListItem(itemName: "Test Item", itemCount: "1", unitName: "Pounds", unitAbbreviation: "lb", categoryName: "Bakery"), isSelected: true) {}
+        ItemToBeAddedRow(item: ShareListItem(itemName: "Test Item", itemCount: "1", unitName: "Pounds", unitAbbreviation: "lb", categoryName: "Bakery", aisleNumber: "Aisle #3"), isSelected: true) {}
     }
 }

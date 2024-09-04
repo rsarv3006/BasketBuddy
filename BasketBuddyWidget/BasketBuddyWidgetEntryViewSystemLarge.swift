@@ -49,16 +49,16 @@ struct BasketBuddyWidgetEntryViewSystemLarge: View {
 }
 
 let MockSimplifiedListItemLong: [SimplifiedListItem] = [
-    SimplifiedListItem(count: "2", name: "waffles", unitAbbrv: "dz", categoryName: "frozen"),
-    SimplifiedListItem(count: "1", name: "tortillas", unitAbbrv: "dz", categoryName: "bakery"),
-    SimplifiedListItem(count: "3", name: "bags of chips", unitAbbrv: "", categoryName: "bulk"),
-    SimplifiedListItem(count: "3", name: "more bags of chips", unitAbbrv: "", categoryName: "bulk"),
-    SimplifiedListItem(count: "2", name: "waffles", unitAbbrv: "dz", categoryName: "frozen"),
-    SimplifiedListItem(count: "1", name: "tortillas", unitAbbrv: "dz", categoryName: "bakery"),
-    SimplifiedListItem(count: "3", name: "bags of chips", unitAbbrv: "", categoryName: "bulk"),
-    SimplifiedListItem(count: "3", name: "more bags of chips", unitAbbrv: "", categoryName: "bulk"),
-    SimplifiedListItem(count: "3", name: "bags of chips", unitAbbrv: "", categoryName: "bulk"),
-    SimplifiedListItem(count: "3", name: "more bags of chips", unitAbbrv: "", categoryName: "bulk"),
+    SimplifiedListItem(count: "2", name: "waffles", unitAbbrv: "dz", categoryName: "frozen", aisleNumber: "2"),
+    SimplifiedListItem(count: "1", name: "tortillas", unitAbbrv: "dz", categoryName: "bakery", aisleNumber: "2"),
+    SimplifiedListItem(count: "3", name: "bags of chips", unitAbbrv: "", categoryName: "bulk", aisleNumber: "2"),
+    SimplifiedListItem(count: "3", name: "more bags of chips", unitAbbrv: "", categoryName: "bulk", aisleNumber: "2"),
+    SimplifiedListItem(count: "2", name: "waffles", unitAbbrv: "dz", categoryName: "frozen", aisleNumber: "2"),
+    SimplifiedListItem(count: "1", name: "tortillas", unitAbbrv: "dz", categoryName: "bakery", aisleNumber: "2"),
+    SimplifiedListItem(count: "3", name: "bags of chips", unitAbbrv: "", categoryName: "bulk", aisleNumber: "2"),
+    SimplifiedListItem(count: "3", name: "more bags of chips", unitAbbrv: "", categoryName: "bulk", aisleNumber: "2"),
+    SimplifiedListItem(count: "3", name: "bags of chips", unitAbbrv: "", categoryName: "bulk", aisleNumber: "2"),
+    SimplifiedListItem(count: "3", name: "more bags of chips", unitAbbrv: "", categoryName: "bulk", aisleNumber: "2"),
 ]
 
 #Preview(as: .systemLarge) {

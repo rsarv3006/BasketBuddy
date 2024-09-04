@@ -87,7 +87,7 @@ final class StartLiveActivityViewModel: ObservableObject {
                 if let item = items.first {
                     nextItem = item
                 } else {
-                    nextItem = SimplifiedListItem(count: "", name: "No Items Left!", unitAbbrv: nil, categoryName: nil)
+                    nextItem = SimplifiedListItem(count: "", name: "No Items Left!", unitAbbrv: nil, categoryName: nil, aisleNumber: "")
                 }
                 
                 
@@ -119,7 +119,7 @@ final class StartLiveActivityViewModel: ObservableObject {
         if let item = items?.first {
             nextItem = item
         } else {
-            nextItem = SimplifiedListItem(count: "", name: "No Items Left!", unitAbbrv: nil, categoryName: nil)
+            nextItem = SimplifiedListItem(count: "", name: "No Items Left!", unitAbbrv: nil, categoryName: nil, aisleNumber: "")
         }
         
         let finalContent = BasketBuddyWidgetAttributes.ContentState(itemCount: items?.count ?? 0, nextItem: nextItem)
@@ -203,7 +203,7 @@ final class StartLiveActivityViewModel: ObservableObject {
         if let item = updatedItems.first {
             nextItem = item
         } else {
-            nextItem = SimplifiedListItem(count: "", name: "No Items Left!", unitAbbrv: nil, categoryName: nil)
+            nextItem = SimplifiedListItem(count: "", name: "No Items Left!", unitAbbrv: nil, categoryName: nil, aisleNumber: "")
         }
         
         let contentState = BasketBuddyWidgetAttributes.ContentState(itemCount: updatedItems.count, nextItem: nextItem)

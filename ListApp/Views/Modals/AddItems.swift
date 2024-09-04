@@ -54,6 +54,7 @@ struct AddItems: View {
                 }
 
                 self._itemName = State(initialValue: selectedItem.name ?? "")
+                self._aisleNumber = State(initialValue: selectedItem.aisleNumber ?? "")
                 self._itemCount = State(initialValue: String(selectedItem.count))
                 self._isStaple = State(initialValue: selectedItem.isStaple)
             } else {
@@ -117,6 +118,16 @@ struct AddItems: View {
                     }
                 }
                 .padding(.horizontal)
+                
+                HStack {
+                    Text("Aisle:")
+                        .foregroundStyle(Color.Theme.seaGreen)
+                    
+                    TextField("Aisle", text: $aisleNumber)
+                        .foregroundColor(Color.Theme.seaGreen)
+                        .textFieldStyle(TextFieldDefaultBackgroundSeagreenBorder())
+                }
+                .padding(.horizontal)
 
                 Toggle("Item is a Staple", isOn: $isStaple)
                     .foregroundColor(Color.Theme.seaGreen)
@@ -142,10 +153,10 @@ struct AddItems: View {
                             itemCountError = itemCount.isEmpty
 
                             if let tempSelectedItem = selectedItem {
-                                ListItem.editItem(itemToEdit: tempSelectedItem, itemName: itemName, itemCount: itemCount, unit: selectedUnit, category: selectedCategory, isStaple: isStaple)
+                                ListItem.editItem(itemToEdit: tempSelectedItem, itemName: itemName, itemCount: itemCount, unit: selectedUnit, category: selectedCategory, isStaple: isStaple, aisleNumber: aisleNumber)
                                 selectedItem = nil
                             } else {
-                                ListItem.addItem(itemName: itemName, itemCount: itemCount, unit: selectedUnit, category: selectedCategory, isStaple: isStaple, viewContext: viewContext)
+                                ListItem.addItem(itemName: itemName, itemCount: itemCount, unit: selectedUnit, category: selectedCategory, isStaple: isStaple, aisleNumber: aisleNumber, viewContext: viewContext)
                             }
 
                             presentationMode.wrappedValue.dismiss()

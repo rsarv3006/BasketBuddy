@@ -14,7 +14,7 @@ public class ListItem: NSManagedObject {
                 throw ServiceErrors.custom(message: "Unable to find a matching unit and/or Category")
             }
 
-            self.addItem(itemName: itemToAdd.itemName, itemCount: itemToAdd.itemCount, unit: unit, category: category, isStaple: false, viewContext: viewContext)
+            self.addItem(itemName: itemToAdd.itemName, itemCount: itemToAdd.itemCount, unit: unit, category: category, isStaple: false, aisleNumber: itemToAdd.aisleNumber ?? "", viewContext: viewContext)
         }
 
         WidgetCenter.shared.reloadTimelines(ofKind: "BasketBuddyWidget")
@@ -26,6 +26,7 @@ public class ListItem: NSManagedObject {
         unit: Unit,
         category: Category,
         isStaple: Bool,
+        aisleNumber: String,
         viewContext: NSManagedObjectContext
     ) {
         let item = ListItem(context: viewContext)
@@ -36,6 +37,7 @@ public class ListItem: NSManagedObject {
         item.dateAdded = Date()
         item.isStaple = isStaple
         item.isVisible = true
+        item.aisleNumber = aisleNumber
 
         do {
             try viewContext.save()
@@ -52,7 +54,8 @@ public class ListItem: NSManagedObject {
         itemCount: String,
         unit: Unit,
         category: Category,
-        isStaple: Bool
+        isStaple: Bool,
+        aisleNumber: String
     ) {
         guard let context = itemToEdit.managedObjectContext else { return }
 
@@ -63,6 +66,7 @@ public class ListItem: NSManagedObject {
         itemToEdit.dateAdded = Date()
         itemToEdit.isStaple = isStaple
         itemToEdit.isVisible = true
+        itemToEdit.aisleNumber = aisleNumber
 
         do {
             try context.save()

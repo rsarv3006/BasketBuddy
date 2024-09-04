@@ -11,6 +11,7 @@
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <entity name="ListItem" representedClassName="ListItem" syncable="YES">
+        <attribute name="aisleNumber" optional="YES" attributeType="String"/>
         <attribute name="count" attributeType="String"/>
         <attribute name="dateAdded" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="datesMovedToBasket" optional="YES" attributeType="Transformable" customClassName="[Date]"/>

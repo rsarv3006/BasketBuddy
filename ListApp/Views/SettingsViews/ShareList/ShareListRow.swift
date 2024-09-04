@@ -19,6 +19,15 @@ struct ShareListRow: View {
                 }
                 
                 Spacer()
+                if let aisleInfo = item.aisleNumber, !aisleInfo.isEmpty {
+                    VStack {
+                        Text("")
+                        Text("Aisle: \(aisleInfo)")
+                            .foregroundColor(Color.Theme.linen)
+                    }
+                    .padding([.trailing], 8)
+                }
+                
                 if self.isSelected {
                     Image(systemName: "checkmark")
                         .font(.headline)

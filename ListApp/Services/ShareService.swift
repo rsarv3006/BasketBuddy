@@ -43,7 +43,7 @@ struct ShareService {
         
         for listItem in listItems {
             if let itemName = listItem.name, let unitName = listItem.unit?.name, let unitAbbreviation = listItem.unit?.abbreviation, let categoryName = listItem.category?.name {
-                let shareListItem = ShareListItem(itemName: itemName, itemCount: listItem.count, unitName: unitName, unitAbbreviation: unitAbbreviation, categoryName: categoryName)
+                let shareListItem = ShareListItem(itemName: itemName, itemCount: listItem.count, unitName: unitName, unitAbbreviation: unitAbbreviation, categoryName: categoryName, aisleNumber: listItem.aisleNumber)
                 shareListItems.append(shareListItem)
             }
         }

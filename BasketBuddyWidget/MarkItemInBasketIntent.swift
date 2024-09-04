@@ -34,7 +34,7 @@ struct MarkItemInBasketIntent: AppIntent {
             if let item = items.first {
                 nextItem = item
             } else {
-                nextItem = SimplifiedListItem(count: "", name: "No Items Left!", unitAbbrv: nil, categoryName: nil)
+                nextItem = SimplifiedListItem(count: "", name: "No Items Left!", unitAbbrv: nil, categoryName: nil, aisleNumber: "")
             }
             
             Task {
