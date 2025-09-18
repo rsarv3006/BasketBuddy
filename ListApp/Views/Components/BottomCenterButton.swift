@@ -9,7 +9,7 @@ struct BottomCenterButton: View {
             self.onPressed()
         } label: {
             ZStack {
-                if #unavailable(iOS 26, iPadOS 26) {
+                if #unavailable(iOS 26) {
                     Circle()
                         .fill(Color.Theme.linen)
                         .frame(width: 110, height: 110)

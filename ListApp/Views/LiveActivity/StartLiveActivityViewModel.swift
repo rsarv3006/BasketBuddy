@@ -42,6 +42,8 @@ final class StartLiveActivityViewModel: ObservableObject {
                 return true
             case .ended, .dismissed:
                 return false
+            case .pending:
+                return false
             @unknown default:
                 return false
             }
@@ -54,6 +56,8 @@ final class StartLiveActivityViewModel: ObservableObject {
             case .active, .stale:
                 return true
             case .ended, .dismissed:
+                return false
+            case .pending:
                 return false
             @unknown default:
                 return false
