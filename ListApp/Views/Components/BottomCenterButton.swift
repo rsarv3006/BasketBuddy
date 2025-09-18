@@ -9,14 +9,16 @@ struct BottomCenterButton: View {
             self.onPressed()
         } label: {
             ZStack {
-                Circle()
-                    .fill(Color.Theme.linen)
-                    .frame(width: 110, height: 110)
-                Circle()
-                    .trim(from: 0.1, to: 0.9)
-                    .rotation(.degrees(90))
-                    .stroke(Color.Theme.seaGreen, style: StrokeStyle(lineWidth: 3))
-                    .frame(width: 110, height: 110)
+                if #unavailable(iOS 26, iPadOS 26) {
+                    Circle()
+                        .fill(Color.Theme.linen)
+                        .frame(width: 110, height: 110)
+                    Circle()
+                        .trim(from: 0.1, to: 0.9)
+                        .rotation(.degrees(90))
+                        .stroke(Color.Theme.seaGreen, style: StrokeStyle(lineWidth: 3))
+                        .frame(width: 110, height: 110)
+                }
                 Image(systemName: centerImageName)
                     .font(.system(size: 45))
                     .foregroundColor(Color.Theme.seaGreen)

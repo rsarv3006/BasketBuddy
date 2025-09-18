@@ -43,7 +43,7 @@ public class RemoteConfigLoader: ConfigLoader {
         let configApiToken = PlistHelpers.getKeyValueFromPlist(plistFileName: "Config", key: "ConfigApiToken")
         guard let configApiUrl,
               let configApiToken,
-              let url = URL(string: "\(configApiUrl)/api/v1/config/basketbuddy")
+              let url = URL(string: "\(configApiUrl)/api/v2/config/basketbuddy")
         else { return nil }
 
         var request = URLRequest(url: url)
